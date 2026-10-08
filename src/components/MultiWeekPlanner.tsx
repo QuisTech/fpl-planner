@@ -148,6 +148,25 @@ export const MultiWeekPlanner: React.FC<MultiWeekPlannerProps> = ({
           <p className="text-xs text-slate-400 mt-1 max-w-2xl leading-relaxed">
             Markov Decision Process lookahead optimizing rolling free transfers (up to 5 FTs), time-decayed chip residual values, and 1,000 Monte Carlo match simulations per Gameweek.
           </p>
+          <div className="flex items-center gap-2 mt-2.5">
+            <span className="text-[11px] font-bold text-slate-400">Baseline Squad:</span>
+            {syncedData?.squad && syncedData.squad.length === 15 ? (
+              <span className="text-[10px] font-black uppercase px-2 py-0.5 rounded-md bg-cyan-500/15 border border-cyan-500/30 text-cyan-300">
+                Synced Team ({syncedData.managerInfo?.teamName || 'Custom Squad'})
+              </span>
+            ) : (
+              <span className={`text-[10px] font-black uppercase px-2 py-0.5 rounded-md flex items-center gap-1 ${
+                data?.activeScenario === 'template' 
+                  ? 'bg-purple-600/20 border border-purple-500/40 text-purple-300' 
+                  : 'bg-emerald-500/15 border border-emerald-500/30 text-emerald-300'
+              }`}>
+                {data?.activeScenario === 'template' ? '🛡️ Template Shield' : '⚡ Quant Optimal'}
+              </span>
+            )}
+            <span className="text-[10px] font-mono text-slate-500">
+              ({riskMode.toUpperCase()} Mode)
+            </span>
+          </div>
         </div>
 
         {/* Controls: Horizon & Confidence Toggle */}
