@@ -1493,6 +1493,8 @@ export class FPLService {
       bank: rawHistory.bank ? rawHistory.bank / 10 : 0
     } : null;
 
+    const multiWeekPlan = (bestFutures.length > 0 && bestFutures[0]?.pathSteps) ? bestFutures[0].pathSteps : [];
+
     return {
       squad: myPicks,
       transfers,
@@ -1502,7 +1504,8 @@ export class FPLService {
       entryHistory,
       managerInfo,
       gameweek: baseData.nextEventId,
-      scenario
+      scenario,
+      multiWeekPlan
     };
   }
 }

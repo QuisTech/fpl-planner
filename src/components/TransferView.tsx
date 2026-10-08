@@ -2,6 +2,7 @@ import { useState, useMemo } from 'react';
 import { motion } from 'motion/react';
 import { 
   Users, 
+  Network, 
   ArrowRightCircle, 
   UserMinus, 
   UserPlus, 
@@ -259,9 +260,20 @@ export const TransferView = ({ syncedData, tier = 'ai-agent', setTab, userId }: 
             </button>
           ))}
         </div>
-        <div className="text-[9px] text-slate-500 font-bold uppercase tracking-widest flex items-center gap-1">
-          <Sparkles className="w-3 h-3 text-fpl-green animate-pulse" />
-          Single Free Transfer Focus
+        <div className="flex items-center gap-2">
+          {setTab && (
+            <button
+              onClick={() => setTab('planner')}
+              className="flex items-center gap-1 text-[9px] font-black uppercase tracking-wider text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 hover:bg-emerald-500/20 px-2 py-1 rounded-md transition-all cursor-pointer"
+            >
+              <Network className="w-3 h-3 text-emerald-400" />
+              <span>Multi-Week Planner</span>
+            </button>
+          )}
+          <div className="text-[9px] text-slate-500 font-bold uppercase tracking-widest hidden sm:flex items-center gap-1">
+            <Sparkles className="w-3 h-3 text-fpl-green animate-pulse" />
+            Single Free Transfer Focus
+          </div>
         </div>
       </div>
 

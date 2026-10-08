@@ -3,7 +3,9 @@ const DEFAULT_PARAMETERS = loadWeights('baseline');
 import { XPOracle } from './ingestion.js';
 import { solveOptimalSquad, solveStartingXI, solveCaptain, solveOptimalTransfers } from './lp-solver.js';
 import { calculateUtility } from './utility.js';
-import { UtilityParameters, } from './projection.js';
+import { UtilityParameters } from './projection.js';
+import { PlannerStepDetail } from './types.js';
+export type { PlannerStepDetail };
 
 export interface SquadState {
   squad: number[]; // Array of 15 player IDs
@@ -155,7 +157,7 @@ export class Simulator {
     }
   }
 
-  public simulateMatchday(state: SquadState, gw: number, oracle: XPOracle, params: UtilityParameters = DEFAULT_PARAMETERS): { score: number; variance: number; xiXP: number; benchXP: number; capXP: number } {
+  public simulateMatchday(state: SquadState, gw: number, oracle: XPOracle, params: UtilityParameters = DEFAULT_PARAMETERS): { score: number; variance: number; xiXP: number; benchXP: number; capXP: number; xiIds: number[]; captain: number; viceCaptain: number } {
     let startersCount = state.activeChip === 'BB' ? 15 : 11;
     let xiIds = state.squad;
     
@@ -191,7 +193,7 @@ export class Simulator {
       }
     });
 
-    return { score: gwScore, variance: gwVariance, xiXP, benchXP, capXP };
+    return { score: gwScore, variance: gwVariance, xiXP, benchXP, capXP, xiIds, captain, viceCaptain };
   }
 
   private getChipResidual(chip: string, gw: number): number {
