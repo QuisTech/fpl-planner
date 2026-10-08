@@ -115,10 +115,26 @@ export function generateClientMultiWeekPlan(
     let outDetails: any[] = [];
     let hitCost = 0;
 
-    // Sort starters vs bench (first 11 are starters)
-    const sortedSquad = [...currentSquad].sort((a, b) => (b.xP || 0) - (a.xP || 0));
+    // 1. Calculate fixture-adjusted xP for each player in this specific gameweek (gw)
+    const getPlayerGwXp = (p: ScoredPlayer): number => {
+      const base = Number(p.xP || p.score || 4.5);
+      const fix = p.next_fixtures?.find(f => f.event === gw) || p.next_fixtures?.[step];
+      if (!fix) return base;
+
+      let fdrMultiplier = 1.0;
+      if (fix.difficulty <= 2) fdrMultiplier = 1.25;      // Easy fixture (+25%)
+      else if (fix.difficulty === 3) fdrMultiplier = 1.0; // Neutral
+      else if (fix.difficulty === 4) fdrMultiplier = 0.82;// Tough (-18%)
+      else if (fix.difficulty >= 5) fdrMultiplier = 0.65; // Brutal away (-35%)
+
+      const venueMultiplier = fix.is_home ? 1.12 : 0.90; // Home advantage vs Away
+      return Math.round(base * fdrMultiplier * venueMultiplier * 10) / 10;
+    };
+
+    // Sort starters vs bench based on this week's fixture-adjusted xP
+    const sortedSquad = [...currentSquad].sort((a, b) => getPlayerGwXp(b) - getPlayerGwXp(a));
     
-    // Choose captain: highest xP starter
+    // Choose captain dynamically based on fixture-adjusted potential
     const captain = sortedSquad[0] || currentSquad[0];
     const viceCaptain = sortedSquad[1] || currentSquad[1];
 

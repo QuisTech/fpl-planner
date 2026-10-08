@@ -177,6 +177,18 @@ export const MultiWeekPlanner: React.FC<MultiWeekPlannerProps> = ({
         </div>
       </div>
 
+      {/* Active Squad Captaincy Notice */}
+      {baseSquad.length > 0 && !baseSquad.some(p => p.web_name === 'Haaland') && (
+        <div className="mb-4 p-3 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-between text-xs text-amber-200">
+          <div className="flex items-center gap-2">
+            <span className="text-amber-400 font-bold">💡 Notice:</span>
+            <span>
+              <strong>Haaland (£15.5m)</strong> is not in your current 15-player squad. Captains can only be selected from your owned assets. Weekly captaincy rotates dynamically among your squad (e.g. B.Fernandes, Palmer, Saka) based on upcoming Fixture Difficulty (FDR) and Home advantage.
+            </span>
+          </div>
+        </div>
+      )}
+
       {/* Aggregate Overview Stats */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
         <div className="bg-slate-900/80 border border-slate-800 p-3.5 rounded-xl">
@@ -301,12 +313,18 @@ export const MultiWeekPlanner: React.FC<MultiWeekPlannerProps> = ({
                       )}
 
                       {/* Captaincy tag */}
-                      {captainPlayer && (
-                        <div className="hidden md:inline-flex items-center gap-1 text-[11px] text-amber-300 font-semibold bg-amber-500/10 border border-amber-500/20 px-2 py-0.5 rounded-lg">
-                          <Crown className="w-3 h-3 text-amber-400" />
-                          <span>(C) {captainPlayer.web_name}</span>
-                        </div>
-                      )}
+                      {captainPlayer && (() => {
+                        const capFix = captainPlayer.next_fixtures?.find(f => f.event === step.gameweek) || captainPlayer.next_fixtures?.[idx];
+                        const oppLabel = capFix ? ` vs ${capFix.opponent} (${capFix.is_home ? 'H' : 'A'})` : '';
+                        const fdrColor = capFix?.difficulty <= 2 ? 'text-emerald-400' : (capFix?.difficulty || 3) >= 4 ? 'text-red-400' : 'text-slate-400';
+                        return (
+                          <div className="hidden sm:inline-flex items-center gap-1.5 text-[11px] text-amber-300 font-bold bg-amber-500/10 border border-amber-500/30 px-2.5 py-0.5 rounded-lg">
+                            <Crown className="w-3.5 h-3.5 text-amber-400" />
+                            <span>(C) {captainPlayer.web_name}</span>
+                            {oppLabel && <span className={`text-[10px] font-mono ${fdrColor}`}>${oppLabel}</span>}
+                          </div>
+                        );
+                      })()}
                     </div>
 
                     {/* Scores & Confidences */}
