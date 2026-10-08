@@ -54,10 +54,16 @@ export const MultiWeekPlanner: React.FC<MultiWeekPlannerProps> = ({
     ];
   }, [data]);
 
-  // Determine starting squad: preferably synced user squad, otherwise top picks optimum
+  // Determine starting squad: preferably synced user squad, otherwise exact Pitch View LP optimum squad
   const baseSquad = useMemo(() => {
     if (syncedData?.squad && syncedData.squad.length === 15) {
       return syncedData.squad;
+    }
+    if (data?.squad && data.squad.length === 15) {
+      return data.squad;
+    }
+    if (data?.startingXI && data?.bench && (data.startingXI.length + data.bench.length === 15)) {
+      return [...data.startingXI, ...data.bench];
     }
     if (data?.topPicks) {
       return [
