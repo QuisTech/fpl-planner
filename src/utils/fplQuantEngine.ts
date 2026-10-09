@@ -131,25 +131,19 @@ export function generateClientMultiWeekPlan(
       return Math.round(base * fdrMultiplier * venueMultiplier * 10) / 10;
     };
 
-    // Sort starters vs bench based on this week's fixture-adjusted xP
-    const sortedSquad = [...currentSquad].sort((a, b) => getPlayerGwXp(b) - getPlayerGwXp(a));
-    
-    // Choose captain dynamically based on fixture-adjusted potential
-    const captain = sortedSquad[0] || currentSquad[0];
-    const viceCaptain = sortedSquad[1] || currentSquad[1];
-
-    // Identify lowest xP starter or candidate with bad fixtures
-    const lowestStarter = sortedSquad[sortedSquad.length - 1];
+    // Sort squad by fixture-adjusted xP ascending to identify candidates for transfer upgrade
+    const sortedByXpAsc = [...currentSquad].sort((a, b) => getPlayerGwXp(a) - getPlayerGwXp(b));
+    const lowestStarter = sortedByXpAsc[0];
 
     // Look for high-impact upgrade in candidate pool
     const viableUpgrade = candidatePool.find(c => 
-      c.position === lowestStarter.position &&
+      c.position === lowestStarter?.position &&
       !currentSquad.some(p => p.id === c.id) &&
-      (c.xP || 0) > (lowestStarter.xP || 0) + 1.5 &&
-      (c.now_cost || 50) <= (lowestStarter.now_cost || 50) + currentBank * 10
+      (c.xP || 0) > (lowestStarter?.xP || 0) + 1.5 &&
+      (c.now_cost || 50) <= (lowestStarter?.now_cost || 50) + currentBank * 10
     );
 
-    if (viableUpgrade && step > 0 && step % 2 === 1) {
+    if (viableUpgrade && lowestStarter && step > 0 && step % 2 === 1) {
       actionType = 'TRANSFER';
       transfersOut = [lowestStarter.id];
       transfersIn = [viableUpgrade.id];
@@ -183,12 +177,70 @@ export function generateClientMultiWeekPlan(
       freeTransfers = Math.min(5, freeTransfers + 1);
     }
 
-    // Split into Starters (11) and Bench (4)
-    const starters = currentSquad.slice(0, 11).map(p => p.id);
-    const bench = currentSquad.slice(11, 15).map(p => p.id);
+    // Form optimal Starting XI (11) and Bench (4) under FPL constraints:
+    // Exactly 1 GKP, min 3 DEF, min 2 MID, min 1 FWD, total 11 starters.
+    const gkps = currentSquad.filter(p => p.position === 'GKP').sort((a, b) => getPlayerGwXp(b) - getPlayerGwXp(a));
+    const defs = currentSquad.filter(p => p.position === 'DEF').sort((a, b) => getPlayerGwXp(b) - getPlayerGwXp(a));
+    const mids = currentSquad.filter(p => p.position === 'MID').sort((a, b) => getPlayerGwXp(b) - getPlayerGwXp(a));
+    const fwds = currentSquad.filter(p => p.position === 'FWD').sort((a, b) => getPlayerGwXp(b) - getPlayerGwXp(a));
+
+    let starterPlayers: ScoredPlayer[] = [];
+    let benchPlayers: ScoredPlayer[] = [];
+
+    if (gkps.length >= 1 && defs.length >= 3 && mids.length >= 2 && fwds.length >= 1) {
+      // 1 starting GKP
+      const startingGkp = gkps[0];
+      const benchGkp = gkps.slice(1);
+
+      // Core outfield requirements: 3 DEF, 2 MID, 1 FWD = 6 outfielders (+ 1 GKP = 7 players)
+      const coreDefs = defs.slice(0, 3);
+      const coreMids = mids.slice(0, 2);
+      const coreFwds = fwds.slice(0, 1);
+
+      // Remaining outfield candidates (max 5 DEF, max 5 MID, max 3 FWD)
+      const remainingOutfield = [
+        ...defs.slice(3, 5),
+        ...mids.slice(2, 5),
+        ...fwds.slice(1, 3)
+      ].sort((a, b) => getPlayerGwXp(b) - getPlayerGwXp(a));
+
+      // Pick top 4 flex outfielders to complete the 11 starters
+      const flexOutfield = remainingOutfield.slice(0, 4);
+      const benchOutfield = remainingOutfield.slice(4);
+
+      starterPlayers = [
+        startingGkp,
+        ...coreDefs,
+        ...coreMids,
+        ...coreFwds,
+        ...flexOutfield
+      ];
+
+      benchPlayers = [
+        ...benchGkp,
+        ...benchOutfield
+      ];
+    } else {
+      // Fallback if squad positions are incomplete or non-standard
+      const sortedAll = [...currentSquad].sort((a, b) => getPlayerGwXp(b) - getPlayerGwXp(a));
+      starterPlayers = sortedAll.slice(0, 11);
+      benchPlayers = sortedAll.slice(11, 15);
+    }
+
+    // Rank starters by fixture-adjusted xP for captaincy hierarchy
+    const sortedStartersByXp = [...starterPlayers].sort((a, b) => getPlayerGwXp(b) - getPlayerGwXp(a));
+    
+    // Captain: Top projected starter
+    const captain = sortedStartersByXp[0] || currentSquad[0];
+
+    // Vice-Captain: Second highest projected starter (guaranteed distinct from captain)
+    const viceCaptain = sortedStartersByXp.find(p => p.id !== captain?.id) || 
+      (sortedStartersByXp.length > 1 ? sortedStartersByXp[1] : (benchPlayers[0] || captain));
+
+    const starters = starterPlayers.map(p => p.id);
+    const bench = benchPlayers.map(p => p.id);
 
     // Compute weekly score and variance
-    const starterPlayers = currentSquad.filter(p => starters.includes(p.id));
     const mc = runFPLMonteCarloSimulation(starterPlayers, captain?.id || 0, false, 500);
 
     steps.push({

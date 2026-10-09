@@ -118,9 +118,20 @@ export const MultiWeekPlanner: React.FC<MultiWeekPlannerProps> = ({
     return planSteps.filter(s => s.actionType === 'CHIP' || s.chipName).map(s => s.chipName || 'CHIP');
   }, [planSteps]);
 
-  // Lookup helper for player metadata
+  // Comprehensive lookup map for player metadata across all potential player pools
+  const playerMap = useMemo(() => {
+    const map = new Map<number, ScoredPlayer>();
+    allCandidates.forEach(p => map.set(p.id, p));
+    baseSquad.forEach(p => map.set(p.id, p));
+    if (syncedData?.squad) syncedData.squad.forEach(p => map.set(p.id, p));
+    if (data?.squad) data.squad.forEach(p => map.set(p.id, p));
+    if (data?.startingXI) data.startingXI.forEach(p => map.set(p.id, p));
+    if (data?.bench) data.bench.forEach(p => map.set(p.id, p));
+    return map;
+  }, [allCandidates, baseSquad, syncedData, data]);
+
   const getPlayerById = (id: number): ScoredPlayer | undefined => {
-    return baseSquad.find(p => p.id === id) || allCandidates.find(p => p.id === id);
+    return playerMap.get(id) || baseSquad.find(p => p.id === id) || allCandidates.find(p => p.id === id);
   };
 
   const handleApply = (step: PlannerStepDetail) => {
@@ -301,7 +312,7 @@ export const MultiWeekPlanner: React.FC<MultiWeekPlannerProps> = ({
                 >
                   {/* Step Header Bar */}
                   <div className="p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-                    <div className="flex items-center gap-3">
+                    <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
                       {/* Gameweek Badge */}
                       <div className={`px-2.5 py-1 rounded-lg font-black text-xs flex items-center gap-1.5 ${
                         isCurrentGw ? 'bg-emerald-500 text-slate-950' : 'bg-slate-800 text-white'
@@ -337,16 +348,29 @@ export const MultiWeekPlanner: React.FC<MultiWeekPlannerProps> = ({
                         </div>
                       )}
 
-                      {/* Captaincy tag */}
+                      {/* Captaincy (C) & Vice-Captaincy (V) Tags - always shown for all GWs across all horizons */}
                       {captainPlayer && (() => {
                         const capFix = captainPlayer.next_fixtures?.find(f => f.event === step.gameweek) || captainPlayer.next_fixtures?.[idx];
-                        const oppLabel = capFix ? ` vs ${capFix.opponent} (${capFix.is_home ? 'H' : 'A'})` : '';
+                        const oppLabel = capFix ? `vs ${capFix.opponent} (${capFix.is_home ? 'H' : 'A'})` : '';
                         const fdrColor = capFix?.difficulty <= 2 ? 'text-emerald-400' : (capFix?.difficulty || 3) >= 4 ? 'text-red-400' : 'text-slate-400';
                         return (
-                          <div className="hidden sm:inline-flex items-center gap-1.5 text-[11px] text-amber-300 font-bold bg-amber-500/10 border border-amber-500/30 px-2.5 py-0.5 rounded-lg">
-                            <Crown className="w-3.5 h-3.5 text-amber-400" />
+                          <div className="inline-flex items-center gap-1 text-[11px] text-amber-300 font-bold bg-amber-500/10 border border-amber-500/30 px-2 py-0.5 rounded-lg shadow-sm">
+                            <Crown className="w-3.5 h-3.5 text-amber-400 shrink-0" />
                             <span>(C) {captainPlayer.web_name}</span>
-                            {oppLabel && <span className={`text-[10px] font-mono ${fdrColor}`}>${oppLabel}</span>}
+                            {oppLabel && <span className={`text-[10px] font-mono ${fdrColor}`}>{oppLabel}</span>}
+                          </div>
+                        );
+                      })()}
+
+                      {viceCaptainPlayer && (() => {
+                        const vcFix = viceCaptainPlayer.next_fixtures?.find(f => f.event === step.gameweek) || viceCaptainPlayer.next_fixtures?.[idx];
+                        const oppLabel = vcFix ? `vs ${vcFix.opponent} (${vcFix.is_home ? 'H' : 'A'})` : '';
+                        const fdrColor = vcFix?.difficulty <= 2 ? 'text-emerald-400' : (vcFix?.difficulty || 3) >= 4 ? 'text-red-400' : 'text-slate-400';
+                        return (
+                          <div className="inline-flex items-center gap-1 text-[11px] text-sky-300 font-bold bg-sky-500/10 border border-sky-500/30 px-2 py-0.5 rounded-lg shadow-sm">
+                            <ShieldCheck className="w-3.5 h-3.5 text-sky-400 shrink-0" />
+                            <span>(V) {viceCaptainPlayer.web_name}</span>
+                            {oppLabel && <span className={`text-[10px] font-mono ${fdrColor}`}>{oppLabel}</span>}
                           </div>
                         );
                       })()}
@@ -444,14 +468,25 @@ export const MultiWeekPlanner: React.FC<MultiWeekPlannerProps> = ({
                             const isVice = player.id === step.viceCaptainId;
 
                             return (
-                              <div key={id} className="bg-slate-900 border border-slate-800 rounded-xl p-2 relative">
+                              <div 
+                                key={id} 
+                                className={`bg-slate-900 border rounded-xl p-2 relative transition-all ${
+                                  isCap 
+                                    ? 'border-amber-500/60 shadow-md shadow-amber-500/10 ring-1 ring-amber-500/30' 
+                                    : isVice 
+                                      ? 'border-sky-500/60 shadow-md shadow-sky-500/10 ring-1 ring-sky-500/30' 
+                                      : 'border-slate-800'
+                                }`}
+                              >
                                 {isCap && (
-                                  <span className="absolute -top-1.5 -right-1.5 bg-amber-500 text-slate-950 text-[9px] font-black px-1.5 py-0.2 rounded-full shadow-sm">
+                                  <span className="absolute -top-1.5 -right-1.5 bg-amber-500 text-slate-950 text-[9px] font-black px-1.5 py-0.2 rounded-full shadow-md flex items-center gap-0.5">
+                                    <Crown className="w-2.5 h-2.5" />
                                     C
                                   </span>
                                 )}
                                 {isVice && (
-                                  <span className="absolute -top-1.5 -right-1.5 bg-slate-700 text-white text-[9px] font-bold px-1.5 py-0.2 rounded-full shadow-sm">
+                                  <span className="absolute -top-1.5 -left-1.5 bg-sky-500 text-slate-950 text-[9px] font-black px-1.5 py-0.2 rounded-full shadow-md flex items-center gap-0.5">
+                                    <ShieldCheck className="w-2.5 h-2.5" />
                                     V
                                   </span>
                                 )}
@@ -475,8 +510,31 @@ export const MultiWeekPlanner: React.FC<MultiWeekPlannerProps> = ({
                           {step.bench.map(id => {
                             const player = getPlayerById(id);
                             if (!player) return null;
+                            const isCap = player.id === step.captainId;
+                            const isVice = player.id === step.viceCaptainId;
                             return (
-                              <div key={id} className="bg-slate-900/50 border border-slate-800/60 rounded-xl p-2">
+                              <div 
+                                key={id} 
+                                className={`bg-slate-900/50 border rounded-xl p-2 relative ${
+                                  isCap 
+                                    ? 'border-amber-500/60 ring-1 ring-amber-500/30' 
+                                    : isVice 
+                                      ? 'border-sky-500/60 ring-1 ring-sky-500/30' 
+                                      : 'border-slate-800/60'
+                                }`}
+                              >
+                                {isCap && (
+                                  <span className="absolute -top-1.5 -right-1.5 bg-amber-500 text-slate-950 text-[9px] font-black px-1.5 py-0.2 rounded-full shadow-md flex items-center gap-0.5">
+                                    <Crown className="w-2.5 h-2.5" />
+                                    C
+                                  </span>
+                                )}
+                                {isVice && (
+                                  <span className="absolute -top-1.5 -left-1.5 bg-sky-500 text-slate-950 text-[9px] font-black px-1.5 py-0.2 rounded-full shadow-md flex items-center gap-0.5">
+                                    <ShieldCheck className="w-2.5 h-2.5" />
+                                    V
+                                  </span>
+                                )}
                                 <div className="text-xs font-bold text-slate-400 truncate">{player.web_name}</div>
                                 <div className="flex justify-between items-center text-[10px] text-slate-500 mt-1">
                                   <span>{player.position} • {player.team_short_name}</span>
