@@ -227,15 +227,24 @@ export function generateClientMultiWeekPlan(
       benchPlayers = sortedAll.slice(11, 15);
     }
 
-    // Rank starters by fixture-adjusted xP for captaincy hierarchy
-    const sortedStartersByXp = [...starterPlayers].sort((a, b) => getPlayerGwXp(b) - getPlayerGwXp(a));
+    // Rank starters for captaincy hierarchy:
+    // In quant game theory and FPL, attackers (FWD/MID) have uncapped right-tail ceilings (hat-tricks/braces)
+    // and cannot lose points when the opponent scores, unlike defenders whose clean sheet is fragile.
+    // Matching the backend solver (posMultiplier in lp-solver.ts), we apply an attacking ceiling multiplier (1.25x for FWD/MID).
+    const getCaptaincyScore = (p: ScoredPlayer): number => {
+      const gwXp = getPlayerGwXp(p);
+      const isAttacker = p.position === 'FWD' || p.position === 'MID';
+      return gwXp * (isAttacker ? 1.25 : 0.85);
+    };
+
+    const sortedForCaptaincy = [...starterPlayers].sort((a, b) => getCaptaincyScore(b) - getCaptaincyScore(a));
     
-    // Captain: Top projected starter
-    const captain = sortedStartersByXp[0] || currentSquad[0];
+    // Captain: Top projected attacking starter
+    const captain = sortedForCaptaincy[0] || currentSquad[0];
 
     // Vice-Captain: Second highest projected starter (guaranteed distinct from captain)
-    const viceCaptain = sortedStartersByXp.find(p => p.id !== captain?.id) || 
-      (sortedStartersByXp.length > 1 ? sortedStartersByXp[1] : (benchPlayers[0] || captain));
+    const viceCaptain = sortedForCaptaincy.find(p => p.id !== captain?.id) || 
+      (sortedForCaptaincy.length > 1 ? sortedForCaptaincy[1] : (benchPlayers[0] || captain));
 
     const starters = starterPlayers.map(p => p.id);
     const bench = benchPlayers.map(p => p.id);
