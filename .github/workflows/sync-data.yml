@@ -1,0 +1,50 @@
+name: Sync Data from fpl-admin
+
+permissions:
+  contents: write
+
+on:
+  workflow_dispatch:
+    # 1-click manual sync button in the GitHub Actions UI
+  schedule:
+    # Runs daily at 04:00 UTC (shortly after fpl-admin finishes daily data runs and backtests)
+    - cron: '0 4 * * *'
+
+jobs:
+  sync-data:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Planner Repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 1
+
+      - name: Checkout fpl-admin Data
+        uses: actions/checkout@v4
+        with:
+          repository: 'QuisTech/fpl-admin'
+          path: 'fpl-admin-temp'
+          sparse-checkout: |
+            data
+            public/data
+          fetch-depth: 1
+
+      - name: Copy Fresh Data Files
+        run: |
+          mkdir -p data public/data
+          if [ -d "fpl-admin-temp/data" ]; then
+            cp -r fpl-admin-temp/data/. data/
+          fi
+          if [ -d "fpl-admin-temp/public/data" ]; then
+            cp -r fpl-admin-temp/public/data/. public/data/
+          fi
+          rm -rf fpl-admin-temp
+
+      - name: Commit and Push Updated Data
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add data/ public/data/
+          git diff --staged --quiet || (git commit -m "Auto-sync: Pulled latest FPL data from QuisTech/fpl-admin [skip ci]" && git push)
