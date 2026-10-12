@@ -116,18 +116,51 @@ export function generateClientMultiWeekPlan(
     let hitCost = 0;
 
     // 1. Calculate fixture-adjusted xP for each player in this specific gameweek (gw)
+    // Defensive calibration: Differentiate between elite defensive units (ARS, MCI, LIV)
+    // and promoted/lower-tier defenses to prevent artificial FDR over-inflation.
     const getPlayerGwXp = (p: ScoredPlayer): number => {
       const base = Number(p.xP || p.score || 4.5);
       const fix = p.next_fixtures?.find(f => f.event === gw) || p.next_fixtures?.[step];
       if (!fix) return base;
 
-      let fdrMultiplier = 1.0;
-      if (fix.difficulty <= 2) fdrMultiplier = 1.25;      // Easy fixture (+25%)
-      else if (fix.difficulty === 3) fdrMultiplier = 1.0; // Neutral
-      else if (fix.difficulty === 4) fdrMultiplier = 0.82;// Tough (-18%)
-      else if (fix.difficulty >= 5) fdrMultiplier = 0.65; // Brutal away (-35%)
+      const isDefensive = p.position === 'DEF' || p.position === 'GKP';
+      const team = (p.team_short_name || '').toUpperCase();
+      const isEliteDefense = ['ARS', 'MCI', 'LIV'].includes(team);
 
-      const venueMultiplier = fix.is_home ? 1.12 : 0.90; // Home advantage vs Away
+      let fdrMultiplier = 1.0;
+      let venueMultiplier = 1.0;
+
+      if (isDefensive) {
+        if (isEliteDefense) {
+          // Tier-1 elite defenses maintain high clean sheet probability across all matchups
+          // and carry elite set-piece/attacking goal threat (Calafiori, Gabriel, Gvardiol).
+          // Floor protection ensures they are not penalized excessively in moderate fixtures.
+          if (fix.difficulty <= 2) fdrMultiplier = 1.15;
+          else if (fix.difficulty === 3) fdrMultiplier = 1.02;
+          else if (fix.difficulty === 4) fdrMultiplier = 0.92;
+          else fdrMultiplier = 0.85;
+
+          venueMultiplier = fix.is_home ? 1.08 : 0.95;
+        } else {
+          // Promoted / bottom-half defenses regularly concede even in favorable home matches.
+          // Capping their fixture boost prevents unrealistic inflation over elite assets.
+          if (fix.difficulty <= 2) fdrMultiplier = 1.08;
+          else if (fix.difficulty === 3) fdrMultiplier = 0.95;
+          else if (fix.difficulty === 4) fdrMultiplier = 0.80;
+          else fdrMultiplier = 0.65;
+
+          venueMultiplier = fix.is_home ? 1.05 : 0.90;
+        }
+      } else {
+        // Attackers (MID, FWD): maintain high dynamic ceiling against porous opponents
+        if (fix.difficulty <= 2) fdrMultiplier = 1.22;
+        else if (fix.difficulty === 3) fdrMultiplier = 1.00;
+        else if (fix.difficulty === 4) fdrMultiplier = 0.85;
+        else fdrMultiplier = 0.70;
+
+        venueMultiplier = fix.is_home ? 1.10 : 0.92;
+      }
+
       return Math.round(base * fdrMultiplier * venueMultiplier * 10) / 10;
     };
 
