@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { cn } from '../lib/utils';
-import { TrendingUp, Award, Clock, ChevronLeft, ChevronRight, ArrowUpDown, ArrowUp, ArrowDown, Trophy, Filter, BarChart3, Sparkles } from 'lucide-react';
+import { TrendingUp, Award, Clock, ChevronLeft, ChevronRight, ArrowUpDown, ArrowUp, ArrowDown, Trophy, Filter, BarChart3, Sparkles, Eye, EyeOff, RefreshCw } from 'lucide-react';
 
 interface PerformanceViewProps {
   history: any;
@@ -198,6 +198,23 @@ export const PerformanceView = ({ history, fetchLivePoints, reconcileUserSquad, 
   const toggleExpand = (gwId: number, modeKey: string) => {
     const key = `${gwId}-${modeKey}`;
     setExpandedModes(prev => ({ ...prev, [key]: !prev[key] }));
+  };
+
+  const toggleExpandAll = (gwId: number, snapshots: any[]) => {
+    const allExpanded = snapshots.length > 0 && snapshots.every(s => !!expandedModes[`${gwId}-${s.uniqueId}`]);
+    
+    // Automatically trigger fresh live score refresh whenever viewing/expanding all squads
+    if (!allExpanded && !loading[gwId]) {
+      refreshActuals(gwId);
+    }
+
+    setExpandedModes(prev => {
+      const next = { ...prev };
+      snapshots.forEach(s => {
+        next[`${gwId}-${s.uniqueId}`] = !allExpanded;
+      });
+      return next;
+    });
   };
 
   const refreshActuals = async (gwId: number) => {
@@ -646,6 +663,41 @@ export const PerformanceView = ({ history, fetchLivePoints, reconcileUserSquad, 
               </div>
 
             </div>
+
+            {/* List Header & Batch Expand / Hide All Squads Controls */}
+            {sortedSnapshots.length > 0 && (() => {
+              const allExpanded = sortedSnapshots.every(s => !!expandedModes[`${gwId}-${s.uniqueId}`]);
+              return (
+                <div className="flex items-center justify-between px-1 py-0.5">
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400">
+                    Showing {sortedSnapshots.length} Scenario{sortedSnapshots.length === 1 ? '' : 's'}
+                  </span>
+                  <button
+                    onClick={() => toggleExpandAll(gwId, sortedSnapshots)}
+                    disabled={loading[gwId]}
+                    className="flex items-center gap-1.5 text-[10px] font-bold text-slate-300 hover:text-white bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 px-3 py-1.5 rounded-lg transition-all shadow-sm active:scale-95 disabled:opacity-60"
+                    title={allExpanded ? "Collapse all squads" : "Expand all squads and refresh latest live scores"}
+                  >
+                    {loading[gwId] ? (
+                      <>
+                        <RefreshCw className="w-3.5 h-3.5 animate-spin text-fpl-green" />
+                        <span>[ REFRESHING SCORES... ]</span>
+                      </>
+                    ) : allExpanded ? (
+                      <>
+                        <EyeOff className="w-3.5 h-3.5 text-slate-400" />
+                        <span>[ HIDE ALL SQUADS ]</span>
+                      </>
+                    ) : (
+                      <>
+                        <Eye className="w-3.5 h-3.5 text-fpl-green" />
+                        <span>[ VIEW ALL SQUADS ]</span>
+                      </>
+                    )}
+                  </button>
+                </div>
+              );
+            })()}
 
             {/* Scenario Performance Cards Grid/List */}
             <div className="flex flex-col gap-3.5">
