@@ -535,7 +535,7 @@ export const MonteCarloAuditView: React.FC<MonteCarloAuditViewProps> = ({ initia
           if (!res) return null;
 
           const isExpanded = expandedGw === gwRecord.gameweek;
-          const { monteCarlo, reconciliation, captain, startingXI, bench } = res;
+          const { monteCarlo, reconciliation, captain, viceCaptain, startingXI, bench } = res;
           
           let statusBadge = (
             <span className="px-2 py-0.5 rounded text-[9px] font-black uppercase tracking-wider bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
@@ -575,34 +575,66 @@ export const MonteCarloAuditView: React.FC<MonteCarloAuditViewProps> = ({ initia
               {/* Gameweek Card Header */}
               <div 
                 onClick={() => setExpandedGw(isExpanded ? null : gwRecord.gameweek)}
-                className="p-4 sm:p-5 flex flex-col md:flex-row md:items-center justify-between gap-4 cursor-pointer select-none"
+                className="p-4 sm:p-5 flex flex-col gap-3.5 cursor-pointer select-none"
               >
-                {/* Left: GW title + status */}
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-xl bg-slate-950 border border-slate-800 flex flex-col items-center justify-center font-black text-white shrink-0 shadow-inner">
-                    <span className="text-[9px] uppercase tracking-wider text-slate-500">GW</span>
-                    <span className="text-lg leading-none">{gwRecord.gameweek}</span>
+                {/* Top Row: GW info on Left, Score & Inspect Button on Right */}
+                <div className="flex items-center justify-between gap-3">
+                  {/* Left: GW title + status */}
+                  <div className="flex items-center gap-3 min-w-0">
+                    <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-slate-950 border border-slate-800 flex flex-col items-center justify-center font-black text-white shrink-0 shadow-inner">
+                      <span className="text-[9px] uppercase tracking-wider text-slate-500">GW</span>
+                      <span className="text-base sm:text-lg leading-none">{gwRecord.gameweek}</span>
+                    </div>
+
+                    <div className="min-w-0">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <h4 className="text-sm font-black text-white tracking-wide">
+                          Gameweek {gwRecord.gameweek}
+                        </h4>
+                        {statusBadge}
+                      </div>
+                      <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 text-[10px] text-slate-400 mt-1">
+                        <span>
+                          Cap: <strong className="text-white">{captain.name} ({Number.isInteger(captain.actualPoints * (captain.multiplier || 1)) ? captain.actualPoints * (captain.multiplier || 1) : Number(captain.actualPoints * (captain.multiplier || 1)).toFixed(1)} pts)</strong>
+                          {captain.isVcPromoted && (
+                            <span className="text-[9px] font-bold text-amber-400 ml-1">
+                              (VC promoted · {captain.originalName} 0 mins)
+                            </span>
+                          )}
+                          {!captain.isVcPromoted && captain.multiplier === 1 && (
+                            <span className="text-[9px] font-bold text-rose-400 ml-1">
+                              (C & VC 0 mins · No 2× bonus)
+                            </span>
+                          )}
+                        </span>
+                        <span>·</span>
+                        <span>Template: <strong className="text-slate-300">{Number(gwRecord.templateScore).toFixed(1)} pts</strong></span>
+                        <span>·</span>
+                        <span>Avg: <strong className="text-slate-300">{Number(gwRecord.averageScore).toFixed(1)} pts</strong></span>
+                      </div>
+                    </div>
                   </div>
 
-                  <div>
-                    <div className="flex items-center gap-2">
-                      <h4 className="text-sm font-black text-white tracking-wide">
-                        Gameweek {gwRecord.gameweek}
-                      </h4>
-                      {statusBadge}
+                  {/* Right: Actual Points & Alpha & Inspect Button */}
+                  <div className="flex items-center gap-3 shrink-0">
+                    <div className="text-right shrink-0">
+                      <div className="text-base sm:text-xl font-black text-white leading-tight">
+                        {Number(reconciliation.netActualScore).toFixed(1)} <span className="text-[10px] sm:text-xs text-slate-400 font-normal">pts</span>
+                      </div>
+                      <div className={`text-[10px] font-black leading-tight ${reconciliation.alphaVsTemplate >= 0 ? 'text-emerald-400' : 'text-rose-400'}`}>
+                        {reconciliation.alphaVsTemplate >= 0 ? `+${Number(reconciliation.alphaVsTemplate).toFixed(1)}` : Number(reconciliation.alphaVsTemplate).toFixed(1)} vs Template
+                      </div>
                     </div>
-                    <div className="flex flex-wrap items-center gap-2 text-[10px] text-slate-400 mt-1">
-                      <span>Cap: <strong className="text-white">{captain.name} ({captain.actualPoints * 2} pts)</strong></span>
-                      <span>·</span>
-                      <span>Template: <strong className="text-slate-300">{Number(gwRecord.templateScore).toFixed(1)} pts</strong></span>
-                      <span>·</span>
-                      <span>Avg: <strong className="text-slate-300">{Number(gwRecord.averageScore).toFixed(1)} pts</strong></span>
+
+                    <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800/80 border border-slate-700/60 text-slate-300 text-[11px] font-bold hover:bg-slate-700 hover:text-white transition-all shadow-sm shrink-0">
+                      <span>{isExpanded ? 'Close' : 'Inspect'}</span>
+                      {isExpanded ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
                     </div>
                   </div>
                 </div>
 
-                {/* Center: Monte Carlo Forecast Distribution & Outcome Gauge */}
-                <div className="flex-1 max-w-lg w-full px-2 py-1">
+                {/* Bottom Row: Monte Carlo Forecast Distribution & Outcome Gauge */}
+                <div className="w-full pt-3 border-t border-slate-800/60">
                   {/* Top Stats Row (immune to wrapping) */}
                   <div className="flex items-center justify-between text-[10px] font-mono text-slate-400 mb-1.5 whitespace-nowrap gap-2">
                     <span className="flex items-center gap-1">
@@ -663,23 +695,6 @@ export const MonteCarloAuditView: React.FC<MonteCarloAuditViewProps> = ({ initia
                     </span>
                   </div>
                 </div>
-
-                {/* Right: Actual Points & Alpha */}
-                <div className="flex items-center justify-between md:justify-end gap-4 shrink-0">
-                  <div className="text-right">
-                    <div className="text-xl font-black text-white">
-                      {Number(reconciliation.netActualScore).toFixed(1)} <span className="text-xs text-slate-400 font-normal">pts</span>
-                    </div>
-                    <div className={`text-[10px] font-black ${reconciliation.alphaVsTemplate >= 0 ? 'text-emerald-400' : 'text-rose-400'}`}>
-                      {reconciliation.alphaVsTemplate >= 0 ? `+${Number(reconciliation.alphaVsTemplate).toFixed(1)}` : Number(reconciliation.alphaVsTemplate).toFixed(1)} vs Template
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800/80 border border-slate-700/60 text-slate-300 text-[11px] font-bold hover:bg-slate-700 hover:text-white transition-all shadow-sm">
-                    <span>{isExpanded ? 'Close' : 'Inspect'}</span>
-                    {isExpanded ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
-                  </div>
-                </div>
               </div>
 
               {/* Expanded Drilldown */}
@@ -692,16 +707,18 @@ export const MonteCarloAuditView: React.FC<MonteCarloAuditViewProps> = ({ initia
                     transition={{ duration: 0.2 }}
                     className="border-t border-slate-800/80 bg-slate-950/60 p-4 sm:p-5"
                   >
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
+                    <div className="grid grid-cols-1 xl:grid-cols-3 gap-5">
                       
                       {/* Left 2 Cols: Starting XI and Bench */}
-                      <div className="lg:col-span-2 space-y-4">
+                      <div className="xl:col-span-2 space-y-4">
                         <div className="flex items-center justify-between">
                           <h5 className="text-[11px] font-bold uppercase tracking-wider text-slate-300">
                             Reconciled Matchday Squad (Autosubs Resolved)
                           </h5>
                           <span className="text-[10px] text-slate-500">
-                            Captain gets 2× actual points
+                            {captain.multiplier === 1 
+                              ? 'Both C & VC played 0 mins (no 2× points)' 
+                              : 'Captain gets 2× actual points'}
                           </span>
                         </div>
 
@@ -709,7 +726,9 @@ export const MonteCarloAuditView: React.FC<MonteCarloAuditViewProps> = ({ initia
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                           {startingXI.map((player) => {
                             const isCap = player.id === captain.id;
-                            const effectivePts = isCap ? player.actualPoints * 2 : player.actualPoints;
+                            const isVc = viceCaptain && player.id === viceCaptain.id;
+                            const rawPts = (isCap && captain.multiplier !== 1) ? player.actualPoints * 2 : player.actualPoints;
+                            const effectivePts = Number.isInteger(rawPts) ? rawPts : Number(rawPts).toFixed(1);
                             
                             return (
                               <div 
@@ -727,7 +746,16 @@ export const MonteCarloAuditView: React.FC<MonteCarloAuditViewProps> = ({ initia
                                   <div className="truncate">
                                     <div className="font-bold truncate flex items-center gap-1">
                                       {player.name}
-                                      {isCap && <span className="text-[9px] font-black text-amber-400">(C)</span>}
+                                      {isCap && (
+                                        <span className="text-[9px] font-black text-amber-400">
+                                          {captain.isVcPromoted ? '(VC→C)' : (captain.multiplier === 1 ? '(C·0x)' : '(C)')}
+                                        </span>
+                                      )}
+                                      {!isCap && isVc && (
+                                        <span className="text-[9px] font-black text-blue-400">
+                                          (VC)
+                                        </span>
+                                      )}
                                       {player.subbedIn && <span className="text-[8px] font-bold px-1 rounded bg-blue-500/20 text-blue-300">SUB IN</span>}
                                     </div>
                                     <div className="text-[9px] text-slate-500">
@@ -737,7 +765,7 @@ export const MonteCarloAuditView: React.FC<MonteCarloAuditViewProps> = ({ initia
                                 </div>
 
                                 <div className="text-right shrink-0">
-                                  <div className={`font-black ${effectivePts >= 8 ? 'text-emerald-400' : 'text-white'}`}>
+                                  <div className={`font-black ${Number(effectivePts) >= 8 ? 'text-emerald-400' : 'text-white'}`}>
                                     {effectivePts} pts
                                   </div>
                                   <div className="text-[9px] text-slate-500">
@@ -763,9 +791,21 @@ export const MonteCarloAuditView: React.FC<MonteCarloAuditViewProps> = ({ initia
                                 <div className="text-[9px] font-bold text-slate-500 mb-0.5">
                                   Sub {bIdx + 1} ({bPlayer.position})
                                 </div>
-                                <div className="font-bold text-slate-200 truncate">{bPlayer.name}</div>
+                                <div className="font-bold text-slate-200 truncate flex items-center gap-1">
+                                  <span className="truncate">{bPlayer.name}</span>
+                                  {bPlayer.id === captain.id && (
+                                    <span className="text-[8px] font-black px-1 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30 shrink-0">
+                                      {captain.isVcPromoted ? 'Orig C' : 'C (0m)'}
+                                    </span>
+                                  )}
+                                  {viceCaptain && bPlayer.id === viceCaptain.id && (
+                                    <span className="text-[8px] font-black px-1 rounded bg-blue-500/20 text-blue-300 border border-blue-500/30 shrink-0">
+                                      VC (0m)
+                                    </span>
+                                  )}
+                                </div>
                                 <div className="text-[10px] mt-0.5 text-slate-400 flex justify-between">
-                                  <span>{bPlayer.actualPoints} pts</span>
+                                  <span>{Number.isInteger(bPlayer.actualPoints) ? bPlayer.actualPoints : Number(bPlayer.actualPoints).toFixed(1)} pts</span>
                                   <span>{bPlayer.played ? 'Played' : '0 mins'}</span>
                                 </div>
                               </div>

@@ -289,30 +289,30 @@ export async function runMonteCarloArchiveDirect(options: ArchiveOptions = {}) {
             // Map players with live actuals
             const starters: MonteCarloAuditPlayer[] = startersRaw.map(p => {
               const stat = liveStats[p.id];
-              const pts = stat ? stat.points : (p.xP || 0);
-              const played = stat ? stat.minutes > 0 : true;
+              const pts = stat ? stat.points : (hasLiveStats ? 0 : Math.round((p.xP || 0) * 10) / 10);
+              const played = stat ? stat.minutes > 0 : false;
               return {
                 id: p.id,
                 name: p.web_name,
                 team: p.team_short_name || '',
                 position: p.position,
                 projectedXp: Math.round((p.xP || p.score || 4.5) * 10) / 10,
-                actualPoints: pts,
+                actualPoints: Math.round(pts * 10) / 10,
                 played
               };
             });
 
             const bench: MonteCarloAuditPlayer[] = benchRaw.map((p, idx) => {
               const stat = liveStats[p.id];
-              const pts = stat ? stat.points : (p.xP || 0);
-              const played = stat ? stat.minutes > 0 : true;
+              const pts = stat ? stat.points : (hasLiveStats ? 0 : Math.round((p.xP || 0) * 10) / 10);
+              const played = stat ? stat.minutes > 0 : false;
               return {
                 id: p.id,
                 name: p.web_name,
                 team: p.team_short_name || '',
                 position: p.position,
                 projectedXp: Math.round((p.xP || p.score || 4.5) * 10) / 10,
-                actualPoints: pts,
+                actualPoints: Math.round(pts * 10) / 10,
                 played
               };
             });
@@ -324,14 +324,18 @@ export async function runMonteCarloArchiveDirect(options: ArchiveOptions = {}) {
             const { finalStarters, finalBench } = executeFPLAutosubs(starters, bench);
 
             // Resolve captain multiplier (double points if captain played; if captain 0 mins, pass to VC)
-            const capInFinal = finalStarters.find(p => p.id === captainRaw?.id);
+            const origCap = starters.find(p => p.id === captainRaw?.id);
+            const capPlayed = origCap ? origCap.played : ((liveStats[captainRaw?.id || 0]?.minutes ?? 0) > 0);
+
             const vcInFinal = finalStarters.find(p => p.id === viceCaptainRaw?.id);
+            const vcPlayed = vcInFinal ? vcInFinal.played : ((liveStats[viceCaptainRaw?.id || 0]?.minutes ?? 0) > 0);
 
-            let captainMultiplier = 2;
             let activeCapId = captainRaw?.id || 0;
+            let isVcPromoted = false;
 
-            if (capInFinal && !capInFinal.played && vcInFinal && vcInFinal.played) {
+            if (!capPlayed && vcInFinal && vcPlayed) {
               activeCapId = vcInFinal.id;
+              isVcPromoted = true;
             }
 
             // Calculate actual starting XI points
@@ -350,6 +354,8 @@ export async function runMonteCarloArchiveDirect(options: ArchiveOptions = {}) {
             const blankOccurred = netActualScore <= 40;
             const alphaVsTemplate = Math.round((netActualScore - (templateScore || mcResult.mean * 0.95)) * 10) / 10;
 
+            const activeCapPlayer = finalStarters.find(p => p.id === activeCapId) || starters.find(p => p.id === captainRaw?.id);
+
             const modeResult: MonteCarloModeResult = {
               mode,
               scenario,
@@ -357,10 +363,12 @@ export async function runMonteCarloArchiveDirect(options: ArchiveOptions = {}) {
               startingXI: finalStarters,
               bench: finalBench,
               captain: {
-                id: captainRaw?.id || 0,
-                name: captainRaw?.web_name || 'Captain',
-                actualPoints: liveStats[captainRaw?.id || 0]?.points ?? 0,
-                multiplier: captainMultiplier
+                id: activeCapId,
+                name: activeCapPlayer?.name || captainRaw?.web_name || 'Captain',
+                actualPoints: activeCapPlayer?.actualPoints ?? (liveStats[activeCapId]?.points ?? 0),
+                multiplier: (capPlayed || isVcPromoted) ? 2 : 1,
+                originalName: isVcPromoted ? (captainRaw?.web_name || 'Original Captain') : undefined,
+                isVcPromoted
               },
               viceCaptain: {
                 id: viceCaptainRaw?.id || 0,

@@ -20,6 +20,8 @@ export interface MonteCarloModeResult {
     name: string;
     actualPoints: number;
     multiplier: number;
+    originalName?: string;
+    isVcPromoted?: boolean;
   };
   viceCaptain: {
     id: number;
