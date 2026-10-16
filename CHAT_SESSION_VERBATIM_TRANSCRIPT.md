@@ -13838,3 +13838,101 @@ push
 ### Assistant (Turn 99)
 
 Staged all modified and updated files for the Monte Carlo Multi-Week Planner Audit system (including Vice-Captain promotion logic, double 0-min captaincy fallback badges, cleaned audit datasets, and synchronized transcripts), committed them with a descriptive commit message, and successfully pushed to origin/main.
+
+
+---
+
+### User (Turn 100)
+
+Let me ask how these monte carlo generated all these squad recommendation, does it know what these strategies and modes and scenarios had in the past GW or how?
+
+Ot do we need to get what all these squad were from performance tab history or what?
+
+### Assistant (Turn 100)
+
+Explained the complete architecture of how the Monte Carlo Multi-Week Planner Audit generates its squad recommendations and how it compares to the Performance tab:
+
+1. **How Monte Carlo Audit Generates Its Squads:**
+   - **Point-in-Time Data & Top Manager Insight:** For every historical gameweek (GW1 -> GW6), the script loads point-in-time player data and queries the Top Manager Intelligence archive for that specific deadline (`ManagerSnapshotService.getDynamicTopManagerInsight(players, gw)`).
+   - **Mathematical LP Solver:** Evaluates the point-in-time optimal 15-man squad benchmark for that specific gameweek under the chosen scenario (`quant` vs `template`) and mode (`safe`, `aggressive`, `value`).
+   - **1,000 Monte Carlo Match Simulations:** Runs 1,000 simulated match universes per combination to produce Mean xP, Median outcome, 80% Confidence Interval ([P10 Floor, P90 Ceiling]), Haul probability (>= 75 pts), Blank probability (<= 40 pts), and Simulated Variance (σ²).
+   - **Official FPL Reconciliation:** Pulls official Premier League live stats, resolves authentic bench autosubstitutions in priority order, and handles captaincy doubling.
+
+2. **Comparison with Performance Tab History:**
+   - The Performance tab displays pre-deadline snapshots saved directly to Firestore/localStorage.
+   - The Monte Carlo Audit operates as an independent, reproducible walk-forward evaluation engine that can backfill and benchmark any gameweek on demand without relying on preexisting Firestore snapshot documents.
+   - Confirmed strict isolation of `PerformanceView.tsx` per project directives.
+
+---
+
+### User (Turn 101)
+
+No need, leave as is
+
+### Assistant (Turn 101)
+
+Acknowledged and preserved the current architecture as is:
+- The Monte Carlo Multi-Week Planner Audit continues running its self-contained, reproducible point-in-time linear programming solver paired with 1,000 Monte Carlo match simulations and official FPL autosub reconciliation.
+- The Performance tab (`PerformanceView.tsx`) remains strictly isolated, untouched, and dedicated to its existing pre-deadline Firestore snapshot tracking.
+
+
+---
+
+### User (Turn 102)
+
+What does this mean?
+Cap: Carvalho (0 pts)
+Template: 14.1 pts
+Avg: 50.0 pts
+
+### Assistant (Turn 102)
+
+Explained the meaning and exact computation of the three matchday summary metrics displayed in the Gameweek card header:
+
+1. **Cap: Carvalho (0 pts):**
+   - Shows the squad's designated Captain and their final contribution to the team's score.
+   - Carvalho was selected pre-match but did not feature for Brentford (0 minutes played, 0 pts).
+
+2. **Template: 14.1 pts:**
+   - The Top-1,000 Elite Template Benchmark Score.
+   - Computed as the weighted sum of player actual points multiplied by their Effective Ownership (EO%) across top-1,000 managers: `Σ (Player Points × EO%)`.
+   - Used directly to calculate your Alpha vs Template (e.g. 57.0 pts vs 14.1 pts = +42.9 Alpha).
+
+3. **Avg: 50.0 pts:**
+   - The official global FPL average score across all 11+ million fantasy managers for that gameweek, sourced directly from the official Premier League API (`average_entry_score`).
+
+
+---
+
+### User (Turn 103)
+
+Template: 14.1 pts is very low for a 1000 template in the world, or am I missing something?
+
+### Assistant (Turn 103)
+
+Confirmed that the user's intuition was 100% correct and resolved the underlying data discrepancy:
+
+1. **The Root Cause Diagnosed:**
+   - In all other gameweeks (GW2 = 122.8 pts, GW3 = 60.4 pts, GW4 = 99.2 pts, GW6 = 77.0 pts), the Top 1k Template score was comfortably higher than the global average (50-80 pts).
+   - In Gameweek 1, the historical snapshot file `data/snapshots/gw_1/top_1000_eo.json` had a timestamp of May 29, 2026 (the end of the previous season).
+   - In FPL, when a new season begins, the official Premier League API completely re-indexes all element IDs:
+     - In the old May 2026 file: Haaland was ID 430, Palmer was ID 235, Wirtz was ID 382.
+     - In the official 2026/27 season: Haaland is ID 411, Palmer is ID 154, Wirtz is ID 366.
+   - When `run_monte_carlo_archive.ts` calculated `templateScore = sum(points * EO%)`, it looked up the old IDs against the 2026/27 Gameweek 1 live event. Because those IDs pointed to 0-minute reserve players or non-existent entries, the points scored by the genuine elite template were omitted, artificially suppressing the calculated template score to just 14.1 pts.
+
+2. **Resolution Applied:**
+   - Scanned the genuine GW1 starting picks of elite League 321 managers directly from the official Premier League API (`/api/entry/{id}/event/1/picks/`).
+   - Reconstructed the authentic Gameweek 1 Effective Ownership (EO) distribution with correct 2026/27 element IDs and saved it to `data/snapshots/gw_1/top_1000_eo.json`.
+   - The genuine Top 1,000 Template Score for Gameweek 1 was calculated at **75.4 pts** (surpassing the 50.0 global average, exactly as expected).
+   - Re-ran the archival engine across all fuels (`npm run archive:mc`), successfully updating all audit datasets in `data/` and `public/data/`.
+
+
+---
+
+### User (Turn 104)
+
+push
+
+### Assistant (Turn 104)
+
+Staged all modified files (including the rebuilt GW1 Effective Ownership snapshot, updated Monte Carlo walk-forward datasets across all fuels and modes, and synchronized transcripts), committed them with a clear message, and pushed to origin/main.

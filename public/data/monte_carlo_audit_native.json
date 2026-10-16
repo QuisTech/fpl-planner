@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T21:16:13.050Z",
+  "generatedAt": "2026-10-16T22:00:59.206Z",
   "fuel": "native",
   "startGw": 1,
   "endGw": 6,
@@ -15,42 +15,42 @@
   ],
   "calibrationSummary": {
     "totalEvaluated": 36,
-    "ciHitCount": 20,
-    "ciCoverageRate": 55.6,
-    "avgAbsoluteError": 32.5,
+    "ciHitCount": 21,
+    "ciCoverageRate": 58.3,
+    "avgAbsoluteError": 32.6,
     "haulHitCount": 21,
     "haulPredictedCount": 36
   },
   "cumulativeTotals": {
     "quant_safe": {
       "totalPoints": 398,
-      "netAlpha": -17.6
+      "netAlpha": -78.9
     },
     "quant_aggressive": {
       "totalPoints": 388,
-      "netAlpha": -27.6
+      "netAlpha": -88.9
     },
     "quant_value": {
       "totalPoints": 500,
-      "netAlpha": 84.4
+      "netAlpha": 23.1
     },
     "template_safe": {
       "totalPoints": 492,
-      "netAlpha": 76.4
+      "netAlpha": 15.1
     },
     "template_aggressive": {
       "totalPoints": 449,
-      "netAlpha": 33.4
+      "netAlpha": -27.9
     },
     "template_value": {
       "totalPoints": 462,
-      "netAlpha": 46.4
+      "netAlpha": -14.9
     }
   },
   "gameweeks": [
     {
       "gameweek": 1,
-      "templateScore": 14.1,
+      "templateScore": 75.4,
       "averageScore": 50,
       "results": {
         "quant_safe": {
@@ -218,26 +218,26 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 98.6,
-            "median": 98,
-            "p10": 74,
-            "p90": 124,
+            "meanXp": 100.1,
+            "median": 99,
+            "p10": 75,
+            "p90": 126,
             "confidenceInterval": [
-              74,
-              124
+              75,
+              126
             ],
             "haulProbability": 90,
             "blankProbability": 0,
-            "variance": 393.8
+            "variance": 409.4
           },
           "reconciliation": {
             "actualScore": 49,
             "netActualScore": 49,
             "insideConfidenceInterval": false,
-            "predictionError": -49.6,
+            "predictionError": -51.1,
             "haulAchieved": false,
             "blankOccurred": false,
-            "alphaVsTemplate": 34.9
+            "alphaVsTemplate": -26.4
           }
         },
         "quant_aggressive": {
@@ -406,26 +406,26 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 99.6,
-            "median": 99,
-            "p10": 74,
-            "p90": 125,
+            "meanXp": 100.2,
+            "median": 100,
+            "p10": 75,
+            "p90": 126,
             "confidenceInterval": [
-              74,
-              125
+              75,
+              126
             ],
             "haulProbability": 90,
             "blankProbability": 0,
-            "variance": 393.8
+            "variance": 406.3
           },
           "reconciliation": {
             "actualScore": 60,
             "netActualScore": 60,
             "insideConfidenceInterval": false,
-            "predictionError": -39.6,
+            "predictionError": -40.2,
             "haulAchieved": false,
             "blankOccurred": false,
-            "alphaVsTemplate": 45.9
+            "alphaVsTemplate": -15.4
           }
         },
         "quant_value": {
@@ -591,26 +591,26 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 78.1,
-            "median": 79,
+            "meanXp": 78.7,
+            "median": 78,
             "p10": 55,
-            "p90": 101,
+            "p90": 103,
             "confidenceInterval": [
               55,
-              101
+              103
             ],
             "haulProbability": 58,
             "blankProbability": 1,
-            "variance": 320.1
+            "variance": 360.4
           },
           "reconciliation": {
             "actualScore": 76,
             "netActualScore": 76,
             "insideConfidenceInterval": true,
-            "predictionError": -2.1,
+            "predictionError": -2.7,
             "haulAchieved": true,
             "blankOccurred": false,
-            "alphaVsTemplate": 61.9
+            "alphaVsTemplate": 0.6
           }
         },
         "template_safe": {
@@ -778,26 +778,26 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 92.6,
-            "median": 92,
-            "p10": 69,
+            "meanXp": 91.3,
+            "median": 91,
+            "p10": 67,
             "p90": 116,
             "confidenceInterval": [
-              69,
+              67,
               116
             ],
-            "haulProbability": 82,
+            "haulProbability": 80,
             "blankProbability": 0,
-            "variance": 334.2
+            "variance": 372.4
           },
           "reconciliation": {
             "actualScore": 78,
             "netActualScore": 78,
             "insideConfidenceInterval": true,
-            "predictionError": -14.6,
+            "predictionError": -13.3,
             "haulAchieved": true,
             "blankOccurred": false,
-            "alphaVsTemplate": 63.9
+            "alphaVsTemplate": 2.6
           }
         },
         "template_aggressive": {
@@ -965,26 +965,26 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 92.5,
+            "meanXp": 93,
             "median": 92,
             "p10": 69,
-            "p90": 118,
+            "p90": 119,
             "confidenceInterval": [
               69,
-              118
+              119
             ],
             "haulProbability": 83,
             "blankProbability": 0,
-            "variance": 396.9
+            "variance": 412.6
           },
           "reconciliation": {
             "actualScore": 74,
             "netActualScore": 74,
             "insideConfidenceInterval": true,
-            "predictionError": -18.5,
+            "predictionError": -19,
             "haulAchieved": false,
             "blankOccurred": false,
-            "alphaVsTemplate": 59.9
+            "alphaVsTemplate": -1.4
           }
         },
         "template_value": {
@@ -1152,26 +1152,26 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 92.6,
+            "meanXp": 91.9,
             "median": 92,
             "p10": 68,
-            "p90": 118,
+            "p90": 117,
             "confidenceInterval": [
               68,
-              118
+              117
             ],
-            "haulProbability": 82,
+            "haulProbability": 81,
             "blankProbability": 0,
-            "variance": 393.8
+            "variance": 384.5
           },
           "reconciliation": {
             "actualScore": 78,
             "netActualScore": 78,
             "insideConfidenceInterval": true,
-            "predictionError": -14.6,
+            "predictionError": -13.9,
             "haulAchieved": true,
             "blankOccurred": false,
-            "alphaVsTemplate": 63.9
+            "alphaVsTemplate": 2.6
           }
         }
       }
@@ -1346,13 +1346,13 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 112.6,
-            "median": 111,
+            "meanXp": 113.6,
+            "median": 113,
             "p10": 86,
-            "p90": 142,
+            "p90": 143,
             "confidenceInterval": [
               86,
-              142
+              143
             ],
             "haulProbability": 97,
             "blankProbability": 0,
@@ -1362,7 +1362,7 @@
             "actualScore": 63,
             "netActualScore": 63,
             "insideConfidenceInterval": false,
-            "predictionError": -49.6,
+            "predictionError": -50.6,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": -59.8
@@ -1534,23 +1534,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 108.4,
+            "meanXp": 108.5,
             "median": 108,
-            "p10": 81,
-            "p90": 135,
+            "p10": 80,
+            "p90": 136,
             "confidenceInterval": [
-              81,
-              135
+              80,
+              136
             ],
             "haulProbability": 95,
             "blankProbability": 0,
-            "variance": 431.9
+            "variance": 461.6
           },
           "reconciliation": {
             "actualScore": 45,
             "netActualScore": 45,
             "insideConfidenceInterval": false,
-            "predictionError": -63.4,
+            "predictionError": -63.5,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": -77.8
@@ -1721,23 +1721,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 77.6,
-            "median": 77,
+            "meanXp": 77.8,
+            "median": 78,
             "p10": 55,
             "p90": 101,
             "confidenceInterval": [
               55,
               101
             ],
-            "haulProbability": 56,
+            "haulProbability": 57,
             "blankProbability": 1,
-            "variance": 334.2
+            "variance": 328.5
           },
           "reconciliation": {
             "actualScore": 81,
             "netActualScore": 81,
             "insideConfidenceInterval": true,
-            "predictionError": 3.4,
+            "predictionError": 3.2,
             "haulAchieved": true,
             "blankOccurred": false,
             "alphaVsTemplate": -41.8
@@ -1908,23 +1908,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 100.4,
-            "median": 100,
-            "p10": 75,
-            "p90": 127,
+            "meanXp": 101.5,
+            "median": 101,
+            "p10": 76,
+            "p90": 128,
             "confidenceInterval": [
-              75,
-              127
+              76,
+              128
             ],
-            "haulProbability": 90,
+            "haulProbability": 92,
             "blankProbability": 0,
-            "variance": 431.9
+            "variance": 428.6
           },
           "reconciliation": {
             "actualScore": 85,
             "netActualScore": 85,
             "insideConfidenceInterval": true,
-            "predictionError": -15.4,
+            "predictionError": -16.5,
             "haulAchieved": true,
             "blankOccurred": false,
             "alphaVsTemplate": -37.8
@@ -2096,23 +2096,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 98.8,
-            "median": 98,
+            "meanXp": 97.6,
+            "median": 97,
             "p10": 73,
-            "p90": 125,
+            "p90": 123,
             "confidenceInterval": [
               73,
-              125
+              123
             ],
-            "haulProbability": 89,
+            "haulProbability": 88,
             "blankProbability": 0,
-            "variance": 419
+            "variance": 393.8
           },
           "reconciliation": {
             "actualScore": 79,
             "netActualScore": 79,
             "insideConfidenceInterval": true,
-            "predictionError": -19.8,
+            "predictionError": -18.6,
             "haulAchieved": true,
             "blankOccurred": false,
             "alphaVsTemplate": -43.8
@@ -2283,23 +2283,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 100.7,
-            "median": 100,
-            "p10": 74,
-            "p90": 127,
+            "meanXp": 100.3,
+            "median": 99,
+            "p10": 75,
+            "p90": 128,
             "confidenceInterval": [
-              74,
-              127
+              75,
+              128
             ],
-            "haulProbability": 90,
+            "haulProbability": 91,
             "blankProbability": 0,
-            "variance": 422.2
+            "variance": 468.3
           },
           "reconciliation": {
             "actualScore": 85,
             "netActualScore": 85,
             "insideConfidenceInterval": true,
-            "predictionError": -15.7,
+            "predictionError": -15.3,
             "haulAchieved": true,
             "blankOccurred": false,
             "alphaVsTemplate": -37.8
@@ -2477,15 +2477,15 @@
           "monteCarlo": {
             "meanXp": 106.7,
             "median": 106,
-            "p10": 80,
-            "p90": 133,
+            "p10": 81,
+            "p90": 132,
             "confidenceInterval": [
-              80,
-              133
+              81,
+              132
             ],
-            "haulProbability": 94,
+            "haulProbability": 95,
             "blankProbability": 0,
-            "variance": 422.2
+            "variance": 390.7
           },
           "reconciliation": {
             "actualScore": 34,
@@ -2661,23 +2661,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 105.5,
+            "meanXp": 105.6,
             "median": 105,
             "p10": 79,
-            "p90": 132,
+            "p90": 133,
             "confidenceInterval": [
               79,
-              132
+              133
             ],
             "haulProbability": 95,
             "blankProbability": 0,
-            "variance": 428.6
+            "variance": 458.2
           },
           "reconciliation": {
             "actualScore": 33,
             "netActualScore": 33,
             "insideConfidenceInterval": false,
-            "predictionError": -72.5,
+            "predictionError": -72.6,
             "haulAchieved": false,
             "blankOccurred": true,
             "alphaVsTemplate": -27.4
@@ -2849,15 +2849,15 @@
           "monteCarlo": {
             "meanXp": 86.6,
             "median": 86,
-            "p10": 63,
-            "p90": 111,
+            "p10": 64,
+            "p90": 109,
             "confidenceInterval": [
-              63,
-              111
+              64,
+              109
             ],
-            "haulProbability": 74,
+            "haulProbability": 75,
             "blankProbability": 0,
-            "variance": 363.4
+            "variance": 306.3
           },
           "reconciliation": {
             "actualScore": 44,
@@ -3032,23 +3032,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 95.9,
+            "meanXp": 96.8,
             "median": 96,
             "p10": 72,
-            "p90": 121,
+            "p90": 124,
             "confidenceInterval": [
               72,
-              121
+              124
             ],
             "haulProbability": 87,
             "blankProbability": 0,
-            "variance": 384.5
+            "variance": 451.6
           },
           "reconciliation": {
             "actualScore": 30,
             "netActualScore": 30,
             "insideConfidenceInterval": false,
-            "predictionError": -65.9,
+            "predictionError": -66.8,
             "haulAchieved": false,
             "blankOccurred": true,
             "alphaVsTemplate": -30.4
@@ -3218,23 +3218,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 96.4,
+            "meanXp": 95.5,
             "median": 96,
-            "p10": 71,
-            "p90": 122,
+            "p10": 70,
+            "p90": 121,
             "confidenceInterval": [
-              71,
-              122
+              70,
+              121
             ],
-            "haulProbability": 86,
+            "haulProbability": 87,
             "blankProbability": 0,
-            "variance": 400
+            "variance": 396.9
           },
           "reconciliation": {
             "actualScore": 34,
             "netActualScore": 34,
             "insideConfidenceInterval": false,
-            "predictionError": -62.4,
+            "predictionError": -61.5,
             "haulAchieved": false,
             "blankOccurred": true,
             "alphaVsTemplate": -26.4
@@ -3403,23 +3403,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 96.5,
+            "meanXp": 96.1,
             "median": 96,
-            "p10": 71,
+            "p10": 70,
             "p90": 122,
             "confidenceInterval": [
-              71,
+              70,
               122
             ],
             "haulProbability": 86,
             "blankProbability": 0,
-            "variance": 396.9
+            "variance": 409.4
           },
           "reconciliation": {
             "actualScore": 30,
             "netActualScore": 30,
             "insideConfidenceInterval": false,
-            "predictionError": -66.5,
+            "predictionError": -66.1,
             "haulAchieved": false,
             "blankOccurred": true,
             "alphaVsTemplate": -30.4
@@ -3593,23 +3593,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 110.9,
-            "median": 111,
-            "p10": 84,
+            "meanXp": 110.5,
+            "median": 110,
+            "p10": 83,
             "p90": 138,
             "confidenceInterval": [
-              84,
+              83,
               138
             ],
             "haulProbability": 96,
             "blankProbability": 0,
-            "variance": 448.2
+            "variance": 461.6
           },
           "reconciliation": {
             "actualScore": 37,
             "netActualScore": 37,
             "insideConfidenceInterval": false,
-            "predictionError": -73.9,
+            "predictionError": -73.5,
             "haulAchieved": false,
             "blankOccurred": true,
             "alphaVsTemplate": -62.2
@@ -3776,23 +3776,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 112.2,
+            "meanXp": 111.6,
             "median": 111,
             "p10": 86,
-            "p90": 141,
+            "p90": 140,
             "confidenceInterval": [
               86,
-              141
+              140
             ],
-            "haulProbability": 96,
+            "haulProbability": 97,
             "blankProbability": 0,
-            "variance": 506.2
+            "variance": 492.3
           },
           "reconciliation": {
             "actualScore": 35,
             "netActualScore": 35,
             "insideConfidenceInterval": false,
-            "predictionError": -77.2,
+            "predictionError": -76.6,
             "haulAchieved": false,
             "blankOccurred": true,
             "alphaVsTemplate": -64.2
@@ -3959,23 +3959,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 84.5,
-            "median": 85,
+            "meanXp": 84.6,
+            "median": 83,
             "p10": 61,
-            "p90": 109,
+            "p90": 110,
             "confidenceInterval": [
               61,
-              109
+              110
             ],
             "haulProbability": 69,
-            "blankProbability": 1,
-            "variance": 366.4
+            "blankProbability": 0,
+            "variance": 393.8
           },
           "reconciliation": {
             "actualScore": 110,
             "netActualScore": 110,
-            "insideConfidenceInterval": false,
-            "predictionError": 25.5,
+            "insideConfidenceInterval": true,
+            "predictionError": 25.4,
             "haulAchieved": true,
             "blankOccurred": false,
             "alphaVsTemplate": 10.8
@@ -4142,8 +4142,8 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 99.4,
-            "median": 99,
+            "meanXp": 99.6,
+            "median": 98,
             "p10": 75,
             "p90": 125,
             "confidenceInterval": [
@@ -4152,13 +4152,13 @@
             ],
             "haulProbability": 91,
             "blankProbability": 0,
-            "variance": 400
+            "variance": 393.8
           },
           "reconciliation": {
             "actualScore": 89,
             "netActualScore": 89,
             "insideConfidenceInterval": true,
-            "predictionError": -10.4,
+            "predictionError": -10.6,
             "haulAchieved": true,
             "blankOccurred": false,
             "alphaVsTemplate": -10.2
@@ -4325,23 +4325,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 95.7,
-            "median": 96,
-            "p10": 70,
-            "p90": 120,
+            "meanXp": 96.3,
+            "median": 95,
+            "p10": 72,
+            "p90": 121,
             "confidenceInterval": [
-              70,
-              120
+              72,
+              121
             ],
-            "haulProbability": 86,
+            "haulProbability": 88,
             "blankProbability": 0,
-            "variance": 360.4
+            "variance": 372.4
           },
           "reconciliation": {
             "actualScore": 54,
             "netActualScore": 54,
             "insideConfidenceInterval": false,
-            "predictionError": -41.7,
+            "predictionError": -42.3,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": -45.2
@@ -4508,23 +4508,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 99.1,
-            "median": 98,
-            "p10": 73,
-            "p90": 126,
+            "meanXp": 97.9,
+            "median": 97,
+            "p10": 74,
+            "p90": 123,
             "confidenceInterval": [
-              73,
-              126
+              74,
+              123
             ],
-            "haulProbability": 89,
+            "haulProbability": 90,
             "blankProbability": 0,
-            "variance": 441.7
+            "variance": 384.5
           },
           "reconciliation": {
             "actualScore": 59,
             "netActualScore": 59,
             "insideConfidenceInterval": false,
-            "predictionError": -40.1,
+            "predictionError": -38.9,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": -40.2
@@ -4698,23 +4698,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 111.3,
-            "median": 111,
-            "p10": 85,
+            "meanXp": 110.8,
+            "median": 110,
+            "p10": 83,
             "p90": 139,
             "confidenceInterval": [
-              85,
+              83,
               139
             ],
             "haulProbability": 96,
             "blankProbability": 0,
-            "variance": 468.3
+            "variance": 485.4
           },
           "reconciliation": {
             "actualScore": 135,
             "netActualScore": 135,
             "insideConfidenceInterval": true,
-            "predictionError": 23.7,
+            "predictionError": 24.2,
             "haulAchieved": true,
             "blankOccurred": false,
             "alphaVsTemplate": 92.9
@@ -4881,23 +4881,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 109.6,
-            "median": 109,
-            "p10": 83,
+            "meanXp": 110.4,
+            "median": 111,
+            "p10": 82,
             "p90": 138,
             "confidenceInterval": [
-              83,
+              82,
               138
             ],
-            "haulProbability": 97,
+            "haulProbability": 96,
             "blankProbability": 0,
-            "variance": 492.3
+            "variance": 464.9
           },
           "reconciliation": {
             "actualScore": 136,
             "netActualScore": 136,
             "insideConfidenceInterval": true,
-            "predictionError": 26.4,
+            "predictionError": 25.6,
             "haulAchieved": true,
             "blankOccurred": false,
             "alphaVsTemplate": 93.9
@@ -5064,23 +5064,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 95.4,
-            "median": 94,
-            "p10": 71,
-            "p90": 120,
+            "meanXp": 94.5,
+            "median": 93,
+            "p10": 70,
+            "p90": 121,
             "confidenceInterval": [
-              71,
-              120
+              70,
+              121
             ],
-            "haulProbability": 86,
+            "haulProbability": 85,
             "blankProbability": 0,
-            "variance": 369.4
+            "variance": 428.6
           },
           "reconciliation": {
             "actualScore": 98,
             "netActualScore": 98,
             "insideConfidenceInterval": true,
-            "predictionError": 2.6,
+            "predictionError": 3.5,
             "haulAchieved": true,
             "blankOccurred": false,
             "alphaVsTemplate": 55.9
@@ -5249,23 +5249,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 103.1,
-            "median": 103,
+            "meanXp": 102.2,
+            "median": 102,
             "p10": 76,
-            "p90": 131,
+            "p90": 128,
             "confidenceInterval": [
               76,
-              131
+              128
             ],
             "haulProbability": 91,
             "blankProbability": 0,
-            "variance": 475.1
+            "variance": 406.3
           },
           "reconciliation": {
             "actualScore": 121,
             "netActualScore": 121,
             "insideConfidenceInterval": true,
-            "predictionError": 17.9,
+            "predictionError": 18.8,
             "haulAchieved": true,
             "blankOccurred": false,
             "alphaVsTemplate": 78.9
@@ -5434,23 +5434,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 101.4,
-            "median": 101,
-            "p10": 75,
-            "p90": 129,
+            "meanXp": 101.1,
+            "median": 100,
+            "p10": 77,
+            "p90": 125,
             "confidenceInterval": [
-              75,
-              129
+              77,
+              125
             ],
-            "haulProbability": 90,
+            "haulProbability": 92,
             "blankProbability": 0,
-            "variance": 464.9
+            "variance": 348.6
           },
           "reconciliation": {
             "actualScore": 129,
             "netActualScore": 129,
-            "insideConfidenceInterval": true,
-            "predictionError": 27.6,
+            "insideConfidenceInterval": false,
+            "predictionError": 27.9,
             "haulAchieved": true,
             "blankOccurred": false,
             "alphaVsTemplate": 86.9
@@ -5619,23 +5619,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 103.4,
+            "meanXp": 103.2,
             "median": 103,
             "p10": 77,
-            "p90": 131,
+            "p90": 129,
             "confidenceInterval": [
               77,
-              131
+              129
             ],
-            "haulProbability": 92,
+            "haulProbability": 93,
             "blankProbability": 0,
-            "variance": 464.9
+            "variance": 406.3
           },
           "reconciliation": {
             "actualScore": 121,
             "netActualScore": 121,
             "insideConfidenceInterval": true,
-            "predictionError": 17.6,
+            "predictionError": 17.8,
             "haulAchieved": true,
             "blankOccurred": false,
             "alphaVsTemplate": 78.9
@@ -5811,23 +5811,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 108.2,
+            "meanXp": 108.3,
             "median": 108,
-            "p10": 81,
-            "p90": 135,
+            "p10": 80,
+            "p90": 138,
             "confidenceInterval": [
-              81,
-              135
+              80,
+              138
             ],
-            "haulProbability": 95,
+            "haulProbability": 94,
             "blankProbability": 0,
-            "variance": 438.4
+            "variance": 538.4
           },
           "reconciliation": {
             "actualScore": 80,
             "netActualScore": 80,
-            "insideConfidenceInterval": false,
-            "predictionError": -28.2,
+            "insideConfidenceInterval": true,
+            "predictionError": -28.3,
             "haulAchieved": true,
             "blankOccurred": false,
             "alphaVsTemplate": 3
@@ -5996,23 +5996,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 103.9,
+            "meanXp": 104.5,
             "median": 104,
-            "p10": 79,
-            "p90": 129,
+            "p10": 77,
+            "p90": 133,
             "confidenceInterval": [
-              79,
-              129
+              77,
+              133
             ],
-            "haulProbability": 94,
+            "haulProbability": 93,
             "blankProbability": 0,
-            "variance": 384.5
+            "variance": 495.8
           },
           "reconciliation": {
             "actualScore": 79,
             "netActualScore": 79,
             "insideConfidenceInterval": true,
-            "predictionError": -24.9,
+            "predictionError": -25.5,
             "haulAchieved": true,
             "blankOccurred": false,
             "alphaVsTemplate": 2
@@ -6181,23 +6181,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 88.6,
-            "median": 88,
-            "p10": 64,
-            "p90": 115,
+            "meanXp": 89.3,
+            "median": 89,
+            "p10": 65,
+            "p90": 113,
             "confidenceInterval": [
-              64,
-              115
+              65,
+              113
             ],
             "haulProbability": 77,
             "blankProbability": 0,
-            "variance": 425.4
+            "variance": 342.8
           },
           "reconciliation": {
             "actualScore": 91,
             "netActualScore": 91,
             "insideConfidenceInterval": true,
-            "predictionError": 2.4,
+            "predictionError": 1.7,
             "haulAchieved": true,
             "blankOccurred": false,
             "alphaVsTemplate": 14
@@ -6366,23 +6366,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 100.7,
+            "meanXp": 100.3,
             "median": 100,
-            "p10": 74,
+            "p10": 75,
             "p90": 127,
             "confidenceInterval": [
-              74,
+              75,
               127
             ],
-            "haulProbability": 89,
+            "haulProbability": 91,
             "blankProbability": 0,
-            "variance": 422.2
+            "variance": 435.1
           },
           "reconciliation": {
             "actualScore": 89,
             "netActualScore": 89,
             "insideConfidenceInterval": true,
-            "predictionError": -11.7,
+            "predictionError": -11.3,
             "haulAchieved": true,
             "blankOccurred": false,
             "alphaVsTemplate": 12
@@ -6551,23 +6551,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 96.8,
+            "meanXp": 96.4,
             "median": 96,
-            "p10": 72,
-            "p90": 122,
+            "p10": 71,
+            "p90": 121,
             "confidenceInterval": [
-              72,
-              122
+              71,
+              121
             ],
             "haulProbability": 87,
             "blankProbability": 0,
-            "variance": 387.6
+            "variance": 369.4
           },
           "reconciliation": {
             "actualScore": 79,
             "netActualScore": 79,
             "insideConfidenceInterval": true,
-            "predictionError": -17.8,
+            "predictionError": -17.4,
             "haulAchieved": true,
             "blankOccurred": false,
             "alphaVsTemplate": 2
@@ -6736,23 +6736,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 100.7,
+            "meanXp": 101.3,
             "median": 100,
-            "p10": 74,
-            "p90": 130,
+            "p10": 76,
+            "p90": 129,
             "confidenceInterval": [
-              74,
-              130
+              76,
+              129
             ],
-            "haulProbability": 90,
+            "haulProbability": 91,
             "blankProbability": 0,
-            "variance": 524
+            "variance": 468.3
           },
           "reconciliation": {
             "actualScore": 89,
             "netActualScore": 89,
             "insideConfidenceInterval": true,
-            "predictionError": -11.7,
+            "predictionError": -12.3,
             "haulAchieved": true,
             "blankOccurred": false,
             "alphaVsTemplate": 12
