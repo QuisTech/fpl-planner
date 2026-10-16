@@ -2013,6 +2013,20 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       return snapshotsHandler(req as any, res as any);
     }
 
+    if (url.includes('run-mc-archive')) {
+      const fuel = (req.body?.fuel as string) || (query.fuel as string) || 'all';
+      const startGw = req.body?.startGw ? parseInt(req.body.startGw, 10) : (query.startGw ? parseInt(query.startGw as string, 10) : 1);
+      const endGw = req.body?.endGw ? parseInt(req.body.endGw, 10) : (query.endGw ? parseInt(query.endGw as string, 10) : undefined);
+
+      try {
+        const { runMonteCarloArchiveDirect } = await import("../scripts/run_monte_carlo_archive.js");
+        const result = await runMonteCarloArchiveDirect({ fuel, startGw, endGw });
+        return res.status(200).json(result);
+      } catch (err: any) {
+        return res.status(500).json({ error: err.message || "Failed to execute Monte Carlo archive" });
+      }
+    }
+
     if (url.includes('/api/ping')) {
       return res.status(200).json({ status: "ok", message: "Grand Cru Engine Online" });
     }

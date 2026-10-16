@@ -14,7 +14,8 @@ import {
   Calendar,
   Sliders,
   CheckCircle2,
-  AlertCircle
+  AlertCircle,
+  Dice5
 } from 'lucide-react';
 import { RecommendationResponse, TeamSyncResponse, ScoredPlayer, PlannerStepDetail } from '../types';
 import { generateClientMultiWeekPlan, runFPLMonteCarloSimulation } from '../utils/fplQuantEngine';
@@ -26,6 +27,7 @@ interface MultiWeekPlannerProps {
   riskMode: 'safe' | 'aggressive' | 'value';
   onSyncTeamId?: (teamId: string, gameweek?: number) => void;
   onApplySquad?: (playerIds: number[]) => void;
+  onViewAudit?: () => void;
 }
 
 export const MultiWeekPlanner: React.FC<MultiWeekPlannerProps> = ({
@@ -33,7 +35,8 @@ export const MultiWeekPlanner: React.FC<MultiWeekPlannerProps> = ({
   syncedData,
   riskMode,
   onSyncTeamId,
-  onApplySquad
+  onApplySquad,
+  onViewAudit
 }) => {
   const [horizon, setHorizon] = useState<number>(5);
   const [showConfidence, setShowConfidence] = useState<boolean>(true);
@@ -210,6 +213,17 @@ export const MultiWeekPlanner: React.FC<MultiWeekPlannerProps> = ({
             <Sliders className="w-3.5 h-3.5" />
             <span>Monte Carlo P10-P90</span>
           </button>
+
+          {onViewAudit && (
+            <button
+              onClick={onViewAudit}
+              className="px-3 py-1.5 rounded-xl text-xs font-bold border border-purple-500/30 bg-purple-500/10 hover:bg-purple-500/20 text-purple-300 transition-all flex items-center gap-1.5 shadow-sm active:scale-95"
+              title="Audit past Gameweek predictions against live FPL points"
+            >
+              <Dice5 className="w-3.5 h-3.5" />
+              <span>Historical MC Audit</span>
+            </button>
+          )}
         </div>
       </div>
 

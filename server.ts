@@ -45,6 +45,22 @@ async function startServer() {
     }
   });
 
+  app.post(["/api/admin/run-mc-archive", "/api/run-mc-archive"], async (req, res) => {
+    try {
+      const fuel = (req.body?.fuel as string) || (req.query?.fuel as string) || 'all';
+      const startGw = req.body?.startGw ? parseInt(req.body.startGw, 10) : (req.query?.startGw ? parseInt(req.query.startGw as string, 10) : 1);
+      const endGw = req.body?.endGw ? parseInt(req.body.endGw, 10) : (req.query?.endGw ? parseInt(req.query.endGw as string, 10) : undefined);
+
+      console.log(`[Admin API] Triggering Monte Carlo archive: fuel=${fuel}, startGw=${startGw}, endGw=${endGw || 'auto'}`);
+      const { runMonteCarloArchiveDirect } = await import("./scripts/run_monte_carlo_archive");
+      const result = await runMonteCarloArchiveDirect({ fuel, startGw, endGw });
+      res.json(result);
+    } catch (error: any) {
+      console.error("[Admin API] Monte Carlo archive run failed:", error.message);
+      res.status(500).json({ error: error.message || "Failed to execute Monte Carlo archive" });
+    }
+  });
+
   app.all("/api/admin*", async (req, res) => {
     try {
       const adminHandler = (await import("./api/admin")).default;

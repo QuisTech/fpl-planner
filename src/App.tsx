@@ -252,6 +252,7 @@ function FPLApp() {
                     setSquadViewSource('synced');
                     setTab('pitch');
                   }}
+                  onViewAudit={() => setTab('backtest')}
                 />
               ) : tab === 'picks' ? (
                 <DataGrid 
