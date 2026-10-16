@@ -390,15 +390,53 @@ export const MultiWeekPlanner: React.FC<MultiWeekPlannerProps> = ({
                       })()}
                     </div>
 
+                    {/* Monte Carlo 80% CI Visual Fan Gauge for Future Gameweek */}
+                    {showConfidence && step.confidenceInterval && (() => {
+                      const p10 = step.confidenceInterval[0];
+                      const p90 = step.confidenceInterval[1];
+                      const mean = step.weeklyScore;
+                      const minRange = Math.min(20, Math.floor(p10 * 0.7));
+                      const maxRange = Math.max(120, Math.ceil(p90 * 1.3));
+                      const rangeSpan = Math.max(1, maxRange - minRange);
+                      const p10Percent = Math.max(0, Math.min(100, ((p10 - minRange) / rangeSpan) * 100));
+                      const p90Percent = Math.max(0, Math.min(100, ((p90 - minRange) / rangeSpan) * 100));
+                      const meanPercent = Math.max(0, Math.min(100, ((mean - minRange) / rangeSpan) * 100));
+
+                      return (
+                        <div className="hidden md:flex flex-col flex-1 max-w-xs px-2 py-0.5">
+                          <div className="flex items-center justify-between text-[9px] font-mono text-slate-400 mb-1 whitespace-nowrap gap-1">
+                            <span>P10: <strong className="text-slate-300">{p10}</strong></span>
+                            <span className="text-purple-300 font-bold px-1.5 py-0.2 rounded bg-slate-950 border border-slate-800">xP {mean}</span>
+                            <span>P90: <strong className="text-slate-300">{p90}</strong></span>
+                          </div>
+                          <div className="relative h-2.5 bg-slate-950 rounded-full border border-slate-800 overflow-hidden flex items-center">
+                            <div 
+                              className="absolute top-0 bottom-0 bg-purple-500/25 border-l border-r border-purple-400/80 rounded"
+                              style={{
+                                left: `${p10Percent}%`,
+                                width: `${Math.max(2, p90Percent - p10Percent)}%`
+                              }}
+                              title={`80% Confidence Interval: ${p10} to ${p90} pts`}
+                            />
+                            <div 
+                              className="absolute top-0 bottom-0 w-[2px] bg-purple-400 z-10 shadow-[0_0_4px_rgba(168,85,247,0.8)]"
+                              style={{ left: `${meanPercent}%` }}
+                              title={`Mean xP: ${mean} pts`}
+                            />
+                          </div>
+                        </div>
+                      );
+                    })()}
+
                     {/* Scores & Confidences */}
-                    <div className="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-end">
+                    <div className="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-end shrink-0">
                       <div className="text-right">
                         <div className="flex items-center gap-1.5 justify-end">
                           <span className="text-sm font-black text-white">{step.weeklyScore}</span>
                           <span className="text-[10px] text-emerald-400 font-bold uppercase">xP</span>
                         </div>
                         {showConfidence && step.confidenceInterval && (
-                          <div className="text-[10px] text-slate-400 font-mono">
+                          <div className="text-[10px] text-slate-400 font-mono md:hidden">
                             Floor: <strong className="text-slate-300">{step.confidenceInterval[0]}</strong> • Ceiling: <strong className="text-purple-300">{step.confidenceInterval[1]}</strong>
                           </div>
                         )}
@@ -407,10 +445,11 @@ export const MultiWeekPlanner: React.FC<MultiWeekPlannerProps> = ({
                       {/* Expand / View Details Button */}
                       <button
                         onClick={() => setExpandedGw(isExpanded ? null : step.gameweek)}
-                        className="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors"
+                        className="flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 text-xs font-bold transition-all border border-slate-700/60 shadow-sm"
                         title={isExpanded ? "Collapse squad" : "Expand squad view"}
                       >
-                        {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+                        <span className="hidden sm:inline">{isExpanded ? 'Close' : 'Inspect'}</span>
+                        {isExpanded ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
                       </button>
                     </div>
                   </div>

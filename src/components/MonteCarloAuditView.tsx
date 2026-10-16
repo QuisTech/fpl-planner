@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   BarChart3, 
@@ -40,6 +40,7 @@ export const MonteCarloAuditView: React.FC<MonteCarloAuditViewProps> = ({ initia
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [expandedGw, setExpandedGw] = useState<number | null>(null);
+  const [auditHorizon, setAuditHorizon] = useState<'3' | '5' | 'all'>('all');
 
   // Trigger state
   const [isTriggering, setIsTriggering] = useState<boolean>(false);
@@ -136,8 +137,53 @@ export const MonteCarloAuditView: React.FC<MonteCarloAuditViewProps> = ({ initia
 
   const activeKey = `${scenario}_${selectedMode}`;
 
-  // Calculate cumulative stats for the currently selected scenario & mode
-  const currentCumulative = data?.cumulativeTotals?.[activeKey] || { totalPoints: 0, netAlpha: 0 };
+  // Filter and sort gameweeks descending (GW6 -> GW1) based on active audit horizon
+  const allSortedGameweeks = useMemo(() => {
+    if (!data?.gameweeks) return [];
+    return [...data.gameweeks].sort((a, b) => b.gameweek - a.gameweek);
+  }, [data?.gameweeks]);
+
+  const sortedGameweeks = useMemo(() => {
+    if (auditHorizon === '3') {
+      return allSortedGameweeks.slice(0, 3);
+    }
+    if (auditHorizon === '5') {
+      return allSortedGameweeks.slice(0, 5);
+    }
+    return allSortedGameweeks;
+  }, [allSortedGameweeks, auditHorizon]);
+
+  // Dynamic KPIs calculated for the active audit horizon and active scenario/mode
+  const horizonStats = useMemo(() => {
+    let totalPoints = 0;
+    let netAlpha = 0;
+    let totalAbsError = 0;
+    let ciHits = 0;
+    let hauls = 0;
+    let evaluatedCount = 0;
+
+    sortedGameweeks.forEach(gw => {
+      const res = gw.results?.[activeKey];
+      if (res) {
+        evaluatedCount++;
+        totalPoints += res.reconciliation.netActualScore;
+        netAlpha += res.reconciliation.alphaVsTemplate;
+        totalAbsError += Math.abs(res.reconciliation.predictionError);
+        if (res.reconciliation.insideConfidenceInterval) ciHits++;
+        if (res.reconciliation.haulAchieved) hauls++;
+      }
+    });
+
+    return {
+      totalPoints: Math.round(totalPoints * 10) / 10,
+      netAlpha: Math.round(netAlpha * 10) / 10,
+      avgAbsoluteError: evaluatedCount > 0 ? Math.round((totalAbsError / evaluatedCount) * 10) / 10 : 0,
+      ciCoverageRate: evaluatedCount > 0 ? Math.round((ciHits / evaluatedCount) * 1000) / 10 : 0,
+      ciHitCount: ciHits,
+      haulHitCount: hauls,
+      totalEvaluated: evaluatedCount
+    };
+  }, [sortedGameweeks, activeKey]);
 
   // Mode visual tokens
   const modeTokens = {
@@ -203,9 +249,6 @@ export const MonteCarloAuditView: React.FC<MonteCarloAuditViewProps> = ({ initia
     );
   }
 
-  // Filter and sort gameweeks descending (GW6 -> GW1)
-  const sortedGameweeks = [...data.gameweeks].sort((a, b) => b.gameweek - a.gameweek);
-
   return (
     <div className="space-y-6">
       
@@ -245,12 +288,12 @@ export const MonteCarloAuditView: React.FC<MonteCarloAuditViewProps> = ({ initia
 
             <button
               disabled={isTriggering}
-              onClick={() => handleRunAudit({ fuel: 'fplform', endGw: 7 })}
+              onClick={() => handleRunAudit({ fuel })}
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-300 border border-emerald-500/30 text-xs font-black uppercase tracking-wider transition-all shadow-sm active:scale-95 disabled:opacity-50"
-              title="Run audit specifically for FPLForm fuel up to GW7"
+              title={`Run walk-forward reconciliation for active fuel (${fuel.toUpperCase()}) from GW1 to latest finished GW`}
             >
               <Zap className="w-3 h-3 fill-current" />
-              Run FPLForm (GW1-7)
+              {isTriggering ? 'Running...' : `Run ${fuel.toUpperCase()}`}
             </button>
 
             <button
@@ -349,9 +392,26 @@ export const MonteCarloAuditView: React.FC<MonteCarloAuditViewProps> = ({ initia
             </div>
           </div>
 
-          <div className="text-[11px] text-slate-400 flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            Evaluation Horizon: <strong>GW{data.startGw} – GW{data.endGw}</strong>
+          {/* Horizon Lens Switcher (Matching MultiWeekPlanner's 3, 5, All horizons) */}
+          <div className="flex items-center gap-2">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
+              Horizon:
+            </span>
+            <div className="flex bg-slate-950 p-1 rounded-xl border border-slate-800">
+              {(['3', '5', 'all'] as const).map(h => (
+                <button
+                  key={h}
+                  onClick={() => setAuditHorizon(h)}
+                  className={`px-3 py-1 text-[10px] font-black uppercase tracking-wider rounded-lg transition-all ${
+                    auditHorizon === h
+                      ? 'bg-emerald-500 text-slate-950 shadow-md font-extrabold'
+                      : 'text-slate-400 hover:text-white'
+                  }`}
+                >
+                  {h === 'all' ? `All (GW${data.startGw}–${data.endGw})` : `Last ${h} GWs`}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -393,9 +453,9 @@ export const MonteCarloAuditView: React.FC<MonteCarloAuditViewProps> = ({ initia
           </div>
           <div>
             <div className="text-2xl font-black text-white flex items-baseline gap-1.5">
-              {Number(data.calibrationSummary?.ciCoverageRate ?? 83.3).toFixed(1)}%
+              {Number(horizonStats.ciCoverageRate).toFixed(1)}%
               <span className="text-[10px] font-semibold text-emerald-400">
-                ({data.calibrationSummary?.ciHitCount ?? 5}/{data.calibrationSummary?.totalEvaluated ?? 6} GWs)
+                ({horizonStats.ciHitCount}/{horizonStats.totalEvaluated} GWs)
               </span>
             </div>
             <p className="text-[10px] text-slate-400 mt-1">
@@ -412,13 +472,13 @@ export const MonteCarloAuditView: React.FC<MonteCarloAuditViewProps> = ({ initia
           </div>
           <div>
             <div className="text-2xl font-black text-white flex items-baseline gap-2">
-              {Number(currentCumulative.totalPoints).toFixed(1)} pts
-              <span className={`text-xs font-black ${currentCumulative.netAlpha >= 0 ? 'text-emerald-400' : 'text-rose-400'}`}>
-                {currentCumulative.netAlpha >= 0 ? `+${Number(currentCumulative.netAlpha).toFixed(1)}` : Number(currentCumulative.netAlpha).toFixed(1)} Alpha
+              {Number(horizonStats.totalPoints).toFixed(1)} pts
+              <span className={`text-xs font-black ${horizonStats.netAlpha >= 0 ? 'text-emerald-400' : 'text-rose-400'}`}>
+                {horizonStats.netAlpha >= 0 ? `+${Number(horizonStats.netAlpha).toFixed(1)}` : Number(horizonStats.netAlpha).toFixed(1)} Alpha
               </span>
             </div>
             <p className="text-[10px] text-slate-400 mt-1">
-              Across all {data.gameweeks.length} completed Gameweeks
+              Across {sortedGameweeks.length} evaluated Gameweeks ({auditHorizon === 'all' ? 'All' : `Last ${auditHorizon} GWs`})
             </p>
           </div>
         </div>
@@ -431,7 +491,7 @@ export const MonteCarloAuditView: React.FC<MonteCarloAuditViewProps> = ({ initia
           </div>
           <div>
             <div className="text-2xl font-black text-white flex items-baseline gap-1">
-              ±{Number(data.calibrationSummary?.avgAbsoluteError ?? 9.5).toFixed(1)} pts
+              ±{Number(horizonStats.avgAbsoluteError).toFixed(1)} pts
             </div>
             <p className="text-[10px] text-slate-400 mt-1">
               Mean absolute deviation (|Actual - Mean|)
@@ -447,11 +507,11 @@ export const MonteCarloAuditView: React.FC<MonteCarloAuditViewProps> = ({ initia
           </div>
           <div>
             <div className="text-2xl font-black text-white flex items-baseline gap-1.5">
-              {data.calibrationSummary?.haulHitCount ?? 3} Hauls
+              {horizonStats.haulHitCount} Hauls
               <span className="text-[10px] text-purple-300 font-semibold">achieved</span>
             </div>
             <p className="text-[10px] text-slate-400 mt-1">
-              Right-tail ceiling hauls captured by planner
+              Right-tail ceiling hauls captured in horizon
             </p>
           </div>
         </div>
@@ -463,7 +523,7 @@ export const MonteCarloAuditView: React.FC<MonteCarloAuditViewProps> = ({ initia
         <div className="flex items-center justify-between px-1">
           <h3 className="text-xs font-black uppercase tracking-wider text-slate-300 flex items-center gap-2">
             <Sliders className="w-4 h-4 text-emerald-400" />
-            Gameweek Audit Ledger (GW{data.startGw} → GW{data.endGw})
+            Gameweek Audit Ledger ({auditHorizon === 'all' ? `GW${data.startGw} → GW${data.endGw}` : `Last ${sortedGameweeks.length} GWs: GW${sortedGameweeks[sortedGameweeks.length - 1]?.gameweek || data.startGw} → GW${sortedGameweeks[0]?.gameweek || data.endGw}`})
           </h3>
           <span className="text-[10px] text-slate-500">
             Click any Gameweek to inspect Starting XI & Bench autosubs
@@ -541,44 +601,71 @@ export const MonteCarloAuditView: React.FC<MonteCarloAuditViewProps> = ({ initia
                   </div>
                 </div>
 
-                {/* Center: Monte Carlo Fan Bar */}
-                <div className="flex-1 max-w-md w-full px-2">
-                  <div className="flex justify-between items-center text-[10px] font-mono text-slate-400 mb-1">
-                    <span>Floor: P10 <strong>{Number(monteCarlo.p10).toFixed(1)}</strong></span>
-                    <span>Mean <strong>{Number(monteCarlo.meanXp).toFixed(1)}</strong></span>
-                    <span>Ceil: P90 <strong>{Number(monteCarlo.p90).toFixed(1)}</strong></span>
+                {/* Center: Monte Carlo Forecast Distribution & Outcome Gauge */}
+                <div className="flex-1 max-w-lg w-full px-2 py-1">
+                  {/* Top Stats Row (immune to wrapping) */}
+                  <div className="flex items-center justify-between text-[10px] font-mono text-slate-400 mb-1.5 whitespace-nowrap gap-2">
+                    <span className="flex items-center gap-1">
+                      <span className="text-[9px] uppercase font-bold text-slate-500">P10 Floor:</span>
+                      <strong className="text-slate-300">{Number(monteCarlo.p10).toFixed(1)}</strong>
+                    </span>
+                    <span className="flex items-center gap-1 px-1.5 py-0.5 rounded bg-slate-950 border border-slate-800/80">
+                      <span className="text-[9px] uppercase font-bold text-slate-500">Mean xP:</span>
+                      <strong className="text-purple-300">{Number(monteCarlo.meanXp).toFixed(1)}</strong>
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <span className="text-[9px] uppercase font-bold text-slate-500">P90 Ceil:</span>
+                      <strong className="text-slate-300">{Number(monteCarlo.p90).toFixed(1)}</strong>
+                    </span>
                   </div>
 
-                  {/* Visual Fan Band */}
-                  <div className="relative h-4 bg-slate-950 rounded-full border border-slate-800 overflow-visible flex items-center">
+                  {/* Visual Fan Band Track */}
+                  <div className="relative h-3 bg-slate-950 rounded-full border border-slate-800/90 overflow-visible flex items-center my-2">
                     {/* Shaded 80% CI Band */}
                     <div 
-                      className="absolute top-0 bottom-0 bg-purple-500/20 border-l border-r border-purple-500/50 rounded"
+                      className="absolute top-0 bottom-0 bg-purple-500/25 border-l-2 border-r-2 border-purple-400/80 rounded"
                       style={{
                         left: `${p10Percent}%`,
                         width: `${Math.max(2, p90Percent - p10Percent)}%`
                       }}
+                      title={`80% Confidence Interval: ${Number(monteCarlo.p10).toFixed(1)} to ${Number(monteCarlo.p90).toFixed(1)} pts`}
                     />
 
                     {/* Mean line marker */}
                     <div 
-                      className="absolute top-0 bottom-0 w-0.5 bg-slate-400/60 z-10"
+                      className="absolute top-[-2px] bottom-[-2px] w-[2px] bg-purple-400 z-10 shadow-[0_0_6px_rgba(168,85,247,0.7)]"
                       style={{ left: `${meanPercent}%` }}
+                      title={`Mean Forecast: ${Number(monteCarlo.meanXp).toFixed(1)} pts`}
                     />
 
-                    {/* Actual points indicator pin */}
+                    {/* Actual Points Marker Pin (Flag badge - explicitly non-interactive) */}
                     <div 
-                      className="absolute w-3.5 h-3.5 -mt-[1px] rounded-full bg-emerald-400 border-2 border-slate-950 shadow-md z-20 transition-all transform -translate-x-1/2 flex items-center justify-center"
+                      className="absolute top-[-8px] bottom-[-8px] z-20 pointer-events-none transition-all transform -translate-x-1/2 flex flex-col items-center"
                       style={{ left: `${actualPercent}%` }}
-                      title={`Actual: ${Number(reconciliation.netActualScore).toFixed(1)} pts`}
                     >
-                      <div className="w-1 h-1 rounded-full bg-slate-950" />
+                      {/* Floating Indicator Needle & Pill */}
+                      <div className="px-1.5 py-0.2 rounded bg-emerald-500 text-slate-950 text-[8px] font-black uppercase tracking-tighter shadow-md whitespace-nowrap mb-0.5">
+                        {Number(reconciliation.netActualScore).toFixed(1)}
+                      </div>
+                      <div className="w-1.5 h-3 bg-emerald-400 rounded-full shadow-[0_0_8px_rgba(52,211,153,0.9)] border border-slate-950" />
                     </div>
+                  </div>
+
+                  {/* Micro Legend */}
+                  <div className="flex items-center justify-between text-[9px] text-slate-500 mt-1 whitespace-nowrap">
+                    <span className="flex items-center gap-1">
+                      <span className="w-2 h-1 rounded bg-purple-500/40 inline-block"></span>
+                      80% Simulation Range
+                    </span>
+                    <span className="flex items-center gap-1 text-emerald-400 font-semibold">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block"></span>
+                      Actual Outcome Pin
+                    </span>
                   </div>
                 </div>
 
                 {/* Right: Actual Points & Alpha */}
-                <div className="flex items-center justify-between md:justify-end gap-5">
+                <div className="flex items-center justify-between md:justify-end gap-4 shrink-0">
                   <div className="text-right">
                     <div className="text-xl font-black text-white">
                       {Number(reconciliation.netActualScore).toFixed(1)} <span className="text-xs text-slate-400 font-normal">pts</span>
@@ -588,8 +675,9 @@ export const MonteCarloAuditView: React.FC<MonteCarloAuditViewProps> = ({ initia
                     </div>
                   </div>
 
-                  <div className="p-1 rounded-lg bg-slate-800/60 text-slate-400 hover:text-white">
-                    {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+                  <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800/80 border border-slate-700/60 text-slate-300 text-[11px] font-bold hover:bg-slate-700 hover:text-white transition-all shadow-sm">
+                    <span>{isExpanded ? 'Close' : 'Inspect'}</span>
+                    {isExpanded ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
                   </div>
                 </div>
               </div>
