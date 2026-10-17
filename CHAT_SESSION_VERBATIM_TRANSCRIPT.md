@@ -14162,3 +14162,54 @@ push
 ### Assistant (Turn 109)
 
 Synchronized session transcripts, staged modified audit datasets and transcripts, committed changes, and pushed to origin/main.
+
+---
+
+### User (Turn 110 - 2026-10-17T20:11:39+01:00)
+
+why is pushing difficult?
+
+### Assistant (Turn 110)
+
+Explained the 4 technical factors that caused the push challenge:
+
+1. **Remote Concurrency Racing (GitHub Actions Auto-Sync):**
+   - A remote GitHub Actions workflow (`Auto-sync: Pulled latest FPL data from QuisTech/fpl-admin [skip ci]`) runs periodically on GitHub.
+   - Right when we attempted to push, GitHub Actions had landed commit `d7cbfb9` onto `origin/main`. Git rejected our push with `fetch first` because the remote branch moved forward while we were preparing the local commit.
+
+2. **Auto-Generated Dataset Merge Conflicts:**
+   - Both the remote GitHub Actions runner and the local machine independently generate and commit heavy Monte Carlo walk-forward audit ledgers (`data/monte_carlo_audit_*.json`, `public/data/monte_carlo_audit_*.json`—over 10,000+ lines of simulation results with timestamps and random variance).
+   - When Git performed the pull rebase, it encountered 300+ line-by-line merge conflicts across those generated JSON files.
+
+3. **Upstream Source-of-Truth Reversion:**
+   - The remote CI workflow pulls snapshot files directly from `QuisTech/fpl-admin` into `fpl-planner`.
+   - Because our earlier fix for the Gameweek 1 Top 1,000 EO (resolving the 14.1 pts template anomaly back to authentic 75.4 pts) was previously only in `fpl-planner`, GitHub Actions pulled `fpl-admin`'s pre-season snapshot and reverted `fpl-planner` back to 14.1 pts.
+   - We permanently resolved this by updating `data/snapshots/gw_1/top_1000_eo.json` in both repositories and re-running the archival engine.
+
+4. **Node Memory Limits During Simulation:**
+   - The Monte Carlo archival script runs hundreds of thousands of simulation trials across 6 gameweeks and 3 fuels. It exceeded Node's default 2GB memory ceiling and required execution with `--max-old-space-size=4096`.
+
+---
+
+### User (Turn 111 - 2026-10-17T20:14:44+01:00)
+
+am I to push and commit ?
+
+### Assistant (Turn 111)
+
+Clarified role and current status:
+- The user does not need to run git commit and push manually; the AI agent can execute all staging, committing, and pushing operations directly.
+- Provided a breakdown of pending changes in both `fpl-planner` and `fpl-admin`.
+- Recommended committing and pushing `fpl-admin` first (upstream source of truth) followed by `fpl-planner` (Monte Carlo audit datasets + GW1 snapshot).
+
+---
+
+### User (Turn 112 - 2026-10-17T20:35:43+01:00)
+
+yes
+
+### Assistant (Turn 112)
+
+Executed automated commit and push workflow across repositories:
+1. Committed and pushed `fpl-admin` (GW1 snapshot fix, server resilience, updated session transcripts).
+2. Pulled latest changes, committed and pushed `fpl-planner` (GW1 snapshot fix, Monte Carlo audit datasets, updated transcripts).
