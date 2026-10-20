@@ -1,10 +1,54 @@
 import "dotenv/config";
 import express from "express";
+import http from "http";
+import net from "net";
 import { createServer as createViteServer } from "vite";
 import { FPLService } from "./api/index";
 
 const app = express();
-const PORT = 3000;
+const server = http.createServer(app);
+
+function isPortAvailable(port: number): Promise<boolean> {
+  return new Promise((resolve) => {
+    const tester = net.createServer();
+    tester.once("error", () => resolve(false));
+    tester.once("listening", () => {
+      tester.close(() => resolve(true));
+    });
+    tester.listen(port, "0.0.0.0");
+  });
+}
+
+function parsePortArg(): number | null {
+  for (let i = 2; i < process.argv.length; i++) {
+    const arg = process.argv[i];
+    if (arg === "--port" || arg === "-p") {
+      const next = process.argv[i + 1];
+      if (next && !isNaN(Number(next))) {
+        return Number(next);
+      }
+    } else if (arg.startsWith("--port=")) {
+      const val = arg.split("=")[1];
+      if (val && !isNaN(Number(val))) {
+        return Number(val);
+      }
+    }
+  }
+  if (process.env.PORT && !isNaN(Number(process.env.PORT))) {
+    return Number(process.env.PORT);
+  }
+  return null;
+}
+
+async function resolvePort(): Promise<number> {
+  const explicitPort = parsePortArg();
+  let candidate = explicitPort ?? 3000;
+  while (!(await isPortAvailable(candidate))) {
+    console.log(`[GRAND CRU] Port ${candidate} is already in use, trying ${candidate + 1}...`);
+    candidate++;
+  }
+  return candidate;
+}
 
 async function startServer() {
   const vite = await createViteServer({
@@ -238,8 +282,10 @@ async function startServer() {
 
   app.use(vite.middlewares);
 
-  app.listen(PORT, "0.0.0.0", () => {
-    console.log(`[GRAND CRU] Development server running on http://localhost:${PORT}`);
+  const port = await resolvePort();
+
+  server.listen(port, "0.0.0.0", () => {
+    console.log(`[GRAND CRU] Development server running on http://localhost:${port}`);
   });
 }
 
