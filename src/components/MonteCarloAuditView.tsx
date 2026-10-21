@@ -121,8 +121,18 @@ export const MonteCarloAuditView: React.FC<MonteCarloAuditViewProps> = ({ initia
 
       setTriggerStatus(json.message || 'Audit completed successfully! Reloading dataset...');
 
-      // Re-fetch active fuel data
-      loadAuditData(fuel);
+      // If backend returned in-memory dataset, update state immediately
+      const fuelSuffix = fuel === 'eye-test' ? 'eyetest' : fuel;
+      if (json.datasets && json.datasets[fuelSuffix]) {
+        setData(json.datasets[fuelSuffix]);
+      } else if (json.datasets && json.datasets[fuel]) {
+        setData(json.datasets[fuel]);
+      } else if (json.dataset) {
+        setData(json.dataset);
+      } else {
+        // Re-fetch active fuel data
+        loadAuditData(fuel);
+      }
 
       setTimeout(() => {
         setTriggerStatus(null);

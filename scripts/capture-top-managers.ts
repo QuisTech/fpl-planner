@@ -11,10 +11,10 @@
 import fs from 'fs';
 import path from 'path';
 import axios from 'axios';
-import { 
+import type { 
   ManagerGWDecisionSnapshot, 
   EliteCohortArchive 
-} from '../api/_lib/manager-snapshot-service.ts';
+} from '../api/_lib/manager-snapshot-service.js';
 
 const FPL_BASE_URL = 'https://fantasy.premierleague.com/api';
 

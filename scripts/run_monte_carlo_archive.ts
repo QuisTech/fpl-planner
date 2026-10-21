@@ -1,15 +1,125 @@
 import 'dotenv/config';
 import fs from 'fs';
 import path from 'path';
-import { FPLService } from '../api/index.ts';
-import { SnapshotService } from '../api/_lib/snapshot-service.ts';
-import { runFPLMonteCarloSimulation } from '../src/utils/fplQuantEngine.ts';
-import { 
+import { SnapshotService } from '../api/_lib/snapshot-service.js';
+import type { 
   MonteCarloAuditDataset, 
   MonteCarloGwArchive, 
   MonteCarloModeResult, 
   MonteCarloAuditPlayer 
-} from '../src/types/monteCarloAudit.ts';
+} from '../src/types/monteCarloAudit.js';
+
+export interface FPLMonteCarloResult {
+  mean: number;
+  median: number;
+  p10: number;
+  p90: number;
+  confidenceInterval: [number, number];
+  simulatedScores: number[];
+  haulProbability: number;
+  blankProbability: number;
+}
+
+/**
+ * Self-contained 1,000-iteration Monte Carlo simulation for squad actual reconciliation.
+ * Avoids runtime ESM dependency on frontend /src/ modules in serverless runtimes.
+ */
+export function runFPLMonteCarloSimulation(
+  starters: any[],
+  captainId: number,
+  isTripleCaptain: boolean = false,
+  numSimulations: number = 1000
+): FPLMonteCarloResult {
+  const scores: number[] = [];
+  const captainMultiplier = isTripleCaptain ? 3 : 2;
+
+  for (let i = 0; i < numSimulations; i++) {
+    let simTotal = 0;
+
+    for (const player of starters) {
+      const baseXp = Number(player.xP || player.score || 4.5);
+      
+      let stdDev = baseXp * 0.55;
+      if (player.position === 'MID' || player.position === 'FWD') {
+        stdDev = baseXp * 0.65;
+      } else if (player.position === 'GKP') {
+        stdDev = baseXp * 0.45;
+      }
+
+      const u1 = Math.max(0.0001, Math.random());
+      const u2 = Math.random();
+      const z = Math.sqrt(-2.0 * Math.log(u1)) * Math.cos(2.0 * Math.PI * u2);
+
+      let playerSim = baseXp + z * stdDev;
+
+      if (Math.random() < 0.08 && (player.position === 'MID' || player.position === 'FWD')) {
+        playerSim += Math.random() * 8.0 + 3.0;
+      }
+
+      if (Math.random() < 0.05) {
+        playerSim = Math.max(0, playerSim - 4.0);
+      }
+
+      playerSim = Math.max(0, playerSim);
+
+      const isCap = player.id === captainId;
+      simTotal += isCap ? playerSim * captainMultiplier : playerSim;
+    }
+
+    scores.push(Math.round(simTotal));
+  }
+
+  scores.sort((a, b) => a - b);
+  const mean = Math.round((scores.reduce((sum, s) => sum + s, 0) / scores.length) * 10) / 10;
+  const p10 = scores[Math.floor(scores.length * 0.10)];
+  const median = scores[Math.floor(scores.length * 0.50)];
+  const p90 = scores[Math.floor(scores.length * 0.90)];
+  const haulCount = scores.filter(s => s >= 75).length;
+  const blankCount = scores.filter(s => s <= 40).length;
+
+  return {
+    mean,
+    median,
+    p10,
+    p90,
+    confidenceInterval: [p10, p90],
+    simulatedScores: scores,
+    haulProbability: Math.round((haulCount / scores.length) * 100),
+    blankProbability: Math.round((blankCount / scores.length) * 100)
+  };
+}
+
+let cachedFPLService: any = null;
+
+async function getFPLService(passedService?: any): Promise<any> {
+  if (passedService) return passedService;
+  if (cachedFPLService) return cachedFPLService;
+  try {
+    const mod = await import('../api/index.js');
+    cachedFPLService = mod.FPLService;
+    return cachedFPLService;
+  } catch (err: any) {
+    try {
+      const mod = await import('../api/index');
+      cachedFPLService = mod.FPLService;
+      return cachedFPLService;
+    } catch {
+      throw new Error(`Failed to resolve FPLService: ${err.message}`);
+    }
+  }
+}
+
+function safeWriteFile(filePath: string, content: string): void {
+  try {
+    const dir = path.dirname(filePath);
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir, { recursive: true });
+    }
+    fs.writeFileSync(filePath, content, 'utf-8');
+  } catch (err: any) {
+    console.warn(`[MC Archive] Note: could not write to ${filePath} (${err.message}). Expected in read-only serverless environment.`);
+  }
+}
 
 interface PlayerLiveStat {
   points: number;
@@ -170,9 +280,15 @@ export interface ArchiveOptions {
   fuel?: string;
   startGw?: number;
   endGw?: number;
+  fplService?: any;
+  snapshotService?: any;
 }
 
 export async function runMonteCarloArchiveDirect(options: ArchiveOptions = {}) {
+  const effectiveFPLService = await getFPLService(options.fplService);
+  const effectiveSnapshotService = options.snapshotService || SnapshotService;
+  const generatedDatasets: Record<string, MonteCarloAuditDataset> = {};
+
   const args = process.argv.slice(2);
   let requestedFuel = options.fuel || 'all';
   let startGw = options.startGw || 1;
@@ -222,12 +338,12 @@ export async function runMonteCarloArchiveDirect(options: ArchiveOptions = {}) {
       console.log(`\n--- Simulating & Auditing Gameweek ${gw} [${fuel.toUpperCase()}] ---`);
 
       // Ensure snapshot exists
-      if (gw <= latestFinishedGw && !SnapshotService.hasSnapshot(gw)) {
+      if (gw <= latestFinishedGw && !effectiveSnapshotService.hasSnapshot(gw)) {
         console.log(`[MC Archive] Point-in-time snapshot missing for GW${gw}. Archiving...`);
-        SnapshotService.saveSnapshot(gw);
+        effectiveSnapshotService.saveSnapshot(gw);
       }
 
-      const snapshotPaths = SnapshotService.getSnapshotPaths(gw);
+      const snapshotPaths = effectiveSnapshotService.getSnapshotPaths(gw);
       const eoFilePath = snapshotPaths?.eoPath || path.resolve(process.cwd(), 'data', 'top_1000_eo.json');
 
       // Load Top 1k EO map for template score
@@ -269,7 +385,7 @@ export async function runMonteCarloArchiveDirect(options: ArchiveOptions = {}) {
 
           try {
             // Solve point-in-time recommendation for this (mode, fuel, scenario, gw)
-            const rec = await FPLService.getRecommendations(
+            const rec = await effectiveFPLService.getRecommendations(
               mode, 
               1000, 
               'admin', 
@@ -471,23 +587,25 @@ export async function runMonteCarloArchiveDirect(options: ArchiveOptions = {}) {
     const jsonStr = JSON.stringify(dataset, null, 2);
 
     const dataPath = path.resolve(process.cwd(), 'data', outputFileName);
-    fs.writeFileSync(dataPath, jsonStr);
+    safeWriteFile(dataPath, jsonStr);
     console.log(`[MC Archive] Saved ${fuel.toUpperCase()} dataset to ${dataPath}`);
 
     const publicDataDir = path.resolve(process.cwd(), 'public', 'data');
-    if (!fs.existsSync(publicDataDir)) fs.mkdirSync(publicDataDir, { recursive: true });
     const publicPath = path.resolve(publicDataDir, outputFileName);
-    fs.writeFileSync(publicPath, jsonStr);
+    safeWriteFile(publicPath, jsonStr);
     console.log(`[MC Archive] Synced to ${publicPath}`);
 
     // If default or fplform, also mirror to main monte_carlo_history.json
     if (fuel === 'fplform' || requestedFuel !== 'all') {
       const historyDataPath = path.resolve(process.cwd(), 'data', 'monte_carlo_history.json');
       const historyPublicPath = path.resolve(publicDataDir, 'monte_carlo_history.json');
-      fs.writeFileSync(historyDataPath, jsonStr);
-      fs.writeFileSync(historyPublicPath, jsonStr);
+      safeWriteFile(historyDataPath, jsonStr);
+      safeWriteFile(historyPublicPath, jsonStr);
       console.log(`[MC Archive] Updated default monte_carlo_history.json`);
     }
+
+    generatedDatasets[fuelSuffix] = dataset;
+    generatedDatasets[fuel] = dataset;
   }
 
   console.log(`\n===============================================================`);
@@ -499,7 +617,8 @@ export async function runMonteCarloArchiveDirect(options: ArchiveOptions = {}) {
     fuelList,
     startGw,
     endGw,
-    message: `Monte Carlo audit completed successfully for GW${startGw} to GW${endGw} (${fuelList.join(', ').toUpperCase()}).`
+    message: `Monte Carlo audit completed successfully for GW${startGw} to GW${endGw} (${fuelList.join(', ').toUpperCase()}).`,
+    datasets: generatedDatasets
   };
 }
 

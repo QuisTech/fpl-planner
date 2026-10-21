@@ -2023,7 +2023,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
       try {
         const { runMonteCarloArchiveDirect } = await import("../scripts/run_monte_carlo_archive.js");
-        const result = await runMonteCarloArchiveDirect({ fuel, startGw, endGw });
+        const result = await runMonteCarloArchiveDirect({ fuel, startGw, endGw, fplService: FPLService });
         return res.status(200).json(result);
       } catch (err: any) {
         return res.status(500).json({ error: err.message || "Failed to execute Monte Carlo archive" });

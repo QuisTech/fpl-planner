@@ -10,8 +10,8 @@
  */
 import fs from 'fs';
 import path from 'path';
-import { SnapshotService } from '../api/_lib/snapshot-service.ts';
-import { runAutoSnapshots } from './auto-snapshot.ts';
+import { SnapshotService } from '../api/_lib/snapshot-service.js';
+import { runAutoSnapshots } from './auto-snapshot.js';
 
 async function detectGameweek(): Promise<number> {
   // Try reading from top_1000_eo.json first

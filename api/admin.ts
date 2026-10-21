@@ -66,7 +66,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     if (url.includes('run-mc-archive') || (req as any).originalUrl?.includes('run-mc-archive')) {
       const { fuel = 'all', startGw = 1, endGw } = req.body || {};
       try {
-        const { runMonteCarloArchiveDirect } = await import("../scripts/run_monte_carlo_archive");
+        const { runMonteCarloArchiveDirect } = await import("../scripts/run_monte_carlo_archive.js");
         const result = await runMonteCarloArchiveDirect({ fuel, startGw, endGw });
         return res.json(result);
       } catch (directErr: any) {
@@ -142,7 +142,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       const ghToken = process.env.GH_PAT || process.env.GITHUB_TOKEN;
 
       try {
-        const { runMonteCarloArchiveDirect } = await import("../scripts/run_monte_carlo_archive");
+        const { runMonteCarloArchiveDirect } = await import("../scripts/run_monte_carlo_archive.js");
         const result = await runMonteCarloArchiveDirect({ fuel, startGw, endGw });
         await logAudit(adminId, 'TRIGGER_MC_ARCHIVE', adminId, { fuel, startGw, endGw });
         return res.json(result);
