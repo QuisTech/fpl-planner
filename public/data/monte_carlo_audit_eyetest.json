@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T09:06:42.219Z",
+  "generatedAt": "2026-10-23T09:00:55.554Z",
   "fuel": "eye-test",
   "startGw": 1,
   "endGw": 7,
@@ -15,9 +15,9 @@
   ],
   "calibrationSummary": {
     "totalEvaluated": 42,
-    "ciHitCount": 22,
-    "ciCoverageRate": 52.4,
-    "avgAbsoluteError": 26.1,
+    "ciHitCount": 19,
+    "ciCoverageRate": 45.2,
+    "avgAbsoluteError": 26.9,
     "haulHitCount": 15,
     "haulPredictedCount": 42
   },
@@ -31,20 +31,20 @@
       "netAlpha": -97.6
     },
     "quant_value": {
-      "totalPoints": 586,
-      "netAlpha": 45.4
+      "totalPoints": 577,
+      "netAlpha": 36.4
     },
     "template_safe": {
-      "totalPoints": 454,
-      "netAlpha": -86.6
+      "totalPoints": 443,
+      "netAlpha": -97.6
     },
     "template_aggressive": {
       "totalPoints": 430,
       "netAlpha": -110.6
     },
     "template_value": {
-      "totalPoints": 456,
-      "netAlpha": -84.6
+      "totalPoints": 445,
+      "netAlpha": -95.6
     }
   },
   "gameweeks": [
@@ -219,23 +219,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 100.5,
-            "median": 101,
-            "p10": 74,
-            "p90": 127,
+            "meanXp": 99.1,
+            "median": 99,
+            "p10": 72,
+            "p90": 126,
             "confidenceInterval": [
-              74,
-              127
+              72,
+              126
             ],
-            "haulProbability": 89,
+            "haulProbability": 88,
             "blankProbability": 0,
-            "variance": 428.6
+            "variance": 441.7
           },
           "reconciliation": {
             "actualScore": 30,
             "netActualScore": 30,
             "insideConfidenceInterval": false,
-            "predictionError": -70.5,
+            "predictionError": -69.1,
             "haulAchieved": false,
             "blankOccurred": true,
             "alphaVsTemplate": -45.4
@@ -409,23 +409,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 94.2,
-            "median": 94,
-            "p10": 70,
-            "p90": 120,
+            "meanXp": 93.6,
+            "median": 93,
+            "p10": 68,
+            "p90": 121,
             "confidenceInterval": [
-              70,
-              120
+              68,
+              121
             ],
-            "haulProbability": 85,
+            "haulProbability": 82,
             "blankProbability": 0,
-            "variance": 406.3
+            "variance": 458.2
           },
           "reconciliation": {
             "actualScore": 48,
             "netActualScore": 48,
             "insideConfidenceInterval": false,
-            "predictionError": -46.2,
+            "predictionError": -45.6,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": -27.4
@@ -474,13 +474,13 @@
               "subbedIn": true
             },
             {
-              "id": 123,
-              "name": "Hinshelwood",
+              "id": 126,
+              "name": "O'Riley",
               "team": "BHA",
               "position": "MID",
-              "projectedXp": 8.3,
-              "actualPoints": 16,
-              "played": true
+              "projectedXp": 8.2,
+              "actualPoints": 0,
+              "played": false
             },
             {
               "id": 614,
@@ -496,7 +496,7 @@
               "name": "Palmer",
               "team": "CHE",
               "position": "MID",
-              "projectedXp": 5.7,
+              "projectedXp": 5.8,
               "actualPoints": 13,
               "played": true
             },
@@ -532,7 +532,7 @@
               "name": "Mbeumo",
               "team": "MUN",
               "position": "MID",
-              "projectedXp": 7.4,
+              "projectedXp": 7.5,
               "actualPoints": 2,
               "played": true
             }
@@ -595,26 +595,26 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 91.7,
-            "median": 91,
+            "meanXp": 92.5,
+            "median": 93,
             "p10": 67,
-            "p90": 118,
+            "p90": 117,
             "confidenceInterval": [
               67,
-              118
+              117
             ],
-            "haulProbability": 81,
+            "haulProbability": 82,
             "blankProbability": 0,
-            "variance": 422.2
+            "variance": 366.4
           },
           "reconciliation": {
-            "actualScore": 74,
-            "netActualScore": 74,
-            "insideConfidenceInterval": true,
-            "predictionError": -17.7,
+            "actualScore": 58,
+            "netActualScore": 58,
+            "insideConfidenceInterval": false,
+            "predictionError": -34.5,
             "haulAchieved": false,
             "blankOccurred": false,
-            "alphaVsTemplate": -1.4
+            "alphaVsTemplate": -17.4
           }
         },
         "template_safe": {
@@ -674,19 +674,18 @@
               "name": "Palmer",
               "team": "CHE",
               "position": "MID",
-              "projectedXp": 5.7,
+              "projectedXp": 5.8,
               "actualPoints": 13,
               "played": true
             },
             {
-              "id": 567,
-              "name": "Horníček",
-              "team": "NEW",
+              "id": 351,
+              "name": "Mamardashvili",
+              "team": "LIV",
               "position": "GKP",
-              "projectedXp": 2.9,
-              "actualPoints": 1,
-              "played": true,
-              "subbedIn": true
+              "projectedXp": 5.9,
+              "actualPoints": 0,
+              "played": false
             },
             {
               "id": 391,
@@ -727,14 +726,13 @@
           ],
           "bench": [
             {
-              "id": 351,
-              "name": "Mamardashvili",
-              "team": "LIV",
+              "id": 443,
+              "name": "Gillespie",
+              "team": "NEW",
               "position": "GKP",
-              "projectedXp": 5.9,
+              "projectedXp": 2.9,
               "actualPoints": 0,
-              "played": false,
-              "subbedIn": false
+              "played": false
             },
             {
               "id": 100,
@@ -784,26 +782,26 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 96.9,
-            "median": 97,
-            "p10": 74,
-            "p90": 121,
+            "meanXp": 96.7,
+            "median": 96,
+            "p10": 71,
+            "p90": 123,
             "confidenceInterval": [
-              74,
-              121
+              71,
+              123
             ],
-            "haulProbability": 89,
+            "haulProbability": 86,
             "blankProbability": 0,
-            "variance": 354.5
+            "variance": 422.2
           },
           "reconciliation": {
-            "actualScore": 57,
-            "netActualScore": 57,
+            "actualScore": 56,
+            "netActualScore": 56,
             "insideConfidenceInterval": false,
-            "predictionError": -39.9,
+            "predictionError": -40.7,
             "haulAchieved": false,
             "blankOccurred": false,
-            "alphaVsTemplate": -18.4
+            "alphaVsTemplate": -19.4
           }
         },
         "template_aggressive": {
@@ -863,7 +861,7 @@
               "name": "Palmer",
               "team": "CHE",
               "position": "MID",
-              "projectedXp": 5.7,
+              "projectedXp": 5.8,
               "actualPoints": 13,
               "played": true
             },
@@ -972,23 +970,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 98.4,
+            "meanXp": 98.3,
             "median": 99,
-            "p10": 73,
+            "p10": 72,
             "p90": 124,
             "confidenceInterval": [
-              73,
+              72,
               124
             ],
             "haulProbability": 89,
             "blankProbability": 0,
-            "variance": 400
+            "variance": 403.1
           },
           "reconciliation": {
             "actualScore": 57,
             "netActualScore": 57,
             "insideConfidenceInterval": false,
-            "predictionError": -41.4,
+            "predictionError": -41.3,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": -18.4
@@ -1051,7 +1049,7 @@
               "name": "Palmer",
               "team": "CHE",
               "position": "MID",
-              "projectedXp": 5.7,
+              "projectedXp": 5.8,
               "actualPoints": 13,
               "played": true
             },
@@ -1065,14 +1063,13 @@
               "played": true
             },
             {
-              "id": 567,
-              "name": "Horníček",
-              "team": "NEW",
+              "id": 351,
+              "name": "Mamardashvili",
+              "team": "LIV",
               "position": "GKP",
-              "projectedXp": 2.9,
-              "actualPoints": 1,
-              "played": true,
-              "subbedIn": true
+              "projectedXp": 5.9,
+              "actualPoints": 0,
+              "played": false
             },
             {
               "id": 398,
@@ -1104,14 +1101,13 @@
           ],
           "bench": [
             {
-              "id": 351,
-              "name": "Mamardashvili",
-              "team": "LIV",
+              "id": 443,
+              "name": "Gillespie",
+              "team": "NEW",
               "position": "GKP",
-              "projectedXp": 5.9,
+              "projectedXp": 2.9,
               "actualPoints": 0,
-              "played": false,
-              "subbedIn": false
+              "played": false
             },
             {
               "id": 100,
@@ -1161,26 +1157,26 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 97.2,
-            "median": 97,
-            "p10": 72,
+            "meanXp": 97.8,
+            "median": 98,
+            "p10": 71,
             "p90": 124,
             "confidenceInterval": [
-              72,
+              71,
               124
             ],
-            "haulProbability": 88,
+            "haulProbability": 87,
             "blankProbability": 0,
-            "variance": 438.4
+            "variance": 419
           },
           "reconciliation": {
-            "actualScore": 57,
-            "netActualScore": 57,
+            "actualScore": 56,
+            "netActualScore": 56,
             "insideConfidenceInterval": false,
-            "predictionError": -40.2,
+            "predictionError": -41.8,
             "haulAchieved": false,
             "blankOccurred": false,
-            "alphaVsTemplate": -18.4
+            "alphaVsTemplate": -19.4
           }
         }
       }
@@ -1353,23 +1349,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 92.5,
-            "median": 92,
-            "p10": 69,
-            "p90": 119,
+            "meanXp": 91.5,
+            "median": 90,
+            "p10": 68,
+            "p90": 117,
             "confidenceInterval": [
-              69,
-              119
+              68,
+              117
             ],
-            "haulProbability": 82,
+            "haulProbability": 80,
             "blankProbability": 0,
-            "variance": 428.6
+            "variance": 396.9
           },
           "reconciliation": {
             "actualScore": 86,
             "netActualScore": 86,
             "insideConfidenceInterval": true,
-            "predictionError": -6.5,
+            "predictionError": -5.5,
             "haulAchieved": true,
             "blankOccurred": false,
             "alphaVsTemplate": -36.8
@@ -1540,23 +1536,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 93.4,
-            "median": 93,
-            "p10": 68,
-            "p90": 120,
+            "meanXp": 93.2,
+            "median": 92,
+            "p10": 69,
+            "p90": 119,
             "confidenceInterval": [
-              68,
-              120
+              69,
+              119
             ],
             "haulProbability": 82,
             "blankProbability": 0,
-            "variance": 431.9
+            "variance": 406.3
           },
           "reconciliation": {
             "actualScore": 96,
             "netActualScore": 96,
             "insideConfidenceInterval": true,
-            "predictionError": 2.6,
+            "predictionError": 2.8,
             "haulAchieved": true,
             "blankOccurred": false,
             "alphaVsTemplate": -26.8
@@ -1595,11 +1591,21 @@
               "played": true
             },
             {
+              "id": 593,
+              "name": "Dedić",
+              "team": "NEW",
+              "position": "DEF",
+              "projectedXp": 5.4,
+              "actualPoints": 11,
+              "played": true,
+              "subbedIn": true
+            },
+            {
               "id": 154,
               "name": "Palmer",
               "team": "CHE",
               "position": "MID",
-              "projectedXp": 6.3,
+              "projectedXp": 6.4,
               "actualPoints": 7,
               "played": true
             },
@@ -1613,23 +1619,14 @@
               "played": true
             },
             {
-              "id": 473,
-              "name": "Aina",
+              "id": 167,
+              "name": "Delap",
               "team": "NFO",
-              "position": "DEF",
-              "projectedXp": 2.6,
-              "actualPoints": 0,
+              "position": "FWD",
+              "projectedXp": 3.8,
+              "actualPoints": 1,
               "played": true,
               "subbedIn": true
-            },
-            {
-              "id": 282,
-              "name": "Giles",
-              "team": "HUL",
-              "position": "DEF",
-              "projectedXp": 6.9,
-              "actualPoints": 6,
-              "played": true
             },
             {
               "id": 379,
@@ -1663,7 +1660,7 @@
               "name": "Mbeumo",
               "team": "MUN",
               "position": "MID",
-              "projectedXp": 7,
+              "projectedXp": 7.1,
               "actualPoints": 11,
               "played": true
             }
@@ -1685,16 +1682,8 @@
               "position": "MID",
               "projectedXp": 6.3,
               "actualPoints": 0,
-              "played": false
-            },
-            {
-              "id": 223,
-              "name": "Mateta",
-              "team": "CRY",
-              "position": "FWD",
-              "projectedXp": 5.6,
-              "actualPoints": 0,
-              "played": false
+              "played": false,
+              "subbedIn": false
             },
             {
               "id": 656,
@@ -1705,6 +1694,15 @@
               "actualPoints": 0,
               "played": false,
               "subbedIn": false
+            },
+            {
+              "id": 473,
+              "name": "Aina",
+              "team": "NFO",
+              "position": "DEF",
+              "projectedXp": 2.6,
+              "actualPoints": 0,
+              "played": true
             }
           ],
           "captain": {
@@ -1725,26 +1723,26 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 80.7,
-            "median": 80,
-            "p10": 60,
-            "p90": 103,
+            "meanXp": 79.5,
+            "median": 79,
+            "p10": 58,
+            "p90": 102,
             "confidenceInterval": [
-              60,
-              103
+              58,
+              102
             ],
-            "haulProbability": 64,
-            "blankProbability": 0,
-            "variance": 303.5
+            "haulProbability": 58,
+            "blankProbability": 1,
+            "variance": 309
           },
           "reconciliation": {
-            "actualScore": 120,
-            "netActualScore": 120,
+            "actualScore": 126,
+            "netActualScore": 126,
             "insideConfidenceInterval": false,
-            "predictionError": 39.3,
+            "predictionError": 46.5,
             "haulAchieved": true,
             "blankOccurred": false,
-            "alphaVsTemplate": -2.8
+            "alphaVsTemplate": 3.2
           }
         },
         "template_safe": {
@@ -1766,7 +1764,7 @@
               "name": "Palmer",
               "team": "CHE",
               "position": "MID",
-              "projectedXp": 6.3,
+              "projectedXp": 6.4,
               "actualPoints": 7,
               "played": true
             },
@@ -1780,20 +1778,20 @@
               "played": false
             },
             {
-              "id": 282,
-              "name": "Giles",
-              "team": "HUL",
-              "position": "DEF",
-              "projectedXp": 6.9,
-              "actualPoints": 6,
-              "played": true
-            },
-            {
               "id": 340,
               "name": "Gelhardt",
               "team": "HUL",
               "position": "MID",
               "projectedXp": 7.5,
+              "actualPoints": 0,
+              "played": false
+            },
+            {
+              "id": 638,
+              "name": "Norton-Cuffy",
+              "team": "HUL",
+              "position": "DEF",
+              "projectedXp": 6.8,
               "actualPoints": 0,
               "played": false
             },
@@ -1911,23 +1909,23 @@
             "meanXp": 91.2,
             "median": 91,
             "p10": 67,
-            "p90": 116,
+            "p90": 117,
             "confidenceInterval": [
               67,
-              116
+              117
             ],
-            "haulProbability": 81,
+            "haulProbability": 80,
             "blankProbability": 0,
-            "variance": 375.4
+            "variance": 406.3
           },
           "reconciliation": {
-            "actualScore": 85,
-            "netActualScore": 85,
+            "actualScore": 79,
+            "netActualScore": 79,
             "insideConfidenceInterval": true,
-            "predictionError": -6.2,
+            "predictionError": -12.2,
             "haulAchieved": true,
             "blankOccurred": false,
-            "alphaVsTemplate": -37.8
+            "alphaVsTemplate": -43.8
           }
         },
         "template_aggressive": {
@@ -1959,7 +1957,7 @@
               "name": "Palmer",
               "team": "CHE",
               "position": "MID",
-              "projectedXp": 6.3,
+              "projectedXp": 6.4,
               "actualPoints": 7,
               "played": true
             },
@@ -2093,23 +2091,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 93.2,
-            "median": 93,
+            "meanXp": 92.7,
+            "median": 92,
             "p10": 68,
             "p90": 118,
             "confidenceInterval": [
               68,
               118
             ],
-            "haulProbability": 84,
+            "haulProbability": 82,
             "blankProbability": 0,
-            "variance": 375.4
+            "variance": 390.7
           },
           "reconciliation": {
             "actualScore": 79,
             "netActualScore": 79,
             "insideConfidenceInterval": true,
-            "predictionError": -14.2,
+            "predictionError": -13.7,
             "haulAchieved": true,
             "blankOccurred": false,
             "alphaVsTemplate": -43.8
@@ -2134,7 +2132,7 @@
               "name": "Palmer",
               "team": "CHE",
               "position": "MID",
-              "projectedXp": 6.3,
+              "projectedXp": 6.4,
               "actualPoints": 7,
               "played": true
             },
@@ -2148,20 +2146,20 @@
               "played": false
             },
             {
-              "id": 282,
-              "name": "Giles",
-              "team": "HUL",
-              "position": "DEF",
-              "projectedXp": 6.9,
-              "actualPoints": 6,
-              "played": true
-            },
-            {
               "id": 340,
               "name": "Gelhardt",
               "team": "HUL",
               "position": "MID",
               "projectedXp": 7.5,
+              "actualPoints": 0,
+              "played": false
+            },
+            {
+              "id": 638,
+              "name": "Norton-Cuffy",
+              "team": "HUL",
+              "position": "DEF",
+              "projectedXp": 6.8,
               "actualPoints": 0,
               "played": false
             },
@@ -2276,26 +2274,26 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 91.7,
-            "median": 91,
-            "p10": 68,
-            "p90": 118,
+            "meanXp": 89.1,
+            "median": 88,
+            "p10": 65,
+            "p90": 114,
             "confidenceInterval": [
-              68,
-              118
+              65,
+              114
             ],
-            "haulProbability": 80,
+            "haulProbability": 76,
             "blankProbability": 0,
-            "variance": 422.2
+            "variance": 378.4
           },
           "reconciliation": {
-            "actualScore": 85,
-            "netActualScore": 85,
+            "actualScore": 79,
+            "netActualScore": 79,
             "insideConfidenceInterval": true,
-            "predictionError": -6.7,
+            "predictionError": -10.1,
             "haulAchieved": true,
             "blankOccurred": false,
-            "alphaVsTemplate": -37.8
+            "alphaVsTemplate": -43.8
           }
         }
       }
@@ -2468,23 +2466,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 99.8,
-            "median": 99,
-            "p10": 73,
-            "p90": 126,
+            "meanXp": 100.8,
+            "median": 101,
+            "p10": 74,
+            "p90": 129,
             "confidenceInterval": [
-              73,
-              126
+              74,
+              129
             ],
             "haulProbability": 89,
             "blankProbability": 0,
-            "variance": 419
+            "variance": 485.4
           },
           "reconciliation": {
             "actualScore": 48,
             "netActualScore": 48,
             "insideConfidenceInterval": false,
-            "predictionError": -51.8,
+            "predictionError": -52.8,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": -12.4
@@ -2653,23 +2651,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 98.6,
+            "meanXp": 99.2,
             "median": 98,
             "p10": 73,
-            "p90": 124,
+            "p90": 126,
             "confidenceInterval": [
               73,
-              124
+              126
             ],
-            "haulProbability": 88,
+            "haulProbability": 89,
             "blankProbability": 0,
-            "variance": 393.8
+            "variance": 438.4
           },
           "reconciliation": {
             "actualScore": 60,
             "netActualScore": 60,
             "insideConfidenceInterval": false,
-            "predictionError": -38.6,
+            "predictionError": -39.2,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": -0.4
@@ -2696,6 +2694,15 @@
               "position": "DEF",
               "projectedXp": 6.1,
               "actualPoints": 4,
+              "played": true
+            },
+            {
+              "id": 605,
+              "name": "Yalcouyé",
+              "team": "BHA",
+              "position": "MID",
+              "projectedXp": 5.5,
+              "actualPoints": 2,
               "played": true
             },
             {
@@ -2770,15 +2777,6 @@
               "projectedXp": 6.8,
               "actualPoints": 2,
               "played": true
-            },
-            {
-              "id": 473,
-              "name": "Aina",
-              "team": "NFO",
-              "position": "DEF",
-              "projectedXp": 7.7,
-              "actualPoints": 1,
-              "played": true
             }
           ],
           "bench": [
@@ -2793,30 +2791,30 @@
               "subbedIn": false
             },
             {
-              "id": 605,
-              "name": "Yalcouyé",
-              "team": "BHA",
+              "id": 290,
+              "name": "Slater",
+              "team": "HUL",
               "position": "MID",
-              "projectedXp": 5.5,
-              "actualPoints": 2,
+              "projectedXp": 4.8,
+              "actualPoints": 3,
               "played": true
             },
             {
-              "id": 289,
-              "name": "Crooks",
-              "team": "HUL",
-              "position": "MID",
-              "projectedXp": 4.6,
-              "actualPoints": 0,
-              "played": false
+              "id": 305,
+              "name": "Davis",
+              "team": "IPS",
+              "position": "DEF",
+              "projectedXp": 2.6,
+              "actualPoints": 1,
+              "played": true
             },
             {
-              "id": 175,
-              "name": "van Ewijk",
+              "id": 176,
+              "name": "Dasilva",
               "team": "COV",
               "position": "DEF",
               "projectedXp": 2.1,
-              "actualPoints": 3,
+              "actualPoints": 2,
               "played": true
             }
           ],
@@ -2838,26 +2836,26 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 86.8,
-            "median": 86,
+            "meanXp": 85.5,
+            "median": 85,
             "p10": 62,
-            "p90": 112,
+            "p90": 110,
             "confidenceInterval": [
               62,
-              112
+              110
             ],
-            "haulProbability": 71,
+            "haulProbability": 70,
             "blankProbability": 1,
-            "variance": 387.6
+            "variance": 366.4
           },
           "reconciliation": {
-            "actualScore": 71,
-            "netActualScore": 71,
+            "actualScore": 72,
+            "netActualScore": 72,
             "insideConfidenceInterval": true,
-            "predictionError": -15.8,
+            "predictionError": -13.5,
             "haulAchieved": false,
             "blankOccurred": false,
-            "alphaVsTemplate": 10.6
+            "alphaVsTemplate": 11.6
           }
         },
         "template_safe": {
@@ -2889,16 +2887,7 @@
               "name": "Palmer",
               "team": "CHE",
               "position": "MID",
-              "projectedXp": 4.1,
-              "actualPoints": 1,
-              "played": true
-            },
-            {
-              "id": 258,
-              "name": "Castagne",
-              "team": "FUL",
-              "position": "DEF",
-              "projectedXp": 8.2,
+              "projectedXp": 4.2,
               "actualPoints": 1,
               "played": true
             },
@@ -2936,6 +2925,15 @@
               "position": "FWD",
               "projectedXp": 11.1,
               "actualPoints": 9,
+              "played": true
+            },
+            {
+              "id": 449,
+              "name": "Hall",
+              "team": "NEW",
+              "position": "DEF",
+              "projectedXp": 5.8,
+              "actualPoints": 4,
               "played": true
             },
             {
@@ -2987,12 +2985,12 @@
               "subbedIn": false
             },
             {
-              "id": 449,
-              "name": "Hall",
-              "team": "NEW",
+              "id": 305,
+              "name": "Davis",
+              "team": "IPS",
               "position": "DEF",
-              "projectedXp": 5.8,
-              "actualPoints": 4,
+              "projectedXp": 2.6,
+              "actualPoints": 1,
               "played": true
             },
             {
@@ -3023,26 +3021,26 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 97.8,
-            "median": 98,
-            "p10": 73,
-            "p90": 123,
+            "meanXp": 93.9,
+            "median": 94,
+            "p10": 68,
+            "p90": 120,
             "confidenceInterval": [
-              73,
-              123
+              68,
+              120
             ],
-            "haulProbability": 88,
-            "blankProbability": 0,
-            "variance": 387.6
+            "haulProbability": 83,
+            "blankProbability": 1,
+            "variance": 415.8
           },
           "reconciliation": {
-            "actualScore": 47,
-            "netActualScore": 47,
+            "actualScore": 50,
+            "netActualScore": 50,
             "insideConfidenceInterval": false,
-            "predictionError": -50.8,
+            "predictionError": -43.9,
             "haulAchieved": false,
             "blankOccurred": false,
-            "alphaVsTemplate": -13.4
+            "alphaVsTemplate": -10.4
           }
         },
         "template_aggressive": {
@@ -3074,7 +3072,7 @@
               "name": "Palmer",
               "team": "CHE",
               "position": "MID",
-              "projectedXp": 4.1,
+              "projectedXp": 4.2,
               "actualPoints": 1,
               "played": true
             },
@@ -3208,23 +3206,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 94.4,
-            "median": 93,
+            "meanXp": 95.9,
+            "median": 95,
             "p10": 71,
-            "p90": 120,
+            "p90": 122,
             "confidenceInterval": [
               71,
-              120
+              122
             ],
-            "haulProbability": 84,
+            "haulProbability": 87,
             "blankProbability": 0,
-            "variance": 400
+            "variance": 415.8
           },
           "reconciliation": {
             "actualScore": 47,
             "netActualScore": 47,
             "insideConfidenceInterval": false,
-            "predictionError": -47.4,
+            "predictionError": -48.9,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": -13.4
@@ -3259,16 +3257,7 @@
               "name": "Palmer",
               "team": "CHE",
               "position": "MID",
-              "projectedXp": 4.1,
-              "actualPoints": 1,
-              "played": true
-            },
-            {
-              "id": 258,
-              "name": "Castagne",
-              "team": "FUL",
-              "position": "DEF",
-              "projectedXp": 8.2,
+              "projectedXp": 4.2,
               "actualPoints": 1,
               "played": true
             },
@@ -3306,6 +3295,15 @@
               "position": "FWD",
               "projectedXp": 11.1,
               "actualPoints": 9,
+              "played": true
+            },
+            {
+              "id": 449,
+              "name": "Hall",
+              "team": "NEW",
+              "position": "DEF",
+              "projectedXp": 5.8,
+              "actualPoints": 4,
               "played": true
             },
             {
@@ -3357,12 +3355,12 @@
               "subbedIn": false
             },
             {
-              "id": 449,
-              "name": "Hall",
-              "team": "NEW",
+              "id": 305,
+              "name": "Davis",
+              "team": "IPS",
               "position": "DEF",
-              "projectedXp": 5.8,
-              "actualPoints": 4,
+              "projectedXp": 2.6,
+              "actualPoints": 1,
               "played": true
             },
             {
@@ -3393,26 +3391,26 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 96.2,
-            "median": 96,
-            "p10": 69,
-            "p90": 122,
+            "meanXp": 93.3,
+            "median": 93,
+            "p10": 68,
+            "p90": 118,
             "confidenceInterval": [
-              69,
-              122
+              68,
+              118
             ],
-            "haulProbability": 86,
+            "haulProbability": 83,
             "blankProbability": 0,
-            "variance": 406.3
+            "variance": 372.4
           },
           "reconciliation": {
-            "actualScore": 47,
-            "netActualScore": 47,
+            "actualScore": 50,
+            "netActualScore": 50,
             "insideConfidenceInterval": false,
-            "predictionError": -49.2,
+            "predictionError": -43.3,
             "haulAchieved": false,
             "blankOccurred": false,
-            "alphaVsTemplate": -13.4
+            "alphaVsTemplate": -10.4
           }
         }
       }
@@ -3583,23 +3581,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 91,
-            "median": 91,
+            "meanXp": 89.4,
+            "median": 89,
             "p10": 68,
-            "p90": 115,
+            "p90": 112,
             "confidenceInterval": [
               68,
-              115
+              112
             ],
-            "haulProbability": 81,
+            "haulProbability": 80,
             "blankProbability": 0,
-            "variance": 351.6
+            "variance": 311.7
           },
           "reconciliation": {
             "actualScore": 57,
             "netActualScore": 57,
             "insideConfidenceInterval": false,
-            "predictionError": -34,
+            "predictionError": -32.4,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": -42.2
@@ -3766,23 +3764,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 89.4,
+            "meanXp": 89,
             "median": 89,
-            "p10": 67,
+            "p10": 65,
             "p90": 112,
             "confidenceInterval": [
-              67,
+              65,
               112
             ],
-            "haulProbability": 80,
+            "haulProbability": 77,
             "blankProbability": 0,
-            "variance": 311.7
+            "variance": 322.9
           },
           "reconciliation": {
             "actualScore": 50,
             "netActualScore": 50,
             "insideConfidenceInterval": false,
-            "predictionError": -39.4,
+            "predictionError": -39,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": -49.2
@@ -3949,23 +3947,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 89.7,
-            "median": 89,
-            "p10": 67,
-            "p90": 114,
+            "meanXp": 89.3,
+            "median": 90,
+            "p10": 66,
+            "p90": 111,
             "confidenceInterval": [
-              67,
-              114
+              66,
+              111
             ],
-            "haulProbability": 80,
+            "haulProbability": 79,
             "blankProbability": 0,
-            "variance": 360.4
+            "variance": 287.4
           },
           "reconciliation": {
             "actualScore": 99,
             "netActualScore": 99,
             "insideConfidenceInterval": true,
-            "predictionError": 9.3,
+            "predictionError": 9.7,
             "haulAchieved": true,
             "blankOccurred": false,
             "alphaVsTemplate": -0.2
@@ -4022,6 +4020,16 @@
               "played": true
             },
             {
+              "id": 110,
+              "name": "Rushworth",
+              "team": "COV",
+              "position": "GKP",
+              "projectedXp": 5.6,
+              "actualPoints": 0,
+              "played": true,
+              "subbedIn": true
+            },
+            {
               "id": 305,
               "name": "Davis",
               "team": "IPS",
@@ -4065,26 +4073,18 @@
               "projectedXp": 6.5,
               "actualPoints": 8,
               "played": true
-            },
-            {
-              "id": 496,
-              "name": "Kinsky",
-              "team": "TOT",
-              "position": "GKP",
-              "projectedXp": 6,
-              "actualPoints": 7,
-              "played": true
             }
           ],
           "bench": [
             {
-              "id": 110,
-              "name": "Rushworth",
-              "team": "COV",
+              "id": 300,
+              "name": "Walton",
+              "team": "IPS",
               "position": "GKP",
-              "projectedXp": 5.6,
+              "projectedXp": 5.8,
               "actualPoints": 0,
-              "played": true
+              "played": false,
+              "subbedIn": false
             },
             {
               "id": 201,
@@ -4132,26 +4132,26 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 87,
-            "median": 86,
-            "p10": 66,
-            "p90": 111,
+            "meanXp": 88.2,
+            "median": 88,
+            "p10": 65,
+            "p90": 112,
             "confidenceInterval": [
-              66,
-              111
+              65,
+              112
             ],
             "haulProbability": 76,
             "blankProbability": 0,
-            "variance": 351.6
+            "variance": 345.7
           },
           "reconciliation": {
-            "actualScore": 70,
-            "netActualScore": 70,
-            "insideConfidenceInterval": true,
-            "predictionError": -17,
+            "actualScore": 63,
+            "netActualScore": 63,
+            "insideConfidenceInterval": false,
+            "predictionError": -25.2,
             "haulAchieved": false,
             "blankOccurred": false,
-            "alphaVsTemplate": -29.2
+            "alphaVsTemplate": -36.2
           }
         },
         "template_aggressive": {
@@ -4315,23 +4315,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 88.6,
-            "median": 88,
-            "p10": 67,
-            "p90": 112,
+            "meanXp": 87.5,
+            "median": 87,
+            "p10": 65,
+            "p90": 111,
             "confidenceInterval": [
-              67,
-              112
+              65,
+              111
             ],
-            "haulProbability": 80,
+            "haulProbability": 77,
             "blankProbability": 0,
-            "variance": 334.2
+            "variance": 337.1
           },
           "reconciliation": {
             "actualScore": 48,
             "netActualScore": 48,
             "insideConfidenceInterval": false,
-            "predictionError": -40.6,
+            "predictionError": -39.5,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": -51.2
@@ -4388,6 +4388,16 @@
               "played": true
             },
             {
+              "id": 110,
+              "name": "Rushworth",
+              "team": "COV",
+              "position": "GKP",
+              "projectedXp": 5.6,
+              "actualPoints": 0,
+              "played": true,
+              "subbedIn": true
+            },
+            {
               "id": 305,
               "name": "Davis",
               "team": "IPS",
@@ -4431,26 +4441,18 @@
               "projectedXp": 6.5,
               "actualPoints": 8,
               "played": true
-            },
-            {
-              "id": 496,
-              "name": "Kinsky",
-              "team": "TOT",
-              "position": "GKP",
-              "projectedXp": 6,
-              "actualPoints": 7,
-              "played": true
             }
           ],
           "bench": [
             {
-              "id": 110,
-              "name": "Rushworth",
-              "team": "COV",
+              "id": 300,
+              "name": "Walton",
+              "team": "IPS",
               "position": "GKP",
-              "projectedXp": 5.6,
+              "projectedXp": 5.8,
               "actualPoints": 0,
-              "played": true
+              "played": false,
+              "subbedIn": false
             },
             {
               "id": 399,
@@ -4498,26 +4500,26 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 87.5,
-            "median": 87,
+            "meanXp": 88.4,
+            "median": 88,
             "p10": 65,
-            "p90": 110,
+            "p90": 112,
             "confidenceInterval": [
               65,
-              110
+              112
             ],
-            "haulProbability": 75,
+            "haulProbability": 77,
             "blankProbability": 0,
-            "variance": 309
+            "variance": 339.9
           },
           "reconciliation": {
-            "actualScore": 72,
-            "netActualScore": 72,
+            "actualScore": 65,
+            "netActualScore": 65,
             "insideConfidenceInterval": true,
-            "predictionError": -15.5,
+            "predictionError": -23.4,
             "haulAchieved": false,
             "blankOccurred": false,
-            "alphaVsTemplate": -27.2
+            "alphaVsTemplate": -34.2
           }
         }
       }
@@ -4692,23 +4694,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 95.5,
-            "median": 95,
+            "meanXp": 95,
+            "median": 94,
             "p10": 71,
-            "p90": 120,
+            "p90": 121,
             "confidenceInterval": [
               71,
-              120
+              121
             ],
-            "haulProbability": 87,
+            "haulProbability": 85,
             "blankProbability": 0,
-            "variance": 366.4
+            "variance": 412.6
           },
           "reconciliation": {
             "actualScore": 61,
             "netActualScore": 61,
             "insideConfidenceInterval": false,
-            "predictionError": -34.5,
+            "predictionError": -34,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": 18.9
@@ -4879,23 +4881,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 89.6,
+            "meanXp": 89.7,
             "median": 89,
-            "p10": 69,
-            "p90": 112,
+            "p10": 67,
+            "p90": 111,
             "confidenceInterval": [
-              69,
-              112
+              67,
+              111
             ],
-            "haulProbability": 81,
+            "haulProbability": 83,
             "blankProbability": 0,
-            "variance": 306.3
+            "variance": 276.9
           },
           "reconciliation": {
             "actualScore": 53,
             "netActualScore": 53,
             "insideConfidenceInterval": false,
-            "predictionError": -36.6,
+            "predictionError": -36.7,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": 10.9
@@ -5066,23 +5068,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 82.4,
-            "median": 82,
+            "meanXp": 82,
+            "median": 81,
             "p10": 60,
             "p90": 106,
             "confidenceInterval": [
               60,
               106
             ],
-            "haulProbability": 67,
+            "haulProbability": 66,
             "blankProbability": 1,
-            "variance": 339.9
+            "variance": 351.6
           },
           "reconciliation": {
             "actualScore": 63,
             "netActualScore": 63,
             "insideConfidenceInterval": true,
-            "predictionError": -19.4,
+            "predictionError": -19,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": 20.9
@@ -5215,12 +5217,12 @@
               "subbedIn": false
             },
             {
-              "id": 279,
-              "name": "Ajayi",
+              "id": 282,
+              "name": "Giles",
               "team": "HUL",
               "position": "DEF",
               "projectedXp": 5.3,
-              "actualPoints": 1,
+              "actualPoints": 0,
               "played": true
             },
             {
@@ -5251,23 +5253,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 90.4,
-            "median": 90,
+            "meanXp": 90.1,
+            "median": 89,
             "p10": 67,
-            "p90": 115,
+            "p90": 114,
             "confidenceInterval": [
               67,
-              115
+              114
             ],
             "haulProbability": 79,
             "blankProbability": 0,
-            "variance": 369.4
+            "variance": 348.6
           },
           "reconciliation": {
             "actualScore": 45,
             "netActualScore": 45,
             "insideConfidenceInterval": false,
-            "predictionError": -45.4,
+            "predictionError": -45.1,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": 2.9
@@ -5438,23 +5440,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 91,
+            "meanXp": 90.8,
             "median": 91,
-            "p10": 67,
+            "p10": 68,
             "p90": 115,
             "confidenceInterval": [
-              67,
+              68,
               115
             ],
-            "haulProbability": 82,
+            "haulProbability": 81,
             "blankProbability": 0,
-            "variance": 351.6
+            "variance": 357.4
           },
           "reconciliation": {
             "actualScore": 53,
             "netActualScore": 53,
             "insideConfidenceInterval": false,
-            "predictionError": -38,
+            "predictionError": -37.8,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": 10.9
@@ -5587,12 +5589,12 @@
               "subbedIn": false
             },
             {
-              "id": 279,
-              "name": "Ajayi",
+              "id": 282,
+              "name": "Giles",
               "team": "HUL",
               "position": "DEF",
               "projectedXp": 5.3,
-              "actualPoints": 1,
+              "actualPoints": 0,
               "played": true
             },
             {
@@ -5623,23 +5625,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 90.6,
-            "median": 90,
-            "p10": 68,
+            "meanXp": 90,
+            "median": 89,
+            "p10": 67,
             "p90": 114,
             "confidenceInterval": [
-              68,
+              67,
               114
             ],
-            "haulProbability": 80,
+            "haulProbability": 78,
             "blankProbability": 0,
-            "variance": 334.2
+            "variance": 351.6
           },
           "reconciliation": {
             "actualScore": 45,
             "netActualScore": 45,
             "insideConfidenceInterval": false,
-            "predictionError": -45.6,
+            "predictionError": -45,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": 2.9
@@ -5815,23 +5817,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 88,
-            "median": 87,
-            "p10": 66,
-            "p90": 112,
+            "meanXp": 88.2,
+            "median": 88,
+            "p10": 67,
+            "p90": 111,
             "confidenceInterval": [
-              66,
-              112
+              67,
+              111
             ],
             "haulProbability": 77,
             "blankProbability": 0,
-            "variance": 351.6
+            "variance": 317.3
           },
           "reconciliation": {
             "actualScore": 75,
             "netActualScore": 75,
             "insideConfidenceInterval": true,
-            "predictionError": -13,
+            "predictionError": -13.2,
             "haulAchieved": true,
             "blankOccurred": false,
             "alphaVsTemplate": -7.2
@@ -6004,23 +6006,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 84.7,
-            "median": 84,
+            "meanXp": 83.5,
+            "median": 83,
             "p10": 64,
-            "p90": 106,
+            "p90": 105,
             "confidenceInterval": [
               64,
-              106
+              105
             ],
-            "haulProbability": 73,
-            "blankProbability": 1,
-            "variance": 276.9
+            "haulProbability": 70,
+            "blankProbability": 0,
+            "variance": 282.1
           },
           "reconciliation": {
             "actualScore": 48,
             "netActualScore": 48,
             "insideConfidenceInterval": false,
-            "predictionError": -36.7,
+            "predictionError": -35.5,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": -34.2
@@ -6187,23 +6189,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 81.7,
-            "median": 82,
-            "p10": 60,
-            "p90": 104,
+            "meanXp": 81.4,
+            "median": 81,
+            "p10": 61,
+            "p90": 102,
             "confidenceInterval": [
-              60,
-              104
+              61,
+              102
             ],
-            "haulProbability": 67,
+            "haulProbability": 68,
             "blankProbability": 1,
-            "variance": 303.5
+            "variance": 259
           },
           "reconciliation": {
             "actualScore": 83,
             "netActualScore": 83,
             "insideConfidenceInterval": true,
-            "predictionError": 1.3,
+            "predictionError": 1.6,
             "haulAchieved": true,
             "blankOccurred": false,
             "alphaVsTemplate": 0.8
@@ -6370,23 +6372,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 85.7,
+            "meanXp": 85.2,
             "median": 86,
-            "p10": 63,
-            "p90": 107,
+            "p10": 64,
+            "p90": 105,
             "confidenceInterval": [
-              63,
-              107
+              64,
+              105
             ],
-            "haulProbability": 75,
+            "haulProbability": 73,
             "blankProbability": 0,
-            "variance": 276.9
+            "variance": 239.3
           },
           "reconciliation": {
             "actualScore": 67,
             "netActualScore": 67,
             "insideConfidenceInterval": true,
-            "predictionError": -18.7,
+            "predictionError": -18.2,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": -15.2
@@ -6555,23 +6557,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 83.7,
-            "median": 83,
-            "p10": 63,
+            "meanXp": 84.4,
+            "median": 84,
+            "p10": 65,
             "p90": 105,
             "confidenceInterval": [
-              63,
+              65,
               105
             ],
             "haulProbability": 71,
             "blankProbability": 0,
-            "variance": 276.9
+            "variance": 259
           },
           "reconciliation": {
             "actualScore": 64,
             "netActualScore": 64,
-            "insideConfidenceInterval": true,
-            "predictionError": -19.7,
+            "insideConfidenceInterval": false,
+            "predictionError": -20.4,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": -18.2
@@ -6738,23 +6740,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 86.5,
-            "median": 87,
-            "p10": 64,
-            "p90": 109,
+            "meanXp": 86,
+            "median": 85,
+            "p10": 65,
+            "p90": 108,
             "confidenceInterval": [
-              64,
-              109
+              65,
+              108
             ],
-            "haulProbability": 73,
+            "haulProbability": 75,
             "blankProbability": 0,
-            "variance": 309
+            "variance": 295.4
           },
           "reconciliation": {
             "actualScore": 67,
             "netActualScore": 67,
             "insideConfidenceInterval": true,
-            "predictionError": -19.5,
+            "predictionError": -19,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": -15.2
@@ -6930,23 +6932,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 92.2,
-            "median": 93,
-            "p10": 68,
-            "p90": 117,
+            "meanXp": 92.9,
+            "median": 92,
+            "p10": 67,
+            "p90": 118,
             "confidenceInterval": [
-              68,
-              117
+              67,
+              118
             ],
             "haulProbability": 83,
             "blankProbability": 0,
-            "variance": 375.4
+            "variance": 384.5
           },
           "reconciliation": {
             "actualScore": 93,
             "netActualScore": 93,
             "insideConfidenceInterval": true,
-            "predictionError": 0.8,
+            "predictionError": 0.1,
             "haulAchieved": true,
             "blankOccurred": false,
             "alphaVsTemplate": 34.5
@@ -7113,23 +7115,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 90.1,
-            "median": 90,
-            "p10": 65,
+            "meanXp": 91,
+            "median": 91,
+            "p10": 67,
             "p90": 115,
             "confidenceInterval": [
-              65,
+              67,
               115
             ],
-            "haulProbability": 78,
+            "haulProbability": 80,
             "blankProbability": 0,
-            "variance": 378.4
+            "variance": 351.6
           },
           "reconciliation": {
             "actualScore": 88,
             "netActualScore": 88,
             "insideConfidenceInterval": true,
-            "predictionError": -2.1,
+            "predictionError": -3,
             "haulAchieved": true,
             "blankOccurred": false,
             "alphaVsTemplate": 29.5
@@ -7296,23 +7298,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 83.6,
-            "median": 83,
-            "p10": 59,
-            "p90": 109,
+            "meanXp": 83.5,
+            "median": 82,
+            "p10": 61,
+            "p90": 108,
             "confidenceInterval": [
-              59,
-              109
+              61,
+              108
             ],
-            "haulProbability": 67,
+            "haulProbability": 68,
             "blankProbability": 0,
-            "variance": 393.8
+            "variance": 366.4
           },
           "reconciliation": {
             "actualScore": 76,
             "netActualScore": 76,
             "insideConfidenceInterval": true,
-            "predictionError": -7.6,
+            "predictionError": -7.5,
             "haulAchieved": true,
             "blankOccurred": false,
             "alphaVsTemplate": 17.5
@@ -7481,23 +7483,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 89,
-            "median": 89,
-            "p10": 63,
+            "meanXp": 88.9,
+            "median": 88,
+            "p10": 64,
             "p90": 113,
             "confidenceInterval": [
-              63,
+              64,
               113
             ],
-            "haulProbability": 76,
+            "haulProbability": 77,
             "blankProbability": 0,
-            "variance": 351.6
+            "variance": 354.5
           },
           "reconciliation": {
             "actualScore": 83,
             "netActualScore": 83,
             "insideConfidenceInterval": true,
-            "predictionError": -6,
+            "predictionError": -5.9,
             "haulAchieved": true,
             "blankOccurred": false,
             "alphaVsTemplate": 24.5
@@ -7664,23 +7666,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 87.6,
+            "meanXp": 87.9,
             "median": 87,
-            "p10": 66,
-            "p90": 111,
+            "p10": 62,
+            "p90": 113,
             "confidenceInterval": [
-              66,
-              111
+              62,
+              113
             ],
-            "haulProbability": 77,
+            "haulProbability": 75,
             "blankProbability": 0,
-            "variance": 334.2
+            "variance": 384.5
           },
           "reconciliation": {
             "actualScore": 82,
             "netActualScore": 82,
             "insideConfidenceInterval": true,
-            "predictionError": -5.6,
+            "predictionError": -5.9,
             "haulAchieved": true,
             "blankOccurred": false,
             "alphaVsTemplate": 23.5
@@ -7849,23 +7851,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 89,
-            "median": 88,
-            "p10": 65,
-            "p90": 114,
+            "meanXp": 88.7,
+            "median": 89,
+            "p10": 66,
+            "p90": 111,
             "confidenceInterval": [
-              65,
-              114
+              66,
+              111
             ],
-            "haulProbability": 77,
+            "haulProbability": 78,
             "blankProbability": 0,
-            "variance": 381.5
+            "variance": 303.5
           },
           "reconciliation": {
             "actualScore": 83,
             "netActualScore": 83,
             "insideConfidenceInterval": true,
-            "predictionError": -6,
+            "predictionError": -5.7,
             "haulAchieved": true,
             "blankOccurred": false,
             "alphaVsTemplate": 24.5
