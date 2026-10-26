@@ -14574,3 +14574,35 @@ git diff --staged --quiet || (git commit -m "Auto-sync: Pulled latest FPL data f
 - You **never** have to run `vercel --prod` locally again.
 - No local terminal commands, no CLI clutter, and no wasted build minutes.
 - When you click "Run workflow" in GitHub Actions (or when the 04:00 UTC schedule fires), GitHub and Vercel handle the entire pipeline end-to-end in the cloud.
+
+
+### User (Turn 157)
+
+But I still have to run git pull offline right to update offline directory?
+
+### Assistant (Turn 157)
+
+**Yes, exactly right!**
+
+Here is the exact distinction between what happens in the **Cloud** vs. what happens on your **Local Machine**:
+
+---
+
+### 1. In the Cloud (Zero Effort Needed)
+- When GitHub Actions runs `sync-data.yml`, it pushes commits directly to `github.com/QuisTech/fpl-planner` (`origin/main`).
+- Vercel automatically pulls from GitHub and updates your live web app ([https://fpl-planner-liard.vercel.app](https://fpl-planner-liard.vercel.app)).
+- If you are just viewing or using the live website on your browser or phone, **everything is already updated in the cloud automatically**.
+
+---
+
+### 2. On Your Local Machine (Running `git pull`)
+- Git on your personal computer (`c:\Users\USER\Documents\fpl-planner`) does **not** automatically download remote commits in the background.
+- Therefore, **whenever you sit down at your PC to develop or code**:
+  - Run `git pull` to fetch the latest snapshots, CSVs, fixtures, and audit ledgers that GitHub Actions committed to the remote repository.
+  - This ensures your local `localhost` environment matches production and prevents any git merge conflicts when you make new code edits.
+
+---
+
+### Rule of Thumb
+- **Browsing the live app?** -> You don't need to do anything.
+- **Opening your IDE / terminal to work locally?** -> Run `git pull` first.
