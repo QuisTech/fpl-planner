@@ -14482,3 +14482,58 @@ Because Vercel canceled all 5 consecutive auto-sync deployments, your live Verce
 2. **Triggering Live Production Deployment Now**:
    - We are committing and pushing this change to `main` without `[skip ci]`.
    - Vercel will immediately pick up this commit, build the fresh production bundle, and purge its edge cache.
+
+
+### User (Turn 155)
+
+Okay does it work with vercel prod or with CI/CD?
+
+### Assistant (Turn 155)
+
+**It works completely automatically with CI/CD!** You do **NOT** need to run manual `vercel --prod` commands.
+
+Here is the exact step-by-step breakdown of how the automated pipeline works:
+
+---
+
+### 1. How the Automated CI/CD Pipeline Works
+
+Your Vercel production app ([https://fpl-planner-liard.vercel.app](https://fpl-planner-liard.vercel.app)) is natively connected to the `main` branch of your GitHub repository (`QuisTech/fpl-planner`).
+
+Whenever data updates:
+
+```
+1. fpl-admin finishes GW finalizer (or daily scrape)
+                    │
+                    ▼
+2. sync-data.yml runs on GitHub Actions
+   (Copies data/ snapshots, fixtures & CSVs)
+                    │
+                    ▼
+3. sync-data.yml commits & pushes to origin/main:
+   "Auto-sync: Pulled latest FPL data from QuisTech/fpl-admin"
+   (WITHOUT [skip ci])
+                    │
+                    ▼
+4. GitHub fires a Webhook to Vercel
+                    │
+                    ▼
+5. Vercel checks vercel.json ignoreCommand:
+   Does commit message contain "[skip ci]"? NO! -> PROCEED TO BUILD
+                    │
+                    ▼
+6. Vercel automatically runs Vite production build,
+   packages serverless API, purges Edge CDN cache,
+   and deploys live to Production!
+```
+
+---
+
+### 2. When Does `vercel --prod` Come In?
+
+- **Normal Day-to-Day Operation**: **100% Automated CI/CD**. Every time `sync-data.yml` runs (either on its 04:00 UTC schedule or when you manually click "Run workflow" in GitHub Actions), Vercel automatically deploys the updated dashboard.
+- **Manual `vercel --prod` CLI**: This is purely an **emergency/instant bypass tool**. If you ever edit something locally on your computer and want to force an immediate deployment in 30 seconds without pushing to GitHub first, you can run `npx vercel --prod --yes`.
+
+### 3. Summary
+
+You are now fully automated. Whenever `sync-data.yml` runs in `fpl-planner`, Vercel's automated CI/CD will immediately build and deploy the fresh data straight to production with zero manual intervention required.
