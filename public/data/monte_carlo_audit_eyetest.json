@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T08:54:22.141Z",
+  "generatedAt": "2026-10-26T09:36:22.477Z",
   "fuel": "eye-test",
   "startGw": 1,
   "endGw": 7,
@@ -17,34 +17,34 @@
     "totalEvaluated": 42,
     "ciHitCount": 18,
     "ciCoverageRate": 42.9,
-    "avgAbsoluteError": 28.2,
-    "haulHitCount": 12,
+    "avgAbsoluteError": 29.9,
+    "haulHitCount": 13,
     "haulPredictedCount": 42
   },
   "cumulativeTotals": {
     "quant_safe": {
-      "totalPoints": 419,
-      "netAlpha": -121.6
+      "totalPoints": 425,
+      "netAlpha": -115.6
     },
     "quant_aggressive": {
-      "totalPoints": 426,
-      "netAlpha": -114.6
+      "totalPoints": 380,
+      "netAlpha": -160.6
     },
     "quant_value": {
-      "totalPoints": 560,
-      "netAlpha": 19.4
+      "totalPoints": 570,
+      "netAlpha": 29.4
     },
     "template_safe": {
-      "totalPoints": 446,
-      "netAlpha": -94.6
+      "totalPoints": 435,
+      "netAlpha": -105.6
     },
     "template_aggressive": {
-      "totalPoints": 414,
-      "netAlpha": -126.6
+      "totalPoints": 394,
+      "netAlpha": -146.6
     },
     "template_value": {
-      "totalPoints": 446,
-      "netAlpha": -94.6
+      "totalPoints": 428,
+      "netAlpha": -112.6
     }
   },
   "gameweeks": [
@@ -69,23 +69,23 @@
               "subbedIn": true
             },
             {
-              "id": 123,
-              "name": "Hinshelwood",
-              "team": "BHA",
-              "position": "MID",
-              "projectedXp": 8.3,
-              "actualPoints": 16,
-              "played": true
-            },
-            {
-              "id": 200,
-              "name": "Lacroix",
+              "id": 144,
+              "name": "Gusto",
               "team": "CHE",
               "position": "DEF",
-              "projectedXp": 5.7,
-              "actualPoints": 6,
+              "projectedXp": 5.5,
+              "actualPoints": 1,
               "played": true,
               "subbedIn": true
+            },
+            {
+              "id": 594,
+              "name": "David",
+              "team": "BHA",
+              "position": "FWD",
+              "projectedXp": 6.6,
+              "actualPoints": 0,
+              "played": false
             },
             {
               "id": 614,
@@ -97,13 +97,13 @@
               "played": false
             },
             {
-              "id": 223,
-              "name": "Mateta",
-              "team": "CRY",
-              "position": "FWD",
+              "id": 617,
+              "name": "Cho",
+              "team": "HUL",
+              "position": "MID",
               "projectedXp": 6.5,
-              "actualPoints": 2,
-              "played": true
+              "actualPoints": 0,
+              "played": false
             },
             {
               "id": 350,
@@ -125,12 +125,12 @@
               "played": true
             },
             {
-              "id": 398,
-              "name": "Foden",
+              "id": 391,
+              "name": "Gvardiol",
               "team": "MCI",
-              "position": "MID",
-              "projectedXp": 7.4,
-              "actualPoints": 1,
+              "position": "DEF",
+              "projectedXp": 6.3,
+              "actualPoints": 9,
               "played": true
             },
             {
@@ -143,21 +143,21 @@
               "played": true
             },
             {
+              "id": 426,
+              "name": "B.Fernandes",
+              "team": "MUN",
+              "position": "MID",
+              "projectedXp": 8.3,
+              "actualPoints": 2,
+              "played": true
+            },
+            {
               "id": 201,
               "name": "Muñoz",
               "team": "NFO",
               "position": "DEF",
               "projectedXp": 6.9,
               "actualPoints": 0,
-              "played": true
-            },
-            {
-              "id": 480,
-              "name": "Gibbs-White",
-              "team": "NFO",
-              "position": "MID",
-              "projectedXp": 6.8,
-              "actualPoints": 2,
               "played": true
             }
           ],
@@ -183,6 +183,15 @@
               "subbedIn": false
             },
             {
+              "id": 340,
+              "name": "Gelhardt",
+              "team": "HUL",
+              "position": "MID",
+              "projectedXp": 5.9,
+              "actualPoints": 0,
+              "played": false
+            },
+            {
               "id": 126,
               "name": "O'Riley",
               "team": "BHA",
@@ -191,15 +200,6 @@
               "actualPoints": 0,
               "played": false,
               "subbedIn": false
-            },
-            {
-              "id": 448,
-              "name": "Burn",
-              "team": "NEW",
-              "position": "DEF",
-              "projectedXp": 2.9,
-              "actualPoints": 0,
-              "played": false
             }
           ],
           "captain": {
@@ -221,26 +221,26 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 98.3,
-            "median": 98,
+            "meanXp": 97.4,
+            "median": 97,
             "p10": 73,
-            "p90": 125,
+            "p90": 123,
             "confidenceInterval": [
               73,
-              125
+              123
             ],
             "haulProbability": 88,
             "blankProbability": 0,
-            "variance": 435.1
+            "variance": 400
           },
           "reconciliation": {
-            "actualScore": 37,
-            "netActualScore": 37,
+            "actualScore": 22,
+            "netActualScore": 22,
             "insideConfidenceInterval": false,
-            "predictionError": -61.3,
+            "predictionError": -75.4,
             "haulAchieved": false,
             "blankOccurred": true,
-            "alphaVsTemplate": -38.4
+            "alphaVsTemplate": -53.4
           }
         },
         "quant_aggressive": {
@@ -259,13 +259,14 @@
               "subbedIn": true
             },
             {
-              "id": 123,
-              "name": "Hinshelwood",
-              "team": "BHA",
-              "position": "MID",
-              "projectedXp": 8.3,
-              "actualPoints": 16,
-              "played": true
+              "id": 144,
+              "name": "Gusto",
+              "team": "CHE",
+              "position": "DEF",
+              "projectedXp": 5.5,
+              "actualPoints": 1,
+              "played": true,
+              "subbedIn": true
             },
             {
               "id": 200,
@@ -287,20 +288,20 @@
               "played": false
             },
             {
-              "id": 223,
-              "name": "Mateta",
-              "team": "CRY",
-              "position": "FWD",
-              "projectedXp": 6.5,
-              "actualPoints": 2,
-              "played": true
-            },
-            {
               "id": 340,
               "name": "Gelhardt",
               "team": "HUL",
               "position": "MID",
-              "projectedXp": 5.5,
+              "projectedXp": 5.9,
+              "actualPoints": 0,
+              "played": false
+            },
+            {
+              "id": 617,
+              "name": "Cho",
+              "team": "HUL",
+              "position": "MID",
+              "projectedXp": 6.5,
               "actualPoints": 0,
               "played": false
             },
@@ -383,27 +384,27 @@
               "subbedIn": false
             },
             {
-              "id": 448,
-              "name": "Burn",
-              "team": "NEW",
-              "position": "DEF",
-              "projectedXp": 2.9,
+              "id": 594,
+              "name": "David",
+              "team": "BHA",
+              "position": "FWD",
+              "projectedXp": 6.6,
               "actualPoints": 0,
-              "played": false
+              "played": false,
+              "subbedIn": false
             }
           ],
           "captain": {
-            "id": 123,
-            "name": "Hinshelwood",
-            "actualPoints": 16,
-            "multiplier": 2,
-            "originalName": "Carvalho",
-            "isVcPromoted": true
+            "id": 100,
+            "name": "Carvalho",
+            "actualPoints": 0,
+            "multiplier": 1,
+            "isVcPromoted": false
           },
           "viceCaptain": {
-            "id": 123,
-            "name": "Hinshelwood",
-            "actualPoints": 16
+            "id": 126,
+            "name": "O'Riley",
+            "actualPoints": 0
           },
           "transfers": {
             "in": [],
@@ -411,26 +412,26 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 93.8,
+            "meanXp": 92.8,
             "median": 93,
-            "p10": 68,
+            "p10": 67,
             "p90": 119,
             "confidenceInterval": [
-              68,
+              67,
               119
             ],
-            "haulProbability": 83,
+            "haulProbability": 81,
             "blankProbability": 0,
-            "variance": 387.6
+            "variance": 419
           },
           "reconciliation": {
-            "actualScore": 49,
-            "netActualScore": 49,
+            "actualScore": 16,
+            "netActualScore": 16,
             "insideConfidenceInterval": false,
-            "predictionError": -44.8,
+            "predictionError": -76.8,
             "haulAchieved": false,
-            "blankOccurred": false,
-            "alphaVsTemplate": -26.4
+            "blankOccurred": true,
+            "alphaVsTemplate": -59.4
           }
         },
         "quant_value": {
@@ -476,13 +477,14 @@
               "subbedIn": true
             },
             {
-              "id": 126,
-              "name": "O'Riley",
-              "team": "BHA",
-              "position": "MID",
-              "projectedXp": 8.2,
-              "actualPoints": 0,
-              "played": false
+              "id": 144,
+              "name": "Gusto",
+              "team": "CHE",
+              "position": "DEF",
+              "projectedXp": 5.5,
+              "actualPoints": 1,
+              "played": true,
+              "subbedIn": true
             },
             {
               "id": 614,
@@ -534,7 +536,7 @@
               "name": "Mbeumo",
               "team": "MUN",
               "position": "MID",
-              "projectedXp": 7.5,
+              "projectedXp": 7.4,
               "actualPoints": 2,
               "played": true
             }
@@ -569,13 +571,14 @@
               "played": false
             },
             {
-              "id": 448,
-              "name": "Burn",
-              "team": "NEW",
-              "position": "DEF",
-              "projectedXp": 2.9,
+              "id": 126,
+              "name": "O'Riley",
+              "team": "BHA",
+              "position": "MID",
+              "projectedXp": 8.2,
               "actualPoints": 0,
-              "played": false
+              "played": false,
+              "subbedIn": false
             }
           ],
           "captain": {
@@ -597,26 +600,26 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 87.8,
-            "median": 86,
-            "p10": 63,
+            "meanXp": 88.7,
+            "median": 88,
+            "p10": 64,
             "p90": 115,
             "confidenceInterval": [
-              63,
+              64,
               115
             ],
-            "haulProbability": 74,
-            "blankProbability": 1,
-            "variance": 451.6
+            "haulProbability": 76,
+            "blankProbability": 0,
+            "variance": 422.2
           },
           "reconciliation": {
-            "actualScore": 58,
-            "netActualScore": 58,
+            "actualScore": 59,
+            "netActualScore": 59,
             "insideConfidenceInterval": false,
-            "predictionError": -29.8,
+            "predictionError": -29.7,
             "haulAchieved": false,
             "blankOccurred": false,
-            "alphaVsTemplate": -17.4
+            "alphaVsTemplate": -16.4
           }
         },
         "template_safe": {
@@ -644,15 +647,6 @@
               "subbedIn": true
             },
             {
-              "id": 123,
-              "name": "Hinshelwood",
-              "team": "BHA",
-              "position": "MID",
-              "projectedXp": 8.3,
-              "actualPoints": 16,
-              "played": true
-            },
-            {
               "id": 144,
               "name": "Gusto",
               "team": "CHE",
@@ -672,6 +666,15 @@
               "played": false
             },
             {
+              "id": 614,
+              "name": "Hadjam",
+              "team": "BHA",
+              "position": "DEF",
+              "projectedXp": 6.8,
+              "actualPoints": 0,
+              "played": false
+            },
+            {
               "id": 154,
               "name": "Palmer",
               "team": "CHE",
@@ -681,13 +684,14 @@
               "played": true
             },
             {
-              "id": 351,
-              "name": "Mamardashvili",
+              "id": 350,
+              "name": "A.Becker",
               "team": "LIV",
               "position": "GKP",
               "projectedXp": 5.9,
-              "actualPoints": 0,
-              "played": false
+              "actualPoints": 2,
+              "played": true,
+              "subbedIn": true
             },
             {
               "id": 387,
@@ -728,13 +732,14 @@
           ],
           "bench": [
             {
-              "id": 443,
-              "name": "Gillespie",
-              "team": "NEW",
+              "id": 351,
+              "name": "Mamardashvili",
+              "team": "LIV",
               "position": "GKP",
-              "projectedXp": 2.9,
+              "projectedXp": 5.9,
               "actualPoints": 0,
-              "played": false
+              "played": false,
+              "subbedIn": false
             },
             {
               "id": 100,
@@ -747,6 +752,15 @@
               "subbedIn": false
             },
             {
+              "id": 617,
+              "name": "Cho",
+              "team": "HUL",
+              "position": "MID",
+              "projectedXp": 6.5,
+              "actualPoints": 0,
+              "played": false
+            },
+            {
               "id": 126,
               "name": "O'Riley",
               "team": "BHA",
@@ -755,15 +769,6 @@
               "actualPoints": 0,
               "played": false,
               "subbedIn": false
-            },
-            {
-              "id": 448,
-              "name": "Burn",
-              "team": "NEW",
-              "position": "DEF",
-              "projectedXp": 2.9,
-              "actualPoints": 0,
-              "played": false
             }
           ],
           "captain": {
@@ -784,26 +789,26 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 94.4,
-            "median": 93,
-            "p10": 70,
-            "p90": 119,
+            "meanXp": 94.3,
+            "median": 94,
+            "p10": 69,
+            "p90": 120,
             "confidenceInterval": [
-              70,
-              119
+              69,
+              120
             ],
-            "haulProbability": 86,
+            "haulProbability": 83,
             "blankProbability": 0,
-            "variance": 369.4
+            "variance": 403.1
           },
           "reconciliation": {
-            "actualScore": 48,
-            "netActualScore": 48,
+            "actualScore": 34,
+            "netActualScore": 34,
             "insideConfidenceInterval": false,
-            "predictionError": -46.4,
+            "predictionError": -60.3,
             "haulAchieved": false,
-            "blankOccurred": false,
-            "alphaVsTemplate": -27.4
+            "blankOccurred": true,
+            "alphaVsTemplate": -41.4
           }
         },
         "template_aggressive": {
@@ -831,13 +836,14 @@
               "subbedIn": true
             },
             {
-              "id": 123,
-              "name": "Hinshelwood",
-              "team": "BHA",
-              "position": "MID",
-              "projectedXp": 8.3,
-              "actualPoints": 16,
-              "played": true
+              "id": 144,
+              "name": "Gusto",
+              "team": "CHE",
+              "position": "DEF",
+              "projectedXp": 5.5,
+              "actualPoints": 1,
+              "played": true,
+              "subbedIn": true
             },
             {
               "id": 379,
@@ -868,13 +874,23 @@
               "played": true
             },
             {
-              "id": 223,
-              "name": "Mateta",
-              "team": "CRY",
-              "position": "FWD",
+              "id": 617,
+              "name": "Cho",
+              "team": "HUL",
+              "position": "MID",
               "projectedXp": 6.5,
+              "actualPoints": 0,
+              "played": false
+            },
+            {
+              "id": 350,
+              "name": "A.Becker",
+              "team": "LIV",
+              "position": "GKP",
+              "projectedXp": 5.9,
               "actualPoints": 2,
-              "played": true
+              "played": true,
+              "subbedIn": true
             },
             {
               "id": 387,
@@ -902,26 +918,18 @@
               "projectedXp": 10.1,
               "actualPoints": 2,
               "played": true
-            },
-            {
-              "id": 590,
-              "name": "Benda",
-              "team": "NFO",
-              "position": "GKP",
-              "projectedXp": 5.8,
-              "actualPoints": 0,
-              "played": false
             }
           ],
           "bench": [
             {
-              "id": 443,
-              "name": "Gillespie",
-              "team": "NEW",
+              "id": 351,
+              "name": "Mamardashvili",
+              "team": "LIV",
               "position": "GKP",
-              "projectedXp": 2.9,
+              "projectedXp": 5.9,
               "actualPoints": 0,
-              "played": false
+              "played": false,
+              "subbedIn": false
             },
             {
               "id": 100,
@@ -944,13 +952,14 @@
               "subbedIn": false
             },
             {
-              "id": 448,
-              "name": "Burn",
-              "team": "NEW",
-              "position": "DEF",
-              "projectedXp": 2.9,
+              "id": 594,
+              "name": "David",
+              "team": "BHA",
+              "position": "FWD",
+              "projectedXp": 6.6,
               "actualPoints": 0,
-              "played": false
+              "played": false,
+              "subbedIn": false
             }
           ],
           "captain": {
@@ -972,26 +981,26 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 94.9,
-            "median": 95,
-            "p10": 71,
+            "meanXp": 94,
+            "median": 93,
+            "p10": 70,
             "p90": 121,
             "confidenceInterval": [
-              71,
+              70,
               121
             ],
-            "haulProbability": 86,
+            "haulProbability": 84,
             "blankProbability": 0,
-            "variance": 415.8
+            "variance": 444.9
           },
           "reconciliation": {
-            "actualScore": 49,
-            "netActualScore": 49,
+            "actualScore": 34,
+            "netActualScore": 34,
             "insideConfidenceInterval": false,
-            "predictionError": -45.9,
+            "predictionError": -60,
             "haulAchieved": false,
-            "blankOccurred": false,
-            "alphaVsTemplate": -26.4
+            "blankOccurred": true,
+            "alphaVsTemplate": -41.4
           }
         },
         "template_value": {
@@ -1019,15 +1028,6 @@
               "subbedIn": true
             },
             {
-              "id": 123,
-              "name": "Hinshelwood",
-              "team": "BHA",
-              "position": "MID",
-              "projectedXp": 8.3,
-              "actualPoints": 16,
-              "played": true
-            },
-            {
               "id": 144,
               "name": "Gusto",
               "team": "CHE",
@@ -1047,6 +1047,15 @@
               "played": false
             },
             {
+              "id": 614,
+              "name": "Hadjam",
+              "team": "BHA",
+              "position": "DEF",
+              "projectedXp": 6.8,
+              "actualPoints": 0,
+              "played": false
+            },
+            {
               "id": 154,
               "name": "Palmer",
               "team": "CHE",
@@ -1056,13 +1065,14 @@
               "played": true
             },
             {
-              "id": 351,
-              "name": "Mamardashvili",
+              "id": 350,
+              "name": "A.Becker",
               "team": "LIV",
               "position": "GKP",
               "projectedXp": 5.9,
-              "actualPoints": 0,
-              "played": false
+              "actualPoints": 2,
+              "played": true,
+              "subbedIn": true
             },
             {
               "id": 387,
@@ -1103,11 +1113,21 @@
           ],
           "bench": [
             {
-              "id": 443,
-              "name": "Gillespie",
-              "team": "NEW",
+              "id": 351,
+              "name": "Mamardashvili",
+              "team": "LIV",
               "position": "GKP",
-              "projectedXp": 2.9,
+              "projectedXp": 5.9,
+              "actualPoints": 0,
+              "played": false,
+              "subbedIn": false
+            },
+            {
+              "id": 617,
+              "name": "Cho",
+              "team": "HUL",
+              "position": "MID",
+              "projectedXp": 6.5,
               "actualPoints": 0,
               "played": false
             },
@@ -1130,15 +1150,6 @@
               "actualPoints": 0,
               "played": false,
               "subbedIn": false
-            },
-            {
-              "id": 448,
-              "name": "Burn",
-              "team": "NEW",
-              "position": "DEF",
-              "projectedXp": 2.9,
-              "actualPoints": 0,
-              "played": false
             }
           ],
           "captain": {
@@ -1159,26 +1170,26 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 95.7,
-            "median": 95,
-            "p10": 71,
-            "p90": 122,
+            "meanXp": 94,
+            "median": 93,
+            "p10": 70,
+            "p90": 119,
             "confidenceInterval": [
-              71,
-              122
+              70,
+              119
             ],
-            "haulProbability": 86,
+            "haulProbability": 85,
             "blankProbability": 0,
-            "variance": 422.2
+            "variance": 381.5
           },
           "reconciliation": {
-            "actualScore": 48,
-            "netActualScore": 48,
+            "actualScore": 34,
+            "netActualScore": 34,
             "insideConfidenceInterval": false,
-            "predictionError": -47.7,
+            "predictionError": -60,
             "haulAchieved": false,
-            "blankOccurred": false,
-            "alphaVsTemplate": -27.4
+            "blankOccurred": true,
+            "alphaVsTemplate": -41.4
           }
         }
       }
@@ -1236,7 +1247,7 @@
               "name": "Gelhardt",
               "team": "HUL",
               "position": "MID",
-              "projectedXp": 7.5,
+              "projectedXp": 8,
               "actualPoints": 0,
               "played": false
             },
@@ -1245,7 +1256,7 @@
               "name": "Isak",
               "team": "LIV",
               "position": "FWD",
-              "projectedXp": 6.4,
+              "projectedXp": 6.3,
               "actualPoints": 8,
               "played": true
             },
@@ -1310,753 +1321,7 @@
               "name": "Hinshelwood",
               "team": "BHA",
               "position": "MID",
-              "projectedXp": 6.3,
-              "actualPoints": 0,
-              "played": false,
-              "subbedIn": false
-            },
-            {
-              "id": 656,
-              "name": "Mfuni",
-              "team": "COV",
-              "position": "DEF",
-              "projectedXp": 8.2,
-              "actualPoints": 0,
-              "played": false,
-              "subbedIn": false
-            },
-            {
-              "id": 201,
-              "name": "Muñoz",
-              "team": "NFO",
-              "position": "DEF",
-              "projectedXp": 2.6,
-              "actualPoints": 0,
-              "played": false
-            }
-          ],
-          "captain": {
-            "id": 411,
-            "name": "Haaland",
-            "actualPoints": 13,
-            "multiplier": 2,
-            "isVcPromoted": false
-          },
-          "viceCaptain": {
-            "id": 340,
-            "name": "Gelhardt",
-            "actualPoints": 0
-          },
-          "transfers": {
-            "in": [],
-            "out": [],
-            "hitCost": 0
-          },
-          "monteCarlo": {
-            "meanXp": 91.7,
-            "median": 92,
-            "p10": 68,
-            "p90": 116,
-            "confidenceInterval": [
-              68,
-              116
-            ],
-            "haulProbability": 81,
-            "blankProbability": 0,
-            "variance": 360.4
-          },
-          "reconciliation": {
-            "actualScore": 91,
-            "netActualScore": 91,
-            "insideConfidenceInterval": true,
-            "predictionError": -0.7,
-            "haulAchieved": true,
-            "blankOccurred": false,
-            "alphaVsTemplate": -31.8
-          }
-        },
-        "quant_aggressive": {
-          "mode": "aggressive",
-          "scenario": "quant",
-          "scenarioLabel": "Quant Optimal",
-          "startingXI": [
-            {
-              "id": 593,
-              "name": "Dedić",
-              "team": "NEW",
-              "position": "DEF",
-              "projectedXp": 5.4,
-              "actualPoints": 11,
-              "played": true,
-              "subbedIn": true
-            },
-            {
-              "id": 483,
-              "name": "Ndoye",
-              "team": "NFO",
-              "position": "MID",
-              "projectedXp": 3.7,
-              "actualPoints": 9,
-              "played": true,
-              "subbedIn": true
-            },
-            {
-              "id": 223,
-              "name": "Mateta",
-              "team": "CRY",
-              "position": "FWD",
-              "projectedXp": 5.6,
-              "actualPoints": 0,
-              "played": false
-            },
-            {
-              "id": 279,
-              "name": "Ajayi",
-              "team": "HUL",
-              "position": "DEF",
-              "projectedXp": 6.9,
-              "actualPoints": 6,
-              "played": true
-            },
-            {
-              "id": 340,
-              "name": "Gelhardt",
-              "team": "HUL",
-              "position": "MID",
-              "projectedXp": 7.5,
-              "actualPoints": 0,
-              "played": false
-            },
-            {
-              "id": 379,
-              "name": "Isak",
-              "team": "LIV",
-              "position": "FWD",
-              "projectedXp": 6.4,
-              "actualPoints": 8,
-              "played": true
-            },
-            {
-              "id": 387,
-              "name": "O'Reilly",
-              "team": "MCI",
-              "position": "DEF",
-              "projectedXp": 7.3,
-              "actualPoints": 2,
-              "played": true
-            },
-            {
-              "id": 398,
-              "name": "Foden",
-              "team": "MCI",
-              "position": "MID",
-              "projectedXp": 7.8,
-              "actualPoints": 9,
-              "played": true
-            },
-            {
-              "id": 411,
-              "name": "Haaland",
-              "team": "MCI",
-              "position": "FWD",
-              "projectedXp": 10.5,
-              "actualPoints": 13,
-              "played": true
-            },
-            {
-              "id": 426,
-              "name": "B.Fernandes",
-              "team": "MUN",
-              "position": "MID",
-              "projectedXp": 8,
-              "actualPoints": 23,
-              "played": true
-            },
-            {
-              "id": 567,
-              "name": "Horníček",
-              "team": "NEW",
-              "position": "GKP",
-              "projectedXp": 5.9,
-              "actualPoints": 7,
-              "played": true
-            }
-          ],
-          "bench": [
-            {
-              "id": 110,
-              "name": "Rushworth",
-              "team": "COV",
-              "position": "GKP",
-              "projectedXp": 5.4,
-              "actualPoints": 2,
-              "played": true
-            },
-            {
-              "id": 123,
-              "name": "Hinshelwood",
-              "team": "BHA",
-              "position": "MID",
-              "projectedXp": 6.3,
-              "actualPoints": 0,
-              "played": false,
-              "subbedIn": false
-            },
-            {
-              "id": 656,
-              "name": "Mfuni",
-              "team": "COV",
-              "position": "DEF",
-              "projectedXp": 8.2,
-              "actualPoints": 0,
-              "played": false,
-              "subbedIn": false
-            },
-            {
-              "id": 201,
-              "name": "Muñoz",
-              "team": "NFO",
-              "position": "DEF",
-              "projectedXp": 2.6,
-              "actualPoints": 0,
-              "played": false
-            }
-          ],
-          "captain": {
-            "id": 411,
-            "name": "Haaland",
-            "actualPoints": 13,
-            "multiplier": 2,
-            "isVcPromoted": false
-          },
-          "viceCaptain": {
-            "id": 426,
-            "name": "B.Fernandes",
-            "actualPoints": 23
-          },
-          "transfers": {
-            "in": [],
-            "out": [],
-            "hitCost": 0
-          },
-          "monteCarlo": {
-            "meanXp": 94,
-            "median": 94,
-            "p10": 69,
-            "p90": 119,
-            "confidenceInterval": [
-              69,
-              119
-            ],
-            "haulProbability": 85,
-            "blankProbability": 0,
-            "variance": 381.5
-          },
-          "reconciliation": {
-            "actualScore": 101,
-            "netActualScore": 101,
-            "insideConfidenceInterval": true,
-            "predictionError": 7,
-            "haulAchieved": true,
-            "blankOccurred": false,
-            "alphaVsTemplate": -21.8
-          }
-        },
-        "quant_value": {
-          "mode": "value",
-          "scenario": "quant",
-          "scenarioLabel": "Quant Optimal",
-          "startingXI": [
-            {
-              "id": 1,
-              "name": "Raya",
-              "team": "ARS",
-              "position": "GKP",
-              "projectedXp": 3.7,
-              "actualPoints": 6,
-              "played": true
-            },
-            {
-              "id": 8,
-              "name": "Calafiori",
-              "team": "ARS",
-              "position": "DEF",
-              "projectedXp": 3.7,
-              "actualPoints": 11,
-              "played": true
-            },
-            {
-              "id": 10,
-              "name": "White",
-              "team": "ARS",
-              "position": "DEF",
-              "projectedXp": 4.1,
-              "actualPoints": 7,
-              "played": true
-            },
-            {
-              "id": 593,
-              "name": "Dedić",
-              "team": "NEW",
-              "position": "DEF",
-              "projectedXp": 5.4,
-              "actualPoints": 11,
-              "played": true,
-              "subbedIn": true
-            },
-            {
-              "id": 154,
-              "name": "Palmer",
-              "team": "CHE",
-              "position": "MID",
-              "projectedXp": 6.4,
-              "actualPoints": 7,
-              "played": true
-            },
-            {
-              "id": 165,
-              "name": "João Pedro",
-              "team": "CHE",
-              "position": "FWD",
-              "projectedXp": 4.9,
-              "actualPoints": 9,
-              "played": true
-            },
-            {
-              "id": 656,
-              "name": "Mfuni",
-              "team": "COV",
-              "position": "DEF",
-              "projectedXp": 8.2,
-              "actualPoints": 0,
-              "played": false
-            },
-            {
-              "id": 340,
-              "name": "Gelhardt",
-              "team": "HUL",
-              "position": "MID",
-              "projectedXp": 7.5,
-              "actualPoints": 0,
-              "played": false
-            },
-            {
-              "id": 379,
-              "name": "Isak",
-              "team": "LIV",
-              "position": "FWD",
-              "projectedXp": 6.4,
-              "actualPoints": 8,
-              "played": true
-            },
-            {
-              "id": 426,
-              "name": "B.Fernandes",
-              "team": "MUN",
-              "position": "MID",
-              "projectedXp": 8,
-              "actualPoints": 23,
-              "played": true
-            },
-            {
-              "id": 427,
-              "name": "Mbeumo",
-              "team": "MUN",
-              "position": "MID",
-              "projectedXp": 7.1,
-              "actualPoints": 11,
-              "played": true
-            }
-          ],
-          "bench": [
-            {
-              "id": 567,
-              "name": "Horníček",
-              "team": "NEW",
-              "position": "GKP",
-              "projectedXp": 5.9,
-              "actualPoints": 7,
-              "played": true
-            },
-            {
-              "id": 223,
-              "name": "Mateta",
-              "team": "CRY",
-              "position": "FWD",
-              "projectedXp": 5.6,
-              "actualPoints": 0,
-              "played": false
-            },
-            {
-              "id": 123,
-              "name": "Hinshelwood",
-              "team": "BHA",
-              "position": "MID",
-              "projectedXp": 6.3,
-              "actualPoints": 0,
-              "played": false,
-              "subbedIn": false
-            },
-            {
-              "id": 201,
-              "name": "Muñoz",
-              "team": "NFO",
-              "position": "DEF",
-              "projectedXp": 2.6,
-              "actualPoints": 0,
-              "played": false
-            }
-          ],
-          "captain": {
-            "id": 426,
-            "name": "B.Fernandes",
-            "actualPoints": 23,
-            "multiplier": 2,
-            "isVcPromoted": false
-          },
-          "viceCaptain": {
-            "id": 340,
-            "name": "Gelhardt",
-            "actualPoints": 0
-          },
-          "transfers": {
-            "in": [],
-            "out": [],
-            "hitCost": 0
-          },
-          "monteCarlo": {
-            "meanXp": 78.2,
-            "median": 78,
-            "p10": 57,
-            "p90": 101,
-            "confidenceInterval": [
-              57,
-              101
-            ],
-            "haulProbability": 59,
-            "blankProbability": 1,
-            "variance": 317.3
-          },
-          "reconciliation": {
-            "actualScore": 116,
-            "netActualScore": 116,
-            "insideConfidenceInterval": false,
-            "predictionError": 37.8,
-            "haulAchieved": true,
-            "blankOccurred": false,
-            "alphaVsTemplate": -6.8
-          }
-        },
-        "template_safe": {
-          "mode": "safe",
-          "scenario": "template",
-          "scenarioLabel": "Risky Template Shield",
-          "startingXI": [
-            {
-              "id": 8,
-              "name": "Calafiori",
-              "team": "ARS",
-              "position": "DEF",
-              "projectedXp": 3.7,
-              "actualPoints": 11,
-              "played": true
-            },
-            {
-              "id": 480,
-              "name": "Gibbs-White",
-              "team": "NFO",
-              "position": "MID",
-              "projectedXp": 4.4,
-              "actualPoints": 13,
-              "played": true,
-              "subbedIn": true
-            },
-            {
-              "id": 154,
-              "name": "Palmer",
-              "team": "CHE",
-              "position": "MID",
-              "projectedXp": 6.4,
-              "actualPoints": 7,
-              "played": true
-            },
-            {
-              "id": 473,
-              "name": "Aina",
-              "team": "NFO",
-              "position": "DEF",
-              "projectedXp": 2.6,
-              "actualPoints": 0,
-              "played": true,
-              "subbedIn": true
-            },
-            {
-              "id": 340,
-              "name": "Gelhardt",
-              "team": "HUL",
-              "position": "MID",
-              "projectedXp": 7.5,
-              "actualPoints": 0,
-              "played": false
-            },
-            {
-              "id": 379,
-              "name": "Isak",
-              "team": "LIV",
-              "position": "FWD",
-              "projectedXp": 6.4,
-              "actualPoints": 8,
-              "played": true
-            },
-            {
-              "id": 395,
-              "name": "Lewis",
-              "team": "MCI",
-              "position": "DEF",
-              "projectedXp": 6.6,
-              "actualPoints": 0,
-              "played": false
-            },
-            {
-              "id": 398,
-              "name": "Foden",
-              "team": "MCI",
-              "position": "MID",
-              "projectedXp": 7.8,
-              "actualPoints": 9,
-              "played": true
-            },
-            {
-              "id": 411,
-              "name": "Haaland",
-              "team": "MCI",
-              "position": "FWD",
-              "projectedXp": 10.5,
-              "actualPoints": 13,
-              "played": true
-            },
-            {
-              "id": 449,
-              "name": "Hall",
-              "team": "NEW",
-              "position": "DEF",
-              "projectedXp": 5.6,
-              "actualPoints": 11,
-              "played": true
-            },
-            {
-              "id": 567,
-              "name": "Horníček",
-              "team": "NEW",
-              "position": "GKP",
-              "projectedXp": 5.9,
-              "actualPoints": 7,
-              "played": true
-            }
-          ],
-          "bench": [
-            {
-              "id": 110,
-              "name": "Rushworth",
-              "team": "COV",
-              "position": "GKP",
-              "projectedXp": 5.4,
-              "actualPoints": 2,
-              "played": true
-            },
-            {
-              "id": 223,
-              "name": "Mateta",
-              "team": "CRY",
-              "position": "FWD",
-              "projectedXp": 5.6,
-              "actualPoints": 0,
-              "played": false
-            },
-            {
-              "id": 123,
-              "name": "Hinshelwood",
-              "team": "BHA",
-              "position": "MID",
-              "projectedXp": 6.3,
-              "actualPoints": 0,
-              "played": false,
-              "subbedIn": false
-            },
-            {
-              "id": 656,
-              "name": "Mfuni",
-              "team": "COV",
-              "position": "DEF",
-              "projectedXp": 8.2,
-              "actualPoints": 0,
-              "played": false,
-              "subbedIn": false
-            }
-          ],
-          "captain": {
-            "id": 411,
-            "name": "Haaland",
-            "actualPoints": 13,
-            "multiplier": 2,
-            "isVcPromoted": false
-          },
-          "viceCaptain": {
-            "id": 154,
-            "name": "Palmer",
-            "actualPoints": 7
-          },
-          "transfers": {
-            "in": [],
-            "out": [],
-            "hitCost": 0
-          },
-          "monteCarlo": {
-            "meanXp": 88.8,
-            "median": 89,
-            "p10": 65,
-            "p90": 113,
-            "confidenceInterval": [
-              65,
-              113
-            ],
-            "haulProbability": 78,
-            "blankProbability": 0,
-            "variance": 357.4
-          },
-          "reconciliation": {
-            "actualScore": 92,
-            "netActualScore": 92,
-            "insideConfidenceInterval": true,
-            "predictionError": 3.2,
-            "haulAchieved": true,
-            "blankOccurred": false,
-            "alphaVsTemplate": -30.8
-          }
-        },
-        "template_aggressive": {
-          "mode": "aggressive",
-          "scenario": "template",
-          "scenarioLabel": "Risky Template Shield",
-          "startingXI": [
-            {
-              "id": 8,
-              "name": "Calafiori",
-              "team": "ARS",
-              "position": "DEF",
-              "projectedXp": 3.7,
-              "actualPoints": 11,
-              "played": true
-            },
-            {
-              "id": 593,
-              "name": "Dedić",
-              "team": "NEW",
-              "position": "DEF",
-              "projectedXp": 5.4,
-              "actualPoints": 11,
-              "played": true,
-              "subbedIn": true
-            },
-            {
-              "id": 154,
-              "name": "Palmer",
-              "team": "CHE",
-              "position": "MID",
-              "projectedXp": 6.4,
-              "actualPoints": 7,
-              "played": true
-            },
-            {
-              "id": 483,
-              "name": "Ndoye",
-              "team": "NFO",
-              "position": "MID",
-              "projectedXp": 3.7,
-              "actualPoints": 9,
-              "played": true,
-              "subbedIn": true
-            },
-            {
-              "id": 223,
-              "name": "Mateta",
-              "team": "CRY",
-              "position": "FWD",
-              "projectedXp": 5.6,
-              "actualPoints": 0,
-              "played": false
-            },
-            {
-              "id": 340,
-              "name": "Gelhardt",
-              "team": "HUL",
-              "position": "MID",
-              "projectedXp": 7.5,
-              "actualPoints": 0,
-              "played": false
-            },
-            {
-              "id": 379,
-              "name": "Isak",
-              "team": "LIV",
-              "position": "FWD",
-              "projectedXp": 6.4,
-              "actualPoints": 8,
-              "played": true
-            },
-            {
-              "id": 387,
-              "name": "O'Reilly",
-              "team": "MCI",
-              "position": "DEF",
-              "projectedXp": 7.3,
-              "actualPoints": 2,
-              "played": true
-            },
-            {
-              "id": 398,
-              "name": "Foden",
-              "team": "MCI",
-              "position": "MID",
-              "projectedXp": 7.8,
-              "actualPoints": 9,
-              "played": true
-            },
-            {
-              "id": 411,
-              "name": "Haaland",
-              "team": "MCI",
-              "position": "FWD",
-              "projectedXp": 10.5,
-              "actualPoints": 13,
-              "played": true
-            },
-            {
-              "id": 567,
-              "name": "Horníček",
-              "team": "NEW",
-              "position": "GKP",
-              "projectedXp": 5.9,
-              "actualPoints": 7,
-              "played": true
-            }
-          ],
-          "bench": [
-            {
-              "id": 110,
-              "name": "Rushworth",
-              "team": "COV",
-              "position": "GKP",
-              "projectedXp": 5.4,
-              "actualPoints": 2,
-              "played": true
-            },
-            {
-              "id": 123,
-              "name": "Hinshelwood",
-              "team": "BHA",
-              "position": "MID",
-              "projectedXp": 6.3,
+              "projectedXp": 5.2,
               "actualPoints": 0,
               "played": false,
               "subbedIn": false
@@ -2101,28 +1366,400 @@
           "monteCarlo": {
             "meanXp": 90.2,
             "median": 90,
-            "p10": 65,
-            "p90": 116,
+            "p10": 67,
+            "p90": 115,
             "confidenceInterval": [
-              65,
-              116
+              67,
+              115
             ],
-            "haulProbability": 79,
+            "haulProbability": 80,
             "blankProbability": 0,
-            "variance": 406.3
+            "variance": 375.4
+          },
+          "reconciliation": {
+            "actualScore": 91,
+            "netActualScore": 91,
+            "insideConfidenceInterval": true,
+            "predictionError": 0.8,
+            "haulAchieved": true,
+            "blankOccurred": false,
+            "alphaVsTemplate": -31.8
+          }
+        },
+        "quant_aggressive": {
+          "mode": "aggressive",
+          "scenario": "quant",
+          "scenarioLabel": "Quant Optimal",
+          "startingXI": [
+            {
+              "id": 483,
+              "name": "Ndoye",
+              "team": "NFO",
+              "position": "MID",
+              "projectedXp": 3.7,
+              "actualPoints": 9,
+              "played": true,
+              "subbedIn": true
+            },
+            {
+              "id": 656,
+              "name": "Mfuni",
+              "team": "COV",
+              "position": "DEF",
+              "projectedXp": 8.2,
+              "actualPoints": 0,
+              "played": false
+            },
+            {
+              "id": 223,
+              "name": "Mateta",
+              "team": "CRY",
+              "position": "FWD",
+              "projectedXp": 5.6,
+              "actualPoints": 0,
+              "played": false
+            },
+            {
+              "id": 279,
+              "name": "Ajayi",
+              "team": "HUL",
+              "position": "DEF",
+              "projectedXp": 6.9,
+              "actualPoints": 6,
+              "played": true
+            },
+            {
+              "id": 340,
+              "name": "Gelhardt",
+              "team": "HUL",
+              "position": "MID",
+              "projectedXp": 8,
+              "actualPoints": 0,
+              "played": false
+            },
+            {
+              "id": 379,
+              "name": "Isak",
+              "team": "LIV",
+              "position": "FWD",
+              "projectedXp": 6.3,
+              "actualPoints": 8,
+              "played": true
+            },
+            {
+              "id": 387,
+              "name": "O'Reilly",
+              "team": "MCI",
+              "position": "DEF",
+              "projectedXp": 7.3,
+              "actualPoints": 2,
+              "played": true
+            },
+            {
+              "id": 398,
+              "name": "Foden",
+              "team": "MCI",
+              "position": "MID",
+              "projectedXp": 7.8,
+              "actualPoints": 9,
+              "played": true
+            },
+            {
+              "id": 411,
+              "name": "Haaland",
+              "team": "MCI",
+              "position": "FWD",
+              "projectedXp": 10.5,
+              "actualPoints": 13,
+              "played": true
+            },
+            {
+              "id": 426,
+              "name": "B.Fernandes",
+              "team": "MUN",
+              "position": "MID",
+              "projectedXp": 8,
+              "actualPoints": 23,
+              "played": true
+            },
+            {
+              "id": 567,
+              "name": "Horníček",
+              "team": "NEW",
+              "position": "GKP",
+              "projectedXp": 5.9,
+              "actualPoints": 7,
+              "played": true
+            }
+          ],
+          "bench": [
+            {
+              "id": 110,
+              "name": "Rushworth",
+              "team": "COV",
+              "position": "GKP",
+              "projectedXp": 5.4,
+              "actualPoints": 2,
+              "played": true
+            },
+            {
+              "id": 448,
+              "name": "Burn",
+              "team": "NEW",
+              "position": "DEF",
+              "projectedXp": 5.5,
+              "actualPoints": 0,
+              "played": false
+            },
+            {
+              "id": 123,
+              "name": "Hinshelwood",
+              "team": "BHA",
+              "position": "MID",
+              "projectedXp": 5.2,
+              "actualPoints": 0,
+              "played": false,
+              "subbedIn": false
+            },
+            {
+              "id": 201,
+              "name": "Muñoz",
+              "team": "NFO",
+              "position": "DEF",
+              "projectedXp": 2.6,
+              "actualPoints": 0,
+              "played": false
+            }
+          ],
+          "captain": {
+            "id": 411,
+            "name": "Haaland",
+            "actualPoints": 13,
+            "multiplier": 2,
+            "isVcPromoted": false
+          },
+          "viceCaptain": {
+            "id": 426,
+            "name": "B.Fernandes",
+            "actualPoints": 23
+          },
+          "transfers": {
+            "in": [],
+            "out": [],
+            "hitCost": 0
+          },
+          "monteCarlo": {
+            "meanXp": 93.6,
+            "median": 93,
+            "p10": 68,
+            "p90": 120,
+            "confidenceInterval": [
+              68,
+              120
+            ],
+            "haulProbability": 83,
+            "blankProbability": 0,
+            "variance": 425.4
           },
           "reconciliation": {
             "actualScore": 90,
             "netActualScore": 90,
             "insideConfidenceInterval": true,
-            "predictionError": -0.2,
+            "predictionError": -3.6,
             "haulAchieved": true,
             "blankOccurred": false,
             "alphaVsTemplate": -32.8
           }
         },
-        "template_value": {
+        "quant_value": {
           "mode": "value",
+          "scenario": "quant",
+          "scenarioLabel": "Quant Optimal",
+          "startingXI": [
+            {
+              "id": 1,
+              "name": "Raya",
+              "team": "ARS",
+              "position": "GKP",
+              "projectedXp": 3.7,
+              "actualPoints": 6,
+              "played": true
+            },
+            {
+              "id": 8,
+              "name": "Calafiori",
+              "team": "ARS",
+              "position": "DEF",
+              "projectedXp": 3.7,
+              "actualPoints": 11,
+              "played": true
+            },
+            {
+              "id": 10,
+              "name": "White",
+              "team": "ARS",
+              "position": "DEF",
+              "projectedXp": 4.1,
+              "actualPoints": 7,
+              "played": true
+            },
+            {
+              "id": 154,
+              "name": "Palmer",
+              "team": "CHE",
+              "position": "MID",
+              "projectedXp": 6.4,
+              "actualPoints": 7,
+              "played": true
+            },
+            {
+              "id": 165,
+              "name": "João Pedro",
+              "team": "CHE",
+              "position": "FWD",
+              "projectedXp": 4.9,
+              "actualPoints": 9,
+              "played": true
+            },
+            {
+              "id": 593,
+              "name": "Dedić",
+              "team": "NEW",
+              "position": "DEF",
+              "projectedXp": 5.4,
+              "actualPoints": 11,
+              "played": true,
+              "subbedIn": true
+            },
+            {
+              "id": 473,
+              "name": "Aina",
+              "team": "NFO",
+              "position": "DEF",
+              "projectedXp": 2.6,
+              "actualPoints": 0,
+              "played": true,
+              "subbedIn": true
+            },
+            {
+              "id": 379,
+              "name": "Isak",
+              "team": "LIV",
+              "position": "FWD",
+              "projectedXp": 6.3,
+              "actualPoints": 8,
+              "played": true
+            },
+            {
+              "id": 398,
+              "name": "Foden",
+              "team": "MCI",
+              "position": "MID",
+              "projectedXp": 7.8,
+              "actualPoints": 9,
+              "played": true
+            },
+            {
+              "id": 426,
+              "name": "B.Fernandes",
+              "team": "MUN",
+              "position": "MID",
+              "projectedXp": 8,
+              "actualPoints": 23,
+              "played": true
+            },
+            {
+              "id": 427,
+              "name": "Mbeumo",
+              "team": "MUN",
+              "position": "MID",
+              "projectedXp": 7,
+              "actualPoints": 11,
+              "played": true
+            }
+          ],
+          "bench": [
+            {
+              "id": 567,
+              "name": "Horníček",
+              "team": "NEW",
+              "position": "GKP",
+              "projectedXp": 5.9,
+              "actualPoints": 7,
+              "played": true
+            },
+            {
+              "id": 223,
+              "name": "Mateta",
+              "team": "CRY",
+              "position": "FWD",
+              "projectedXp": 5.6,
+              "actualPoints": 0,
+              "played": false
+            },
+            {
+              "id": 656,
+              "name": "Mfuni",
+              "team": "COV",
+              "position": "DEF",
+              "projectedXp": 8.2,
+              "actualPoints": 0,
+              "played": false,
+              "subbedIn": false
+            },
+            {
+              "id": 340,
+              "name": "Gelhardt",
+              "team": "HUL",
+              "position": "MID",
+              "projectedXp": 8,
+              "actualPoints": 0,
+              "played": false,
+              "subbedIn": false
+            }
+          ],
+          "captain": {
+            "id": 426,
+            "name": "B.Fernandes",
+            "actualPoints": 23,
+            "multiplier": 2,
+            "isVcPromoted": false
+          },
+          "viceCaptain": {
+            "id": 340,
+            "name": "Gelhardt",
+            "actualPoints": 0
+          },
+          "transfers": {
+            "in": [],
+            "out": [],
+            "hitCost": 0
+          },
+          "monteCarlo": {
+            "meanXp": 79.5,
+            "median": 80,
+            "p10": 59,
+            "p90": 101,
+            "confidenceInterval": [
+              59,
+              101
+            ],
+            "haulProbability": 61,
+            "blankProbability": 1,
+            "variance": 282.1
+          },
+          "reconciliation": {
+            "actualScore": 125,
+            "netActualScore": 125,
+            "insideConfidenceInterval": false,
+            "predictionError": 45.5,
+            "haulAchieved": true,
+            "blankOccurred": false,
+            "alphaVsTemplate": 2.2
+          }
+        },
+        "template_safe": {
+          "mode": "safe",
           "scenario": "template",
           "scenarioLabel": "Risky Template Shield",
           "startingXI": [
@@ -2136,6 +1773,15 @@
               "played": true
             },
             {
+              "id": 154,
+              "name": "Palmer",
+              "team": "CHE",
+              "position": "MID",
+              "projectedXp": 6.4,
+              "actualPoints": 7,
+              "played": true
+            },
+            {
               "id": 480,
               "name": "Gibbs-White",
               "team": "NFO",
@@ -2144,15 +1790,6 @@
               "actualPoints": 13,
               "played": true,
               "subbedIn": true
-            },
-            {
-              "id": 154,
-              "name": "Palmer",
-              "team": "CHE",
-              "position": "MID",
-              "projectedXp": 6.4,
-              "actualPoints": 7,
-              "played": true
             },
             {
               "id": 473,
@@ -2169,7 +1806,7 @@
               "name": "Gelhardt",
               "team": "HUL",
               "position": "MID",
-              "projectedXp": 7.5,
+              "projectedXp": 8,
               "actualPoints": 0,
               "played": false
             },
@@ -2178,7 +1815,7 @@
               "name": "Isak",
               "team": "LIV",
               "position": "FWD",
-              "projectedXp": 6.4,
+              "projectedXp": 6.3,
               "actualPoints": 8,
               "played": true
             },
@@ -2239,23 +1876,13 @@
               "played": true
             },
             {
-              "id": 223,
-              "name": "Mateta",
-              "team": "CRY",
-              "position": "FWD",
-              "projectedXp": 5.6,
-              "actualPoints": 0,
-              "played": false
-            },
-            {
               "id": 123,
               "name": "Hinshelwood",
               "team": "BHA",
               "position": "MID",
-              "projectedXp": 6.3,
+              "projectedXp": 5.2,
               "actualPoints": 0,
-              "played": false,
-              "subbedIn": false
+              "played": false
             },
             {
               "id": 656,
@@ -2263,6 +1890,16 @@
               "team": "COV",
               "position": "DEF",
               "projectedXp": 8.2,
+              "actualPoints": 0,
+              "played": false,
+              "subbedIn": false
+            },
+            {
+              "id": 223,
+              "name": "Mateta",
+              "team": "CRY",
+              "position": "FWD",
+              "projectedXp": 5.6,
               "actualPoints": 0,
               "played": false,
               "subbedIn": false
@@ -2286,26 +1923,396 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 88.8,
+            "meanXp": 88.2,
             "median": 88,
             "p10": 64,
-            "p90": 115,
+            "p90": 113,
             "confidenceInterval": [
               64,
-              115
+              113
             ],
             "haulProbability": 75,
             "blankProbability": 0,
-            "variance": 419
+            "variance": 375.4
           },
           "reconciliation": {
             "actualScore": 92,
             "netActualScore": 92,
             "insideConfidenceInterval": true,
-            "predictionError": 3.2,
+            "predictionError": 3.8,
             "haulAchieved": true,
             "blankOccurred": false,
             "alphaVsTemplate": -30.8
+          }
+        },
+        "template_aggressive": {
+          "mode": "aggressive",
+          "scenario": "template",
+          "scenarioLabel": "Risky Template Shield",
+          "startingXI": [
+            {
+              "id": 8,
+              "name": "Calafiori",
+              "team": "ARS",
+              "position": "DEF",
+              "projectedXp": 3.7,
+              "actualPoints": 11,
+              "played": true
+            },
+            {
+              "id": 483,
+              "name": "Ndoye",
+              "team": "NFO",
+              "position": "MID",
+              "projectedXp": 3.7,
+              "actualPoints": 9,
+              "played": true,
+              "subbedIn": true
+            },
+            {
+              "id": 154,
+              "name": "Palmer",
+              "team": "CHE",
+              "position": "MID",
+              "projectedXp": 6.4,
+              "actualPoints": 7,
+              "played": true
+            },
+            {
+              "id": 656,
+              "name": "Mfuni",
+              "team": "COV",
+              "position": "DEF",
+              "projectedXp": 8.2,
+              "actualPoints": 0,
+              "played": false
+            },
+            {
+              "id": 223,
+              "name": "Mateta",
+              "team": "CRY",
+              "position": "FWD",
+              "projectedXp": 5.6,
+              "actualPoints": 0,
+              "played": false
+            },
+            {
+              "id": 340,
+              "name": "Gelhardt",
+              "team": "HUL",
+              "position": "MID",
+              "projectedXp": 8,
+              "actualPoints": 0,
+              "played": false
+            },
+            {
+              "id": 379,
+              "name": "Isak",
+              "team": "LIV",
+              "position": "FWD",
+              "projectedXp": 6.3,
+              "actualPoints": 8,
+              "played": true
+            },
+            {
+              "id": 387,
+              "name": "O'Reilly",
+              "team": "MCI",
+              "position": "DEF",
+              "projectedXp": 7.3,
+              "actualPoints": 2,
+              "played": true
+            },
+            {
+              "id": 398,
+              "name": "Foden",
+              "team": "MCI",
+              "position": "MID",
+              "projectedXp": 7.8,
+              "actualPoints": 9,
+              "played": true
+            },
+            {
+              "id": 411,
+              "name": "Haaland",
+              "team": "MCI",
+              "position": "FWD",
+              "projectedXp": 10.5,
+              "actualPoints": 13,
+              "played": true
+            },
+            {
+              "id": 567,
+              "name": "Horníček",
+              "team": "NEW",
+              "position": "GKP",
+              "projectedXp": 5.9,
+              "actualPoints": 7,
+              "played": true
+            }
+          ],
+          "bench": [
+            {
+              "id": 110,
+              "name": "Rushworth",
+              "team": "COV",
+              "position": "GKP",
+              "projectedXp": 5.4,
+              "actualPoints": 2,
+              "played": true
+            },
+            {
+              "id": 448,
+              "name": "Burn",
+              "team": "NEW",
+              "position": "DEF",
+              "projectedXp": 5.5,
+              "actualPoints": 0,
+              "played": false
+            },
+            {
+              "id": 123,
+              "name": "Hinshelwood",
+              "team": "BHA",
+              "position": "MID",
+              "projectedXp": 5.2,
+              "actualPoints": 0,
+              "played": false,
+              "subbedIn": false
+            },
+            {
+              "id": 201,
+              "name": "Muñoz",
+              "team": "NFO",
+              "position": "DEF",
+              "projectedXp": 2.6,
+              "actualPoints": 0,
+              "played": false
+            }
+          ],
+          "captain": {
+            "id": 411,
+            "name": "Haaland",
+            "actualPoints": 13,
+            "multiplier": 2,
+            "isVcPromoted": false
+          },
+          "viceCaptain": {
+            "id": 340,
+            "name": "Gelhardt",
+            "actualPoints": 0
+          },
+          "transfers": {
+            "in": [],
+            "out": [],
+            "hitCost": 0
+          },
+          "monteCarlo": {
+            "meanXp": 89.1,
+            "median": 88,
+            "p10": 66,
+            "p90": 113,
+            "confidenceInterval": [
+              66,
+              113
+            ],
+            "haulProbability": 78,
+            "blankProbability": 0,
+            "variance": 348.6
+          },
+          "reconciliation": {
+            "actualScore": 79,
+            "netActualScore": 79,
+            "insideConfidenceInterval": true,
+            "predictionError": -10.1,
+            "haulAchieved": true,
+            "blankOccurred": false,
+            "alphaVsTemplate": -43.8
+          }
+        },
+        "template_value": {
+          "mode": "value",
+          "scenario": "template",
+          "scenarioLabel": "Risky Template Shield",
+          "startingXI": [
+            {
+              "id": 8,
+              "name": "Calafiori",
+              "team": "ARS",
+              "position": "DEF",
+              "projectedXp": 3.7,
+              "actualPoints": 11,
+              "played": true
+            },
+            {
+              "id": 154,
+              "name": "Palmer",
+              "team": "CHE",
+              "position": "MID",
+              "projectedXp": 6.4,
+              "actualPoints": 7,
+              "played": true
+            },
+            {
+              "id": 483,
+              "name": "Ndoye",
+              "team": "NFO",
+              "position": "MID",
+              "projectedXp": 3.7,
+              "actualPoints": 9,
+              "played": true,
+              "subbedIn": true
+            },
+            {
+              "id": 223,
+              "name": "Mateta",
+              "team": "CRY",
+              "position": "FWD",
+              "projectedXp": 5.6,
+              "actualPoints": 0,
+              "played": false
+            },
+            {
+              "id": 340,
+              "name": "Gelhardt",
+              "team": "HUL",
+              "position": "MID",
+              "projectedXp": 8,
+              "actualPoints": 0,
+              "played": false
+            },
+            {
+              "id": 379,
+              "name": "Isak",
+              "team": "LIV",
+              "position": "FWD",
+              "projectedXp": 6.3,
+              "actualPoints": 8,
+              "played": true
+            },
+            {
+              "id": 387,
+              "name": "O'Reilly",
+              "team": "MCI",
+              "position": "DEF",
+              "projectedXp": 7.3,
+              "actualPoints": 2,
+              "played": true
+            },
+            {
+              "id": 398,
+              "name": "Foden",
+              "team": "MCI",
+              "position": "MID",
+              "projectedXp": 7.8,
+              "actualPoints": 9,
+              "played": true
+            },
+            {
+              "id": 411,
+              "name": "Haaland",
+              "team": "MCI",
+              "position": "FWD",
+              "projectedXp": 10.5,
+              "actualPoints": 13,
+              "played": true
+            },
+            {
+              "id": 448,
+              "name": "Burn",
+              "team": "NEW",
+              "position": "DEF",
+              "projectedXp": 5.5,
+              "actualPoints": 0,
+              "played": false
+            },
+            {
+              "id": 567,
+              "name": "Horníček",
+              "team": "NEW",
+              "position": "GKP",
+              "projectedXp": 5.9,
+              "actualPoints": 7,
+              "played": true
+            }
+          ],
+          "bench": [
+            {
+              "id": 110,
+              "name": "Rushworth",
+              "team": "COV",
+              "position": "GKP",
+              "projectedXp": 5.4,
+              "actualPoints": 2,
+              "played": true
+            },
+            {
+              "id": 123,
+              "name": "Hinshelwood",
+              "team": "BHA",
+              "position": "MID",
+              "projectedXp": 5.2,
+              "actualPoints": 0,
+              "played": false
+            },
+            {
+              "id": 656,
+              "name": "Mfuni",
+              "team": "COV",
+              "position": "DEF",
+              "projectedXp": 8.2,
+              "actualPoints": 0,
+              "played": false,
+              "subbedIn": false
+            },
+            {
+              "id": 201,
+              "name": "Muñoz",
+              "team": "NFO",
+              "position": "DEF",
+              "projectedXp": 2.6,
+              "actualPoints": 0,
+              "played": false
+            }
+          ],
+          "captain": {
+            "id": 411,
+            "name": "Haaland",
+            "actualPoints": 13,
+            "multiplier": 2,
+            "isVcPromoted": false
+          },
+          "viceCaptain": {
+            "id": 154,
+            "name": "Palmer",
+            "actualPoints": 7
+          },
+          "transfers": {
+            "in": [],
+            "out": [],
+            "hitCost": 0
+          },
+          "monteCarlo": {
+            "meanXp": 88.5,
+            "median": 88,
+            "p10": 65,
+            "p90": 114,
+            "confidenceInterval": [
+              65,
+              114
+            ],
+            "haulProbability": 76,
+            "blankProbability": 1,
+            "variance": 396.9
+          },
+          "reconciliation": {
+            "actualScore": 79,
+            "netActualScore": 79,
+            "insideConfidenceInterval": true,
+            "predictionError": -9.5,
+            "haulAchieved": true,
+            "blankOccurred": false,
+            "alphaVsTemplate": -43.8
           }
         }
       }
@@ -2321,22 +2328,21 @@
           "scenarioLabel": "Quant Optimal",
           "startingXI": [
             {
-              "id": 449,
-              "name": "Hall",
-              "team": "NEW",
-              "position": "DEF",
-              "projectedXp": 5.8,
-              "actualPoints": 4,
-              "played": true,
-              "subbedIn": true
-            },
-            {
               "id": 258,
               "name": "Castagne",
               "team": "FUL",
               "position": "DEF",
               "projectedXp": 8.1,
               "actualPoints": 1,
+              "played": true
+            },
+            {
+              "id": 362,
+              "name": "Jacquet",
+              "team": "LIV",
+              "position": "DEF",
+              "projectedXp": 6.5,
+              "actualPoints": 5,
               "played": true
             },
             {
@@ -2353,19 +2359,9 @@
               "name": "Isak",
               "team": "LIV",
               "position": "FWD",
-              "projectedXp": 7.2,
+              "projectedXp": 7.1,
               "actualPoints": 13,
               "played": true
-            },
-            {
-              "id": 464,
-              "name": "Wissa",
-              "team": "NEW",
-              "position": "FWD",
-              "projectedXp": 5.8,
-              "actualPoints": 1,
-              "played": true,
-              "subbedIn": true
             },
             {
               "id": 398,
@@ -2374,6 +2370,15 @@
               "position": "MID",
               "projectedXp": 8.7,
               "actualPoints": 1,
+              "played": true
+            },
+            {
+              "id": 399,
+              "name": "Cherki",
+              "team": "MCI",
+              "position": "MID",
+              "projectedXp": 8.4,
+              "actualPoints": 3,
               "played": true
             },
             {
@@ -2433,24 +2438,22 @@
               "played": true
             },
             {
-              "id": 123,
-              "name": "Hinshelwood",
-              "team": "BHA",
-              "position": "MID",
-              "projectedXp": 7.5,
+              "id": 223,
+              "name": "Mateta",
+              "team": "CRY",
+              "position": "FWD",
+              "projectedXp": 6,
               "actualPoints": 0,
-              "played": false,
-              "subbedIn": false
+              "played": false
             },
             {
-              "id": 387,
-              "name": "O'Reilly",
-              "team": "MCI",
+              "id": 449,
+              "name": "Hall",
+              "team": "NEW",
               "position": "DEF",
-              "projectedXp": 8.7,
-              "actualPoints": 0,
-              "played": false,
-              "subbedIn": false
+              "projectedXp": 5.7,
+              "actualPoints": 4,
+              "played": true
             },
             {
               "id": 176,
@@ -2480,26 +2483,26 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 101,
-            "median": 101,
-            "p10": 75,
+            "meanXp": 99.5,
+            "median": 99,
+            "p10": 74,
             "p90": 126,
             "confidenceInterval": [
-              75,
+              74,
               126
             ],
-            "haulProbability": 91,
+            "haulProbability": 89,
             "blankProbability": 0,
-            "variance": 381.5
+            "variance": 428.6
           },
           "reconciliation": {
-            "actualScore": 56,
-            "netActualScore": 56,
+            "actualScore": 59,
+            "netActualScore": 59,
             "insideConfidenceInterval": false,
-            "predictionError": -45,
+            "predictionError": -40.5,
             "haulAchieved": false,
             "blankOccurred": false,
-            "alphaVsTemplate": -4.4
+            "alphaVsTemplate": -1.4
           }
         },
         "quant_aggressive": {
@@ -2527,6 +2530,15 @@
               "played": true
             },
             {
+              "id": 356,
+              "name": "Virgil",
+              "team": "LIV",
+              "position": "DEF",
+              "projectedXp": 6.5,
+              "actualPoints": 6,
+              "played": true
+            },
+            {
               "id": 367,
               "name": "Gakpo",
               "team": "LIV",
@@ -2540,19 +2552,9 @@
               "name": "Isak",
               "team": "LIV",
               "position": "FWD",
-              "projectedXp": 7.2,
+              "projectedXp": 7.1,
               "actualPoints": 13,
               "played": true
-            },
-            {
-              "id": 26,
-              "name": "Havertz",
-              "team": "ARS",
-              "position": "FWD",
-              "projectedXp": 4.7,
-              "actualPoints": 8,
-              "played": true,
-              "subbedIn": true
             },
             {
               "id": 398,
@@ -2564,21 +2566,22 @@
               "played": true
             },
             {
+              "id": 593,
+              "name": "Dedić",
+              "team": "NEW",
+              "position": "DEF",
+              "projectedXp": 5.5,
+              "actualPoints": 1,
+              "played": true,
+              "subbedIn": true
+            },
+            {
               "id": 411,
               "name": "Haaland",
               "team": "MCI",
               "position": "FWD",
               "projectedXp": 10.9,
               "actualPoints": 9,
-              "played": true
-            },
-            {
-              "id": 447,
-              "name": "Botman",
-              "team": "NEW",
-              "position": "DEF",
-              "projectedXp": 5.5,
-              "actualPoints": 1,
               "played": true
             },
             {
@@ -2620,21 +2623,21 @@
               "played": true
             },
             {
-              "id": 123,
-              "name": "Hinshelwood",
-              "team": "BHA",
-              "position": "MID",
-              "projectedXp": 7.5,
+              "id": 223,
+              "name": "Mateta",
+              "team": "CRY",
+              "position": "FWD",
+              "projectedXp": 6,
               "actualPoints": 0,
               "played": false,
               "subbedIn": false
             },
             {
-              "id": 387,
-              "name": "O'Reilly",
+              "id": 400,
+              "name": "Doku",
               "team": "MCI",
-              "position": "DEF",
-              "projectedXp": 8.7,
+              "position": "MID",
+              "projectedXp": 8.4,
               "actualPoints": 0,
               "played": false,
               "subbedIn": false
@@ -2657,9 +2660,9 @@
             "isVcPromoted": false
           },
           "viceCaptain": {
-            "id": 123,
-            "name": "Hinshelwood",
-            "actualPoints": 0
+            "id": 483,
+            "name": "Ndoye",
+            "actualPoints": 1
           },
           "transfers": {
             "in": [],
@@ -2667,26 +2670,26 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 97.2,
+            "meanXp": 97.4,
             "median": 97,
             "p10": 72,
-            "p90": 125,
+            "p90": 124,
             "confidenceInterval": [
               72,
-              125
+              124
             ],
-            "haulProbability": 87,
+            "haulProbability": 88,
             "blankProbability": 0,
-            "variance": 471.7
+            "variance": 431.9
           },
           "reconciliation": {
-            "actualScore": 60,
-            "netActualScore": 60,
+            "actualScore": 58,
+            "netActualScore": 58,
             "insideConfidenceInterval": false,
-            "predictionError": -37.2,
+            "predictionError": -39.4,
             "haulAchieved": false,
             "blankOccurred": false,
-            "alphaVsTemplate": -0.4
+            "alphaVsTemplate": -2.4
           }
         },
         "quant_value": {
@@ -2735,7 +2738,7 @@
               "name": "Isak",
               "team": "LIV",
               "position": "FWD",
-              "projectedXp": 7.2,
+              "projectedXp": 7.1,
               "actualPoints": 13,
               "played": true
             },
@@ -2771,7 +2774,7 @@
               "name": "Mbeumo",
               "team": "MUN",
               "position": "MID",
-              "projectedXp": 6.5,
+              "projectedXp": 6.4,
               "actualPoints": 8,
               "played": true
             },
@@ -2809,7 +2812,7 @@
               "name": "Yalcouyé",
               "team": "BHA",
               "position": "MID",
-              "projectedXp": 5.5,
+              "projectedXp": 5.4,
               "actualPoints": 2,
               "played": true
             },
@@ -2850,23 +2853,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 86.6,
-            "median": 86,
-            "p10": 65,
+            "meanXp": 86.2,
+            "median": 85,
+            "p10": 62,
             "p90": 111,
             "confidenceInterval": [
-              65,
+              62,
               111
             ],
-            "haulProbability": 74,
+            "haulProbability": 71,
             "blankProbability": 0,
-            "variance": 363.4
+            "variance": 375.4
           },
           "reconciliation": {
             "actualScore": 71,
             "netActualScore": 71,
             "insideConfidenceInterval": true,
-            "predictionError": -15.6,
+            "predictionError": -15.2,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": 10.6
@@ -2887,16 +2890,6 @@
               "played": true
             },
             {
-              "id": 167,
-              "name": "Delap",
-              "team": "NFO",
-              "position": "FWD",
-              "projectedXp": 6.7,
-              "actualPoints": 2,
-              "played": true,
-              "subbedIn": true
-            },
-            {
               "id": 154,
               "name": "Palmer",
               "team": "CHE",
@@ -2906,20 +2899,11 @@
               "played": true
             },
             {
-              "id": 258,
-              "name": "Castagne",
-              "team": "FUL",
-              "position": "DEF",
-              "projectedXp": 8.1,
-              "actualPoints": 1,
-              "played": true
-            },
-            {
               "id": 379,
               "name": "Isak",
               "team": "LIV",
               "position": "FWD",
-              "projectedXp": 7.2,
+              "projectedXp": 7.1,
               "actualPoints": 13,
               "played": true
             },
@@ -2933,12 +2917,12 @@
               "played": true
             },
             {
-              "id": 449,
-              "name": "Hall",
-              "team": "NEW",
-              "position": "DEF",
-              "projectedXp": 5.8,
-              "actualPoints": 4,
+              "id": 492,
+              "name": "Awoniyi",
+              "team": "COV",
+              "position": "FWD",
+              "projectedXp": 3.3,
+              "actualPoints": 2,
               "played": true,
               "subbedIn": true
             },
@@ -2952,6 +2936,15 @@
               "played": true
             },
             {
+              "id": 449,
+              "name": "Hall",
+              "team": "NEW",
+              "position": "DEF",
+              "projectedXp": 5.7,
+              "actualPoints": 4,
+              "played": true
+            },
+            {
               "id": 567,
               "name": "Horníček",
               "team": "NEW",
@@ -2961,12 +2954,21 @@
               "played": true
             },
             {
-              "id": 201,
-              "name": "Muñoz",
+              "id": 473,
+              "name": "Aina",
               "team": "NFO",
               "position": "DEF",
-              "projectedXp": 8,
+              "projectedXp": 7.7,
               "actualPoints": 1,
+              "played": true
+            },
+            {
+              "id": 480,
+              "name": "Gibbs-White",
+              "team": "NFO",
+              "position": "MID",
+              "projectedXp": 8,
+              "actualPoints": 3,
               "played": true
             },
             {
@@ -2990,16 +2992,6 @@
               "played": true
             },
             {
-              "id": 123,
-              "name": "Hinshelwood",
-              "team": "BHA",
-              "position": "MID",
-              "projectedXp": 7.5,
-              "actualPoints": 0,
-              "played": false,
-              "subbedIn": false
-            },
-            {
               "id": 400,
               "name": "Doku",
               "team": "MCI",
@@ -3008,6 +3000,15 @@
               "actualPoints": 0,
               "played": false,
               "subbedIn": false
+            },
+            {
+              "id": 305,
+              "name": "Davis",
+              "team": "IPS",
+              "position": "DEF",
+              "projectedXp": 2.6,
+              "actualPoints": 1,
+              "played": true
             },
             {
               "id": 176,
@@ -3027,9 +3028,9 @@
             "isVcPromoted": false
           },
           "viceCaptain": {
-            "id": 123,
-            "name": "Hinshelwood",
-            "actualPoints": 0
+            "id": 480,
+            "name": "Gibbs-White",
+            "actualPoints": 3
           },
           "transfers": {
             "in": [],
@@ -3037,26 +3038,26 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 95.5,
-            "median": 95,
-            "p10": 70,
-            "p90": 122,
+            "meanXp": 93.4,
+            "median": 93,
+            "p10": 68,
+            "p90": 119,
             "confidenceInterval": [
-              70,
-              122
+              68,
+              119
             ],
-            "haulProbability": 85,
+            "haulProbability": 83,
             "blankProbability": 0,
-            "variance": 428.6
+            "variance": 400
           },
           "reconciliation": {
-            "actualScore": 48,
-            "netActualScore": 48,
+            "actualScore": 50,
+            "netActualScore": 50,
             "insideConfidenceInterval": false,
-            "predictionError": -47.5,
+            "predictionError": -43.4,
             "haulAchieved": false,
             "blankOccurred": false,
-            "alphaVsTemplate": -12.4
+            "alphaVsTemplate": -10.4
           }
         },
         "template_aggressive": {
@@ -3072,16 +3073,6 @@
               "projectedXp": 6.1,
               "actualPoints": 4,
               "played": true
-            },
-            {
-              "id": 167,
-              "name": "Delap",
-              "team": "NFO",
-              "position": "FWD",
-              "projectedXp": 6.7,
-              "actualPoints": 2,
-              "played": true,
-              "subbedIn": true
             },
             {
               "id": 154,
@@ -3106,7 +3097,7 @@
               "name": "Isak",
               "team": "LIV",
               "position": "FWD",
-              "projectedXp": 7.2,
+              "projectedXp": 7.1,
               "actualPoints": 13,
               "played": true
             },
@@ -3120,8 +3111,8 @@
               "played": true
             },
             {
-              "id": 447,
-              "name": "Botman",
+              "id": 593,
+              "name": "Dedić",
               "team": "NEW",
               "position": "DEF",
               "projectedXp": 5.5,
@@ -3148,6 +3139,15 @@
               "played": true
             },
             {
+              "id": 167,
+              "name": "Delap",
+              "team": "NFO",
+              "position": "FWD",
+              "projectedXp": 6.7,
+              "actualPoints": 2,
+              "played": true
+            },
+            {
               "id": 201,
               "name": "Muñoz",
               "team": "NFO",
@@ -3177,16 +3177,6 @@
               "played": true
             },
             {
-              "id": 123,
-              "name": "Hinshelwood",
-              "team": "BHA",
-              "position": "MID",
-              "projectedXp": 7.5,
-              "actualPoints": 0,
-              "played": false,
-              "subbedIn": false
-            },
-            {
               "id": 400,
               "name": "Doku",
               "team": "MCI",
@@ -3195,6 +3185,15 @@
               "actualPoints": 0,
               "played": false,
               "subbedIn": false
+            },
+            {
+              "id": 367,
+              "name": "Gakpo",
+              "team": "LIV",
+              "position": "MID",
+              "projectedXp": 6.6,
+              "actualPoints": 11,
+              "played": true
             },
             {
               "id": 176,
@@ -3214,9 +3213,9 @@
             "isVcPromoted": false
           },
           "viceCaptain": {
-            "id": 123,
-            "name": "Hinshelwood",
-            "actualPoints": 0
+            "id": 483,
+            "name": "Ndoye",
+            "actualPoints": 1
           },
           "transfers": {
             "in": [],
@@ -3225,16 +3224,16 @@
           },
           "monteCarlo": {
             "meanXp": 95.6,
-            "median": 96,
+            "median": 95,
             "p10": 70,
-            "p90": 121,
+            "p90": 122,
             "confidenceInterval": [
               70,
-              121
+              122
             ],
             "haulProbability": 85,
             "blankProbability": 0,
-            "variance": 393.8
+            "variance": 425.4
           },
           "reconciliation": {
             "actualScore": 45,
@@ -3261,16 +3260,6 @@
               "played": true
             },
             {
-              "id": 167,
-              "name": "Delap",
-              "team": "NFO",
-              "position": "FWD",
-              "projectedXp": 6.7,
-              "actualPoints": 2,
-              "played": true,
-              "subbedIn": true
-            },
-            {
               "id": 154,
               "name": "Palmer",
               "team": "CHE",
@@ -3280,20 +3269,11 @@
               "played": true
             },
             {
-              "id": 258,
-              "name": "Castagne",
-              "team": "FUL",
-              "position": "DEF",
-              "projectedXp": 8.1,
-              "actualPoints": 1,
-              "played": true
-            },
-            {
               "id": 379,
               "name": "Isak",
               "team": "LIV",
               "position": "FWD",
-              "projectedXp": 7.2,
+              "projectedXp": 7.1,
               "actualPoints": 13,
               "played": true
             },
@@ -3307,12 +3287,12 @@
               "played": true
             },
             {
-              "id": 449,
-              "name": "Hall",
-              "team": "NEW",
-              "position": "DEF",
-              "projectedXp": 5.8,
-              "actualPoints": 4,
+              "id": 492,
+              "name": "Awoniyi",
+              "team": "COV",
+              "position": "FWD",
+              "projectedXp": 3.3,
+              "actualPoints": 2,
               "played": true,
               "subbedIn": true
             },
@@ -3326,6 +3306,15 @@
               "played": true
             },
             {
+              "id": 449,
+              "name": "Hall",
+              "team": "NEW",
+              "position": "DEF",
+              "projectedXp": 5.7,
+              "actualPoints": 4,
+              "played": true
+            },
+            {
               "id": 567,
               "name": "Horníček",
               "team": "NEW",
@@ -3335,12 +3324,21 @@
               "played": true
             },
             {
-              "id": 201,
-              "name": "Muñoz",
+              "id": 473,
+              "name": "Aina",
               "team": "NFO",
               "position": "DEF",
-              "projectedXp": 8,
+              "projectedXp": 7.7,
               "actualPoints": 1,
+              "played": true
+            },
+            {
+              "id": 480,
+              "name": "Gibbs-White",
+              "team": "NFO",
+              "position": "MID",
+              "projectedXp": 8,
+              "actualPoints": 3,
               "played": true
             },
             {
@@ -3364,16 +3362,6 @@
               "played": true
             },
             {
-              "id": 123,
-              "name": "Hinshelwood",
-              "team": "BHA",
-              "position": "MID",
-              "projectedXp": 7.5,
-              "actualPoints": 0,
-              "played": false,
-              "subbedIn": false
-            },
-            {
               "id": 400,
               "name": "Doku",
               "team": "MCI",
@@ -3382,6 +3370,15 @@
               "actualPoints": 0,
               "played": false,
               "subbedIn": false
+            },
+            {
+              "id": 305,
+              "name": "Davis",
+              "team": "IPS",
+              "position": "DEF",
+              "projectedXp": 2.6,
+              "actualPoints": 1,
+              "played": true
             },
             {
               "id": 176,
@@ -3401,9 +3398,9 @@
             "isVcPromoted": false
           },
           "viceCaptain": {
-            "id": 123,
-            "name": "Hinshelwood",
-            "actualPoints": 0
+            "id": 480,
+            "name": "Gibbs-White",
+            "actualPoints": 3
           },
           "transfers": {
             "in": [],
@@ -3411,26 +3408,26 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 96.2,
-            "median": 96,
-            "p10": 71,
-            "p90": 122,
+            "meanXp": 93.4,
+            "median": 92,
+            "p10": 70,
+            "p90": 121,
             "confidenceInterval": [
-              71,
-              122
+              70,
+              121
             ],
-            "haulProbability": 87,
+            "haulProbability": 83,
             "blankProbability": 0,
-            "variance": 406.3
+            "variance": 464.9
           },
           "reconciliation": {
-            "actualScore": 48,
-            "netActualScore": 48,
+            "actualScore": 50,
+            "netActualScore": 50,
             "insideConfidenceInterval": false,
-            "predictionError": -48.2,
+            "predictionError": -43.4,
             "haulAchieved": false,
             "blankOccurred": false,
-            "alphaVsTemplate": -12.4
+            "alphaVsTemplate": -10.4
           }
         }
       }
@@ -3495,7 +3492,7 @@
               "name": "Gakpo",
               "team": "LIV",
               "position": "MID",
-              "projectedXp": 7.6,
+              "projectedXp": 7.5,
               "actualPoints": 1,
               "played": true
             },
@@ -3601,23 +3598,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 89.6,
-            "median": 90,
-            "p10": 68,
-            "p90": 112,
+            "meanXp": 88.9,
+            "median": 88,
+            "p10": 66,
+            "p90": 113,
             "confidenceInterval": [
-              68,
-              112
+              66,
+              113
             ],
-            "haulProbability": 80,
+            "haulProbability": 78,
             "blankProbability": 0,
-            "variance": 306.3
+            "variance": 354.5
           },
           "reconciliation": {
             "actualScore": 42,
             "netActualScore": 42,
             "insideConfidenceInterval": false,
-            "predictionError": -47.6,
+            "predictionError": -46.9,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": -57.2
@@ -3629,11 +3626,11 @@
           "scenarioLabel": "Quant Optimal",
           "startingXI": [
             {
-              "id": 26,
-              "name": "Havertz",
-              "team": "ARS",
+              "id": 106,
+              "name": "Thiago",
+              "team": "BRE",
               "position": "FWD",
-              "projectedXp": 5.6,
+              "projectedXp": 6.5,
               "actualPoints": 1,
               "played": true
             },
@@ -3678,7 +3675,7 @@
               "name": "Gakpo",
               "team": "LIV",
               "position": "MID",
-              "projectedXp": 7.6,
+              "projectedXp": 7.5,
               "actualPoints": 1,
               "played": true
             },
@@ -3784,23 +3781,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 83.9,
+            "meanXp": 84.1,
             "median": 84,
-            "p10": 63,
+            "p10": 62,
             "p90": 105,
             "confidenceInterval": [
-              63,
+              62,
               105
             ],
             "haulProbability": 71,
             "blankProbability": 0,
-            "variance": 271.7
+            "variance": 266.6
           },
           "reconciliation": {
             "actualScore": 25,
             "netActualScore": 25,
             "insideConfidenceInterval": false,
-            "predictionError": -58.9,
+            "predictionError": -59.1,
             "haulAchieved": false,
             "blankOccurred": true,
             "alphaVsTemplate": -74.2
@@ -3888,7 +3885,7 @@
               "name": "Calvert-Lewin",
               "team": "LEE",
               "position": "FWD",
-              "projectedXp": 3.1,
+              "projectedXp": 5.3,
               "actualPoints": 10,
               "played": true
             },
@@ -3967,23 +3964,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 82.2,
-            "median": 82,
-            "p10": 59,
-            "p90": 105,
+            "meanXp": 84.8,
+            "median": 84,
+            "p10": 63,
+            "p90": 107,
             "confidenceInterval": [
-              59,
-              105
+              63,
+              107
             ],
-            "haulProbability": 66,
+            "haulProbability": 71,
             "blankProbability": 0,
-            "variance": 317.3
+            "variance": 300.8
           },
           "reconciliation": {
             "actualScore": 99,
             "netActualScore": 99,
             "insideConfidenceInterval": true,
-            "predictionError": 16.8,
+            "predictionError": 14.2,
             "haulAchieved": true,
             "blankOccurred": false,
             "alphaVsTemplate": -0.2
@@ -4150,23 +4147,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 86.5,
+            "meanXp": 86.1,
             "median": 86,
-            "p10": 65,
+            "p10": 64,
             "p90": 109,
             "confidenceInterval": [
-              65,
+              64,
               109
             ],
-            "haulProbability": 75,
+            "haulProbability": 73,
             "blankProbability": 0,
-            "variance": 309
+            "variance": 320.1
           },
           "reconciliation": {
             "actualScore": 62,
             "netActualScore": 62,
             "insideConfidenceInterval": false,
-            "predictionError": -24.5,
+            "predictionError": -24.1,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": -37.2
@@ -4333,23 +4330,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 85.7,
-            "median": 85,
-            "p10": 63,
-            "p90": 108,
+            "meanXp": 86,
+            "median": 86,
+            "p10": 64,
+            "p90": 109,
             "confidenceInterval": [
-              63,
-              108
+              64,
+              109
             ],
             "haulProbability": 74,
             "blankProbability": 0,
-            "variance": 303.5
+            "variance": 322.9
           },
           "reconciliation": {
             "actualScore": 33,
             "netActualScore": 33,
             "insideConfidenceInterval": false,
-            "predictionError": -52.7,
+            "predictionError": -53,
             "haulAchieved": false,
             "blankOccurred": true,
             "alphaVsTemplate": -66.2
@@ -4516,23 +4513,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 86.2,
-            "median": 86,
-            "p10": 63,
-            "p90": 109,
+            "meanXp": 86,
+            "median": 85,
+            "p10": 64,
+            "p90": 110,
             "confidenceInterval": [
-              63,
-              109
+              64,
+              110
             ],
-            "haulProbability": 74,
+            "haulProbability": 73,
             "blankProbability": 0,
-            "variance": 317.3
+            "variance": 351.6
           },
           "reconciliation": {
             "actualScore": 62,
             "netActualScore": 62,
             "insideConfidenceInterval": false,
-            "predictionError": -24.2,
+            "predictionError": -24,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": -37.2
@@ -4551,6 +4548,16 @@
           "scenarioLabel": "Quant Optimal",
           "startingXI": [
             {
+              "id": 183,
+              "name": "Rudoni",
+              "team": "COV",
+              "position": "MID",
+              "projectedXp": 5.2,
+              "actualPoints": 5,
+              "played": true,
+              "subbedIn": true
+            },
+            {
               "id": 305,
               "name": "Davis",
               "team": "IPS",
@@ -4564,17 +4571,17 @@
               "name": "Isak",
               "team": "LIV",
               "position": "FWD",
-              "projectedXp": 7.2,
+              "projectedXp": 7.1,
               "actualPoints": 8,
               "played": true
             },
             {
-              "id": 282,
-              "name": "Giles",
-              "team": "HUL",
+              "id": 115,
+              "name": "De Cuyper",
+              "team": "BHA",
               "position": "DEF",
-              "projectedXp": 5.3,
-              "actualPoints": 0,
+              "projectedXp": 4.2,
+              "actualPoints": 6,
               "played": true,
               "subbedIn": true
             },
@@ -4597,21 +4604,12 @@
               "played": true
             },
             {
-              "id": 426,
-              "name": "B.Fernandes",
-              "team": "MUN",
-              "position": "MID",
-              "projectedXp": 6.8,
-              "actualPoints": 2,
-              "played": true
-            },
-            {
-              "id": 167,
-              "name": "Delap",
-              "team": "NFO",
-              "position": "FWD",
-              "projectedXp": 6.9,
-              "actualPoints": 1,
+              "id": 449,
+              "name": "Hall",
+              "team": "NEW",
+              "position": "DEF",
+              "projectedXp": 7.7,
+              "actualPoints": 13,
               "played": true
             },
             {
@@ -4633,21 +4631,21 @@
               "played": true
             },
             {
+              "id": 483,
+              "name": "Ndoye",
+              "team": "NFO",
+              "position": "MID",
+              "projectedXp": 7.8,
+              "actualPoints": 1,
+              "played": true
+            },
+            {
               "id": 496,
               "name": "Kinsky",
               "team": "TOT",
               "position": "GKP",
               "projectedXp": 5.7,
               "actualPoints": 2,
-              "played": true
-            },
-            {
-              "id": 502,
-              "name": "Robertson",
-              "team": "TOT",
-              "position": "DEF",
-              "projectedXp": 5.6,
-              "actualPoints": 4,
               "played": true
             }
           ],
@@ -4662,6 +4660,16 @@
               "played": true
             },
             {
+              "id": 223,
+              "name": "Mateta",
+              "team": "CRY",
+              "position": "FWD",
+              "projectedXp": 5.8,
+              "actualPoints": 0,
+              "played": false,
+              "subbedIn": false
+            },
+            {
               "id": 398,
               "name": "Foden",
               "team": "MCI",
@@ -4670,15 +4678,6 @@
               "actualPoints": 0,
               "played": false,
               "subbedIn": false
-            },
-            {
-              "id": 183,
-              "name": "Rudoni",
-              "team": "COV",
-              "position": "MID",
-              "projectedXp": 5.2,
-              "actualPoints": 5,
-              "played": true
             },
             {
               "id": 176,
@@ -4708,26 +4707,26 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 93.7,
-            "median": 93,
-            "p10": 70,
-            "p90": 119,
+            "meanXp": 95.6,
+            "median": 95,
+            "p10": 71,
+            "p90": 120,
             "confidenceInterval": [
-              70,
-              119
+              71,
+              120
             ],
-            "haulProbability": 85,
+            "haulProbability": 86,
             "blankProbability": 0,
-            "variance": 390.7
+            "variance": 363.4
           },
           "reconciliation": {
-            "actualScore": 43,
-            "netActualScore": 43,
+            "actualScore": 61,
+            "netActualScore": 61,
             "insideConfidenceInterval": false,
-            "predictionError": -50.7,
+            "predictionError": -34.6,
             "haulAchieved": false,
             "blankOccurred": false,
-            "alphaVsTemplate": 0.9
+            "alphaVsTemplate": 18.9
           }
         },
         "quant_aggressive": {
@@ -4745,13 +4744,14 @@
               "played": true
             },
             {
-              "id": 279,
-              "name": "Ajayi",
-              "team": "HUL",
-              "position": "DEF",
-              "projectedXp": 5.3,
-              "actualPoints": 1,
-              "played": true
+              "id": 411,
+              "name": "Haaland",
+              "team": "MCI",
+              "position": "FWD",
+              "projectedXp": 9.5,
+              "actualPoints": 6,
+              "played": true,
+              "subbedIn": true
             },
             {
               "id": 305,
@@ -4777,7 +4777,7 @@
               "name": "Bogle",
               "team": "LEE",
               "position": "DEF",
-              "projectedXp": 8.9,
+              "projectedXp": 8.8,
               "actualPoints": 5,
               "played": true
             },
@@ -4786,17 +4786,17 @@
               "name": "Isak",
               "team": "LIV",
               "position": "FWD",
-              "projectedXp": 7.2,
+              "projectedXp": 7.1,
               "actualPoints": 8,
               "played": true
             },
             {
-              "id": 411,
-              "name": "Haaland",
-              "team": "MCI",
-              "position": "FWD",
-              "projectedXp": 9.5,
-              "actualPoints": 6,
+              "id": 279,
+              "name": "Ajayi",
+              "team": "HUL",
+              "position": "DEF",
+              "projectedXp": 5.3,
+              "actualPoints": 1,
               "played": true,
               "subbedIn": true
             },
@@ -4849,6 +4849,16 @@
               "subbedIn": false
             },
             {
+              "id": 223,
+              "name": "Mateta",
+              "team": "CRY",
+              "position": "FWD",
+              "projectedXp": 5.8,
+              "actualPoints": 0,
+              "played": false,
+              "subbedIn": false
+            },
+            {
               "id": 398,
               "name": "Foden",
               "team": "MCI",
@@ -4865,15 +4875,6 @@
               "position": "DEF",
               "projectedXp": 4.1,
               "actualPoints": 15,
-              "played": true
-            },
-            {
-              "id": 26,
-              "name": "Havertz",
-              "team": "ARS",
-              "position": "FWD",
-              "projectedXp": 4.8,
-              "actualPoints": 2,
               "played": true
             }
           ],
@@ -4895,23 +4896,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 90.7,
-            "median": 91,
-            "p10": 67,
-            "p90": 115,
+            "meanXp": 91,
+            "median": 90,
+            "p10": 69,
+            "p90": 114,
             "confidenceInterval": [
-              67,
-              115
+              69,
+              114
             ],
             "haulProbability": 81,
             "blankProbability": 0,
-            "variance": 360.4
+            "variance": 322.9
           },
           "reconciliation": {
             "actualScore": 53,
             "netActualScore": 53,
             "insideConfidenceInterval": false,
-            "predictionError": -37.7,
+            "predictionError": -38,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": 10.9
@@ -4945,7 +4946,7 @@
               "name": "Groß",
               "team": "BHA",
               "position": "MID",
-              "projectedXp": 5.4,
+              "projectedXp": 5.3,
               "actualPoints": 14,
               "played": true
             },
@@ -4982,7 +4983,7 @@
               "name": "Isak",
               "team": "LIV",
               "position": "FWD",
-              "projectedXp": 7.2,
+              "projectedXp": 7.1,
               "actualPoints": 8,
               "played": true
             },
@@ -5082,23 +5083,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 81.7,
-            "median": 81,
-            "p10": 60,
-            "p90": 104,
+            "meanXp": 82.6,
+            "median": 82,
+            "p10": 61,
+            "p90": 106,
             "confidenceInterval": [
-              60,
-              104
+              61,
+              106
             ],
-            "haulProbability": 64,
-            "blankProbability": 1,
-            "variance": 303.5
+            "haulProbability": 66,
+            "blankProbability": 0,
+            "variance": 334.2
           },
           "reconciliation": {
             "actualScore": 63,
             "netActualScore": 63,
             "insideConfidenceInterval": true,
-            "predictionError": -18.7,
+            "predictionError": -19.6,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": 20.9
@@ -5132,7 +5133,7 @@
               "name": "Bogle",
               "team": "LEE",
               "position": "DEF",
-              "projectedXp": 8.9,
+              "projectedXp": 8.8,
               "actualPoints": 5,
               "played": true
             },
@@ -5141,7 +5142,7 @@
               "name": "Isak",
               "team": "LIV",
               "position": "FWD",
-              "projectedXp": 7.2,
+              "projectedXp": 7.1,
               "actualPoints": 8,
               "played": true
             },
@@ -5267,23 +5268,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 92.5,
-            "median": 92,
-            "p10": 68,
-            "p90": 116,
+            "meanXp": 93.3,
+            "median": 93,
+            "p10": 69,
+            "p90": 119,
             "confidenceInterval": [
-              68,
-              116
+              69,
+              119
             ],
             "haulProbability": 83,
             "blankProbability": 0,
-            "variance": 337.1
+            "variance": 403.1
           },
           "reconciliation": {
             "actualScore": 50,
             "netActualScore": 50,
             "insideConfidenceInterval": false,
-            "predictionError": -42.5,
+            "predictionError": -43.3,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": 7.9
@@ -5336,7 +5337,7 @@
               "name": "Bogle",
               "team": "LEE",
               "position": "DEF",
-              "projectedXp": 8.9,
+              "projectedXp": 8.8,
               "actualPoints": 5,
               "played": true
             },
@@ -5345,7 +5346,7 @@
               "name": "Isak",
               "team": "LIV",
               "position": "FWD",
-              "projectedXp": 7.2,
+              "projectedXp": 7.1,
               "actualPoints": 8,
               "played": true
             },
@@ -5454,23 +5455,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 90.6,
-            "median": 90,
-            "p10": 68,
+            "meanXp": 90.7,
+            "median": 91,
+            "p10": 66,
             "p90": 115,
             "confidenceInterval": [
-              68,
+              66,
               115
             ],
             "haulProbability": 80,
             "blankProbability": 0,
-            "variance": 363.4
+            "variance": 360.4
           },
           "reconciliation": {
             "actualScore": 59,
             "netActualScore": 59,
             "insideConfidenceInterval": false,
-            "predictionError": -31.6,
+            "predictionError": -31.7,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": 16.9
@@ -5504,7 +5505,7 @@
               "name": "Bogle",
               "team": "LEE",
               "position": "DEF",
-              "projectedXp": 8.9,
+              "projectedXp": 8.8,
               "actualPoints": 5,
               "played": true
             },
@@ -5513,7 +5514,7 @@
               "name": "Isak",
               "team": "LIV",
               "position": "FWD",
-              "projectedXp": 7.2,
+              "projectedXp": 7.1,
               "actualPoints": 8,
               "played": true
             },
@@ -5639,23 +5640,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 93,
-            "median": 92,
-            "p10": 69,
+            "meanXp": 93.6,
+            "median": 93,
+            "p10": 70,
             "p90": 119,
             "confidenceInterval": [
-              69,
+              70,
               119
             ],
-            "haulProbability": 85,
+            "haulProbability": 84,
             "blankProbability": 0,
-            "variance": 412.6
+            "variance": 393.8
           },
           "reconciliation": {
             "actualScore": 50,
             "netActualScore": 50,
             "insideConfidenceInterval": false,
-            "predictionError": -43,
+            "predictionError": -43.6,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": 7.9
@@ -5678,7 +5679,7 @@
               "name": "Thiago",
               "team": "BRE",
               "position": "FWD",
-              "projectedXp": 5.6,
+              "projectedXp": 5.8,
               "actualPoints": 4,
               "played": true
             },
@@ -5789,7 +5790,7 @@
               "name": "Isak",
               "team": "LIV",
               "position": "FWD",
-              "projectedXp": 5.9,
+              "projectedXp": 5.8,
               "actualPoints": 0,
               "played": false,
               "subbedIn": false
@@ -5831,23 +5832,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 86.3,
+            "meanXp": 86.9,
             "median": 86,
             "p10": 66,
-            "p90": 108,
+            "p90": 109,
             "confidenceInterval": [
               66,
-              108
+              109
             ],
-            "haulProbability": 77,
+            "haulProbability": 76,
             "blankProbability": 0,
-            "variance": 287.4
+            "variance": 298.1
           },
           "reconciliation": {
             "actualScore": 63,
             "netActualScore": 63,
             "insideConfidenceInterval": false,
-            "predictionError": -23.3,
+            "predictionError": -23.9,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": -19.2
@@ -5872,7 +5873,7 @@
               "name": "Thiago",
               "team": "BRE",
               "position": "FWD",
-              "projectedXp": 5.6,
+              "projectedXp": 5.8,
               "actualPoints": 4,
               "played": true
             },
@@ -5986,7 +5987,7 @@
               "name": "Isak",
               "team": "LIV",
               "position": "FWD",
-              "projectedXp": 5.9,
+              "projectedXp": 5.8,
               "actualPoints": 0,
               "played": false,
               "subbedIn": false
@@ -6020,23 +6021,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 83.4,
+            "meanXp": 84.3,
             "median": 83,
-            "p10": 63,
-            "p90": 104,
+            "p10": 64,
+            "p90": 107,
             "confidenceInterval": [
-              63,
-              104
+              64,
+              107
             ],
-            "haulProbability": 69,
+            "haulProbability": 71,
             "blankProbability": 0,
-            "variance": 259
+            "variance": 314.5
           },
           "reconciliation": {
             "actualScore": 50,
             "netActualScore": 50,
             "insideConfidenceInterval": false,
-            "predictionError": -33.4,
+            "predictionError": -34.3,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": -32.2
@@ -6079,7 +6080,7 @@
               "name": "Groß",
               "team": "BHA",
               "position": "MID",
-              "projectedXp": 5.5,
+              "projectedXp": 5.4,
               "actualPoints": 6,
               "played": true
             },
@@ -6203,23 +6204,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 79.1,
-            "median": 78,
+            "meanXp": 78.1,
+            "median": 77,
             "p10": 59,
-            "p90": 101,
+            "p90": 98,
             "confidenceInterval": [
               59,
-              101
+              98
             ],
-            "haulProbability": 60,
+            "haulProbability": 55,
             "blankProbability": 0,
-            "variance": 292.7
+            "variance": 241.7
           },
           "reconciliation": {
             "actualScore": 83,
             "netActualScore": 83,
             "insideConfidenceInterval": true,
-            "predictionError": 3.9,
+            "predictionError": 4.9,
             "haulAchieved": true,
             "blankOccurred": false,
             "alphaVsTemplate": 0.8
@@ -6280,7 +6281,7 @@
               "name": "Barry",
               "team": "EVE",
               "position": "FWD",
-              "projectedXp": 7.7,
+              "projectedXp": 7.6,
               "actualPoints": 6,
               "played": true
             },
@@ -6354,7 +6355,7 @@
               "name": "Isak",
               "team": "LIV",
               "position": "FWD",
-              "projectedXp": 5.9,
+              "projectedXp": 5.8,
               "actualPoints": 0,
               "played": false
             },
@@ -6386,23 +6387,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 85.5,
+            "meanXp": 86.3,
             "median": 86,
-            "p10": 64,
+            "p10": 65,
             "p90": 108,
             "confidenceInterval": [
-              64,
+              65,
               108
             ],
             "haulProbability": 73,
             "blankProbability": 0,
-            "variance": 309
+            "variance": 287.4
           },
           "reconciliation": {
             "actualScore": 71,
             "netActualScore": 71,
             "insideConfidenceInterval": true,
-            "predictionError": -14.5,
+            "predictionError": -15.3,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": -11.2
@@ -6538,7 +6539,7 @@
               "name": "Isak",
               "team": "LIV",
               "position": "FWD",
-              "projectedXp": 5.9,
+              "projectedXp": 5.8,
               "actualPoints": 0,
               "played": false,
               "subbedIn": false
@@ -6571,23 +6572,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 82.7,
-            "median": 81,
-            "p10": 63,
-            "p90": 104,
+            "meanXp": 83.1,
+            "median": 83,
+            "p10": 64,
+            "p90": 105,
             "confidenceInterval": [
-              63,
-              104
+              64,
+              105
             ],
-            "haulProbability": 67,
+            "haulProbability": 70,
             "blankProbability": 0,
-            "variance": 276.9
+            "variance": 292.7
           },
           "reconciliation": {
             "actualScore": 64,
             "netActualScore": 64,
             "insideConfidenceInterval": true,
-            "predictionError": -18.7,
+            "predictionError": -19.1,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": -18.2
@@ -6648,7 +6649,7 @@
               "name": "Barry",
               "team": "EVE",
               "position": "FWD",
-              "projectedXp": 7.7,
+              "projectedXp": 7.6,
               "actualPoints": 6,
               "played": true
             },
@@ -6722,7 +6723,7 @@
               "name": "Isak",
               "team": "LIV",
               "position": "FWD",
-              "projectedXp": 5.9,
+              "projectedXp": 5.8,
               "actualPoints": 0,
               "played": false
             },
@@ -6755,16 +6756,16 @@
           },
           "monteCarlo": {
             "meanXp": 85.5,
-            "median": 86,
+            "median": 85,
             "p10": 64,
-            "p90": 107,
+            "p90": 108,
             "confidenceInterval": [
               64,
-              107
+              108
             ],
-            "haulProbability": 74,
+            "haulProbability": 73,
             "blankProbability": 0,
-            "variance": 282.1
+            "variance": 309
           },
           "reconciliation": {
             "actualScore": 71,
@@ -6802,7 +6803,7 @@
               "name": "Tavernier",
               "team": "BOU",
               "position": "MID",
-              "projectedXp": 6.6,
+              "projectedXp": 6.8,
               "actualPoints": 10,
               "played": true
             },
@@ -6829,7 +6830,7 @@
               "name": "Isak",
               "team": "LIV",
               "position": "FWD",
-              "projectedXp": 6.7,
+              "projectedXp": 7.1,
               "actualPoints": 9,
               "played": true
             },
@@ -6936,9 +6937,9 @@
             "isVcPromoted": false
           },
           "viceCaptain": {
-            "id": 480,
-            "name": "Gibbs-White",
-            "actualPoints": 0
+            "id": 379,
+            "name": "Isak",
+            "actualPoints": 9
           },
           "transfers": {
             "in": [],
@@ -6946,23 +6947,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 91.9,
-            "median": 92,
-            "p10": 67,
-            "p90": 116,
+            "meanXp": 92.2,
+            "median": 91,
+            "p10": 69,
+            "p90": 117,
             "confidenceInterval": [
-              67,
-              116
+              69,
+              117
             ],
-            "haulProbability": 83,
+            "haulProbability": 81,
             "blankProbability": 0,
-            "variance": 354.5
+            "variance": 375.4
           },
           "reconciliation": {
             "actualScore": 87,
             "netActualScore": 87,
             "insideConfidenceInterval": true,
-            "predictionError": -4.9,
+            "predictionError": -5.2,
             "haulAchieved": true,
             "blankOccurred": false,
             "alphaVsTemplate": 28.5
@@ -6987,7 +6988,7 @@
               "name": "Tavernier",
               "team": "BOU",
               "position": "MID",
-              "projectedXp": 6.6,
+              "projectedXp": 6.8,
               "actualPoints": 10,
               "played": true
             },
@@ -7023,7 +7024,7 @@
               "name": "Isak",
               "team": "LIV",
               "position": "FWD",
-              "projectedXp": 6.7,
+              "projectedXp": 7.1,
               "actualPoints": 9,
               "played": true
             },
@@ -7129,23 +7130,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 89.3,
-            "median": 89,
-            "p10": 66,
-            "p90": 113,
+            "meanXp": 91.2,
+            "median": 92,
+            "p10": 67,
+            "p90": 114,
             "confidenceInterval": [
-              66,
-              113
+              67,
+              114
             ],
-            "haulProbability": 79,
+            "haulProbability": 81,
             "blankProbability": 0,
-            "variance": 342.8
+            "variance": 317.3
           },
           "reconciliation": {
             "actualScore": 88,
             "netActualScore": 88,
             "insideConfidenceInterval": true,
-            "predictionError": -1.3,
+            "predictionError": -3.2,
             "haulAchieved": true,
             "blankOccurred": false,
             "alphaVsTemplate": 29.5
@@ -7188,7 +7189,7 @@
               "name": "De Cuyper",
               "team": "BHA",
               "position": "DEF",
-              "projectedXp": 9.4,
+              "projectedXp": 9.5,
               "actualPoints": 6,
               "played": true
             },
@@ -7197,7 +7198,7 @@
               "name": "Groß",
               "team": "BHA",
               "position": "MID",
-              "projectedXp": 8.1,
+              "projectedXp": 8,
               "actualPoints": 5,
               "played": true
             },
@@ -7312,23 +7313,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 82.1,
-            "median": 82,
-            "p10": 60,
-            "p90": 104,
+            "meanXp": 82,
+            "median": 81,
+            "p10": 59,
+            "p90": 105,
             "confidenceInterval": [
-              60,
-              104
+              59,
+              105
             ],
-            "haulProbability": 66,
+            "haulProbability": 65,
             "blankProbability": 1,
-            "variance": 292.7
+            "variance": 322.9
           },
           "reconciliation": {
             "actualScore": 70,
             "netActualScore": 70,
             "insideConfidenceInterval": true,
-            "predictionError": -12.1,
+            "predictionError": -12,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": 11.5
@@ -7346,6 +7347,15 @@
               "position": "DEF",
               "projectedXp": 3.4,
               "actualPoints": 6,
+              "played": true
+            },
+            {
+              "id": 68,
+              "name": "Tavernier",
+              "team": "BOU",
+              "position": "MID",
+              "projectedXp": 6.8,
+              "actualPoints": 10,
               "played": true
             },
             {
@@ -7380,7 +7390,7 @@
               "name": "Isak",
               "team": "LIV",
               "position": "FWD",
-              "projectedXp": 6.7,
+              "projectedXp": 7.1,
               "actualPoints": 9,
               "played": true
             },
@@ -7391,15 +7401,6 @@
               "position": "DEF",
               "projectedXp": 8.3,
               "actualPoints": 0,
-              "played": true
-            },
-            {
-              "id": 398,
-              "name": "Foden",
-              "team": "MCI",
-              "position": "MID",
-              "projectedXp": 7.5,
-              "actualPoints": 9,
               "played": true
             },
             {
@@ -7497,26 +7498,26 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 87.7,
-            "median": 88,
-            "p10": 63,
-            "p90": 112,
+            "meanXp": 87.1,
+            "median": 87,
+            "p10": 65,
+            "p90": 111,
             "confidenceInterval": [
-              63,
-              112
+              65,
+              111
             ],
-            "haulProbability": 76,
-            "blankProbability": 1,
-            "variance": 360.4
+            "haulProbability": 75,
+            "blankProbability": 0,
+            "variance": 348.6
           },
           "reconciliation": {
-            "actualScore": 75,
-            "netActualScore": 75,
+            "actualScore": 76,
+            "netActualScore": 76,
             "insideConfidenceInterval": true,
-            "predictionError": -12.7,
+            "predictionError": -11.1,
             "haulAchieved": true,
             "blankOccurred": false,
-            "alphaVsTemplate": 16.5
+            "alphaVsTemplate": 17.5
           }
         },
         "template_aggressive": {
@@ -7534,12 +7535,21 @@
               "played": true
             },
             {
-              "id": 79,
-              "name": "Evanilson",
+              "id": 597,
+              "name": "Suzuki",
+              "team": "AVL",
+              "position": "GKP",
+              "projectedXp": 6,
+              "actualPoints": 8,
+              "played": true
+            },
+            {
+              "id": 68,
+              "name": "Tavernier",
               "team": "BOU",
-              "position": "FWD",
-              "projectedXp": 5.8,
-              "actualPoints": 12,
+              "position": "MID",
+              "projectedXp": 6.8,
+              "actualPoints": 10,
               "played": true
             },
             {
@@ -7549,15 +7559,6 @@
               "position": "MID",
               "projectedXp": 5.9,
               "actualPoints": 2,
-              "played": true
-            },
-            {
-              "id": 110,
-              "name": "Rushworth",
-              "team": "COV",
-              "position": "GKP",
-              "projectedXp": 5.8,
-              "actualPoints": 1,
               "played": true
             },
             {
@@ -7583,17 +7584,17 @@
               "name": "Isak",
               "team": "LIV",
               "position": "FWD",
-              "projectedXp": 6.7,
+              "projectedXp": 7.1,
               "actualPoints": 9,
               "played": true
             },
             {
-              "id": 391,
-              "name": "Gvardiol",
+              "id": 388,
+              "name": "Guéhi",
               "team": "MCI",
               "position": "DEF",
-              "projectedXp": 8.3,
-              "actualPoints": 0,
+              "projectedXp": 8,
+              "actualPoints": 1,
               "played": true
             },
             {
@@ -7626,22 +7627,22 @@
           ],
           "bench": [
             {
-              "id": 250,
-              "name": "Leno",
-              "team": "FUL",
+              "id": 110,
+              "name": "Rushworth",
+              "team": "COV",
               "position": "GKP",
-              "projectedXp": 5.2,
-              "actualPoints": 6,
+              "projectedXp": 5.8,
+              "actualPoints": 1,
               "played": true
             },
             {
-              "id": 480,
-              "name": "Gibbs-White",
-              "team": "NFO",
-              "position": "MID",
-              "projectedXp": 7,
-              "actualPoints": 0,
-              "played": false
+              "id": 79,
+              "name": "Evanilson",
+              "team": "BOU",
+              "position": "FWD",
+              "projectedXp": 5.8,
+              "actualPoints": 12,
+              "played": true
             },
             {
               "id": 201,
@@ -7680,26 +7681,26 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 86.8,
-            "median": 87,
-            "p10": 65,
+            "meanXp": 86.9,
+            "median": 86,
+            "p10": 63,
             "p90": 110,
             "confidenceInterval": [
-              65,
+              63,
               110
             ],
             "haulProbability": 75,
             "blankProbability": 0,
-            "variance": 328.5
+            "variance": 325.7
           },
           "reconciliation": {
-            "actualScore": 74,
-            "netActualScore": 74,
+            "actualScore": 80,
+            "netActualScore": 80,
             "insideConfidenceInterval": true,
-            "predictionError": -12.8,
-            "haulAchieved": false,
+            "predictionError": -6.9,
+            "haulAchieved": true,
             "blankOccurred": false,
-            "alphaVsTemplate": 15.5
+            "alphaVsTemplate": 21.5
           }
         },
         "template_value": {
@@ -7714,6 +7715,24 @@
               "position": "DEF",
               "projectedXp": 3.4,
               "actualPoints": 6,
+              "played": true
+            },
+            {
+              "id": 597,
+              "name": "Suzuki",
+              "team": "AVL",
+              "position": "GKP",
+              "projectedXp": 6,
+              "actualPoints": 8,
+              "played": true
+            },
+            {
+              "id": 68,
+              "name": "Tavernier",
+              "team": "BOU",
+              "position": "MID",
+              "projectedXp": 6.8,
+              "actualPoints": 10,
               "played": true
             },
             {
@@ -7748,7 +7767,7 @@
               "name": "Isak",
               "team": "LIV",
               "position": "FWD",
-              "projectedXp": 6.7,
+              "projectedXp": 7.1,
               "actualPoints": 9,
               "played": true
             },
@@ -7759,15 +7778,6 @@
               "position": "DEF",
               "projectedXp": 8.3,
               "actualPoints": 0,
-              "played": true
-            },
-            {
-              "id": 398,
-              "name": "Foden",
-              "team": "MCI",
-              "position": "MID",
-              "projectedXp": 7.5,
-              "actualPoints": 9,
               "played": true
             },
             {
@@ -7796,15 +7806,6 @@
               "position": "MID",
               "projectedXp": 6.5,
               "actualPoints": 3,
-              "played": true
-            },
-            {
-              "id": 496,
-              "name": "Kinsky",
-              "team": "TOT",
-              "position": "GKP",
-              "projectedXp": 6,
-              "actualPoints": 2,
               "played": true
             }
           ],
@@ -7865,26 +7866,26 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 86.7,
-            "median": 86,
-            "p10": 63,
+            "meanXp": 88,
+            "median": 88,
+            "p10": 65,
             "p90": 111,
             "confidenceInterval": [
-              63,
+              65,
               111
             ],
-            "haulProbability": 74,
-            "blankProbability": 1,
-            "variance": 360.4
+            "haulProbability": 77,
+            "blankProbability": 0,
+            "variance": 322.9
           },
           "reconciliation": {
-            "actualScore": 75,
-            "netActualScore": 75,
+            "actualScore": 82,
+            "netActualScore": 82,
             "insideConfidenceInterval": true,
-            "predictionError": -11.7,
+            "predictionError": -6,
             "haulAchieved": true,
             "blankOccurred": false,
-            "alphaVsTemplate": 16.5
+            "alphaVsTemplate": 23.5
           }
         }
       }
