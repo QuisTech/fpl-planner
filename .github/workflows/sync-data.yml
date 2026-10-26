@@ -59,4 +59,5 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add data/ public/data/
-          git diff --staged --quiet || (git commit -m "Auto-sync: Pulled latest FPL data from QuisTech/fpl-admin [skip ci]" && git push)
+          git diff --staged --quiet || (git commit -m "Auto-sync: Pulled latest FPL data from QuisTech/fpl-admin" && git push)
+
