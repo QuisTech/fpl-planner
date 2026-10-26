@@ -14537,3 +14537,40 @@ Whenever data updates:
 ### 3. Summary
 
 You are now fully automated. Whenever `sync-data.yml` runs in `fpl-planner`, Vercel's automated CI/CD will immediately build and deploy the fresh data straight to production with zero manual intervention required.
+
+
+### User (Turn 156)
+
+CI/CD is better because I don't want to have vercel prod running every fucking time so it doesn't affect my vercel space
+
+### Assistant (Turn 156)
+
+100% agreed — and you are spot on about protecting your Vercel space and Hobby build limits.
+
+The way your CI/CD is now configured is lean, disciplined, and strictly protected:
+
+---
+
+### 1. Zero Build Spam: Only Triggers When Data Actually Changes
+In [.github/workflows/sync-data.yml](file:///c:/Users/USER/Documents/fpl-planner/.github/workflows/sync-data.yml#L61):
+```bash
+git add data/ public/data/
+git diff --staged --quiet || (git commit -m "Auto-sync: Pulled latest FPL data from QuisTech/fpl-admin" && git push)
+```
+- If the data from `fpl-admin` has **not changed**, `git diff --staged --quiet` exits silently.
+- **No commit is made, no push occurs, and Vercel stays 100% asleep.**
+- Vercel only wakes up to build when there are **actual, genuine data differences**.
+
+---
+
+### 2. High-Frequency Jobs Remain Shielded by `[skip ci]` in `fpl-admin`
+- In `fpl-admin`, background jobs that poll frequently (such as hourly XP updates and fixture checks) still commit with `[skip ci]`.
+- This ensures your Vercel account never burns through build minutes on background server checks.
+- Only the consolidated sync in `fpl-planner` triggers a single clean Vercel production build.
+
+---
+
+### 3. Complete Peace of Mind
+- You **never** have to run `vercel --prod` locally again.
+- No local terminal commands, no CLI clutter, and no wasted build minutes.
+- When you click "Run workflow" in GitHub Actions (or when the 04:00 UTC schedule fires), GitHub and Vercel handle the entire pipeline end-to-end in the cloud.
