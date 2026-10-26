@@ -14620,3 +14620,50 @@ Executed `git pull` across local repositories:
 - **fpl-admin**: Already up to date with `origin/main` (`d41a234`).
 
 All local directories are in perfect sync with the remote GitHub cloud repositories and Vercel production.
+
+
+### User (Turn 159)
+
+Monte Carlo Multi-Week Planner Audit
+Out-Of-Sample
+Walk-forward reconciliation: 1,000 Monte Carlo match simulations vs official live FPL matchday points.
+
+Run All Fuels
+Run EYE-TEST
+Custom...
+Running Monte Carlo simulations and walk-forward reconciliation...
+EROFS: read-only file system, copyfile '/var/task/data/fplform.csv' -> '/var/task/data/snapshots/gw_8/fplform.csv'
+FPLFORM
+NATIVE
+EYE-TEST
+
+Fix that
+
+### Assistant (Turn 159)
+
+Fixed! The `EROFS: read-only file system` crash has been completely resolved.
+
+---
+
+### 1. Root Cause Analysis
+When running in Vercel Serverless Functions (`/var/task`), the entire filesystem (outside `/tmp`) is strictly **read-only**.
+1. When triggering the Monte Carlo audit, the runner checks whether each completed gameweek has a point-in-time snapshot.
+2. In `data/snapshots/gw_8/`, `fplform.csv` and `metadata.json` were missing because only `manager_decisions.json` and `player_points.json` had been archived.
+3. The serverless runner tried to backfill the missing snapshot by calling `SnapshotService.saveSnapshot(8)`, which executed `fs.mkdirSync` and `fs.copyFileSync`.
+4. Because `/var/task` is read-only, Node.js threw the unhandled `EROFS` exception.
+
+---
+
+### 2. The Fix Applied
+1. **Protected SnapshotService Against Read-Only Filesystems**:
+   - In [api/_lib/snapshot-service.ts](file:///c:/Users/USER/Documents/fpl-planner/api/_lib/snapshot-service.ts), wrapped `saveSnapshot` in a `try / catch` block. If writes fail due to serverless read-only restrictions, it logs a graceful warning and returns cleanly instead of throwing a 500 error.
+   - Updated `hasSnapshot` to recognize existing snapshots even if `metadata.json` is not yet created.
+2. **Protected Monte Carlo Archive Runner**:
+   - In [scripts/run_monte_carlo_archive.ts](file:///c:/Users/USER/Documents/fpl-planner/scripts/run_monte_carlo_archive.ts), added `try / catch` around `effectiveSnapshotService.saveSnapshot(gw)` so serverless execution never halts.
+3. **Generated and Committed GW8 Snapshot Locally**:
+   - Generated the point-in-time snapshot files for Gameweek 8 (`fplform.csv`, `fpl_native.csv`, `metadata.json`, `top_1000_eo.json`) and synchronized them across both repositories.
+4. **Pre-Generated Full Multi-Fuel Monte Carlo Audit**:
+   - Ran 1,000 Monte Carlo match simulations and walk-forward reconciliations across all fuels (FPLForm, Native, Eye-Test) for GW1 through GW8.
+   - All audit datasets in `data/` and `public/data/` are now fully generated and up to date.
+5. **Deployed to Production**:
+   - Committed and pushed all updates and audit datasets to GitHub `main` and deployed to live Vercel production.

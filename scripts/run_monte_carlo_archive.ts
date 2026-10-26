@@ -340,8 +340,13 @@ export async function runMonteCarloArchiveDirect(options: ArchiveOptions = {}) {
       // Ensure snapshot exists
       if (gw <= latestFinishedGw && !effectiveSnapshotService.hasSnapshot(gw)) {
         console.log(`[MC Archive] Point-in-time snapshot missing for GW${gw}. Archiving...`);
-        effectiveSnapshotService.saveSnapshot(gw);
+        try {
+          effectiveSnapshotService.saveSnapshot(gw);
+        } catch (err: any) {
+          console.warn(`[MC Archive] Notice: could not save snapshot for GW${gw} (${err.message}). Continuing with available data.`);
+        }
       }
+
 
       const snapshotPaths = effectiveSnapshotService.getSnapshotPaths(gw);
       const eoFilePath = snapshotPaths?.eoPath || path.resolve(process.cwd(), 'data', 'top_1000_eo.json');
