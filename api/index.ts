@@ -658,11 +658,30 @@ export class FPLService {
     
     const startingXI = buildStartingXI(squad, params);
     const startingIds = new Set(startingXI.map(p => p.id));
-    const bench = squad.filter(p => !startingIds.has(p.id)).sort((a, b) => {
-      if (a.position === 'GKP' && b.position !== 'GKP') return -1;
-      if (a.position !== 'GKP' && b.position === 'GKP') return 1;
-      return (b.score || b.xP || 0) - (a.score || a.xP || 0);
+
+    // Auto-Sub Bench Armor (Smart Sub 1 Priority):
+    // Position 12: Backup Goalkeeper (GKP)
+    // Position 13 (Sub 1): Highest-reliability auto-sub protector (nailed 90-min starter with high floor)
+    // Positions 14-15 (Sub 2, Sub 3): Remaining outfield subs sorted by points upside
+    const gkpBench = squad.filter(p => !startingIds.has(p.id) && p.position === 'GKP');
+    const outfieldBench = squad.filter(p => !startingIds.has(p.id) && p.position !== 'GKP').sort((a, b) => {
+      // Check reliability: high availability and start consistency in 2026/27
+      const aAvail = (a.chance_of_playing_next_round ?? 100) >= 75;
+      const bAvail = (b.chance_of_playing_next_round ?? 100) >= 75;
+      const aScore = a.score || a.xP || 0;
+      const bScore = b.score || b.xP || 0;
+
+      // Smart Sub 1 Priority: if a player has positive xP (>= 1.5) and is available with solid starting history,
+      // prioritize them into Sub 1 to protect against an attacking starter being unexpectedly benched
+      const aNailed = aAvail && (a.startsLast5 ?? 3) >= 3 && aScore >= 1.5;
+      const bNailed = bAvail && (b.startsLast5 ?? 3) >= 3 && bScore >= 1.5;
+      if (aNailed && !bNailed) return -1;
+      if (!aNailed && bNailed) return 1;
+
+      return bScore - aScore;
     });
+
+    const bench = [...gkpBench, ...outfieldBench];
 
     // Assign position_in_squad (1-11 for starters, 12-15 for bench) so all downstream UI views stay in sync
     startingXI.forEach((p, idx) => { p.position_in_squad = idx + 1; });
