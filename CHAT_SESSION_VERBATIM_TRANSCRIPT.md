@@ -26139,3 +26139,26 @@ git pull
 ### In `fpl-admin`:
 - Checked and pulled `origin/main`.
 - Already up to date.
+
+---
+
+### User (Turn 187)
+
+I want fpl-planner to have fpl planner written in the header instead offpl horizon, can you do that, just that alone, every other thing written remains, just that
+
+---
+
+### Assistant (Turn 187)
+
+**Done!**
+
+In [Header.tsx](file:///c:/Users/USER/Documents/fpl-planner/src/components/Header.tsx#L29), updated the header text from:
+```tsx
+<h1 className="text-2xl font-bold tracking-tight">FPL <span className="text-fpl-green">HORIZON</span></h1>
+```
+to:
+```tsx
+<h1 className="text-2xl font-bold tracking-tight">FPL <span className="text-fpl-green">PLANNER</span></h1>
+```
+
+Every other element in the header (the "F" logo box, the "V3" badge, the "AI POWERED" badge, the "Generative AI Optimization Engine" subtitle, and all controls) remains completely untouched. Verified with a clean production build (`npm run build`).
