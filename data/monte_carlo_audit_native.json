@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-08T20:40:36.802Z",
+  "generatedAt": "2026-11-09T12:28:01.497Z",
   "fuel": "native",
   "startGw": 1,
   "endGw": 9,
@@ -15,10 +15,10 @@
   ],
   "calibrationSummary": {
     "totalEvaluated": 54,
-    "ciHitCount": 21,
-    "ciCoverageRate": 38.9,
-    "avgAbsoluteError": 25.4,
-    "haulHitCount": 10,
+    "ciHitCount": 23,
+    "ciCoverageRate": 42.6,
+    "avgAbsoluteError": 27,
+    "haulHitCount": 11,
     "haulPredictedCount": 53
   },
   "cumulativeTotals": {
@@ -27,24 +27,24 @@
       "netAlpha": -181.5
     },
     "quant_aggressive": {
-      "totalPoints": 431,
-      "netAlpha": -209.5
+      "totalPoints": 443,
+      "netAlpha": -197.5
     },
     "quant_value": {
-      "totalPoints": 691,
-      "netAlpha": 50.5
+      "totalPoints": 665,
+      "netAlpha": 24.5
     },
     "template_safe": {
       "totalPoints": 518,
       "netAlpha": -122.5
     },
     "template_aggressive": {
-      "totalPoints": 489,
-      "netAlpha": -151.5
+      "totalPoints": 499,
+      "netAlpha": -141.5
     },
     "template_value": {
-      "totalPoints": 495,
-      "netAlpha": -145.5
+      "totalPoints": 488,
+      "netAlpha": -152.5
     }
   },
   "gameweeks": [
@@ -217,23 +217,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 80.9,
+            "meanXp": 81.9,
             "median": 81,
-            "p10": 59,
-            "p90": 103,
+            "p10": 60,
+            "p90": 104,
             "confidenceInterval": [
-              59,
-              103
+              60,
+              104
             ],
-            "haulProbability": 63,
-            "blankProbability": 0,
+            "haulProbability": 66,
+            "blankProbability": 1,
             "variance": 298.1
           },
           "reconciliation": {
             "actualScore": 40,
             "netActualScore": 40,
             "insideConfidenceInterval": false,
-            "predictionError": -40.9,
+            "predictionError": -41.9,
             "haulAchieved": false,
             "blankOccurred": true,
             "alphaVsTemplate": -35.4
@@ -405,23 +405,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 77.6,
-            "median": 77,
+            "meanXp": 77.5,
+            "median": 76,
             "p10": 56,
-            "p90": 100,
+            "p90": 99,
             "confidenceInterval": [
               56,
-              100
+              99
             ],
-            "haulProbability": 55,
+            "haulProbability": 54,
             "blankProbability": 1,
-            "variance": 306.3
+            "variance": 282.1
           },
           "reconciliation": {
             "actualScore": 40,
             "netActualScore": 40,
             "insideConfidenceInterval": false,
-            "predictionError": -37.6,
+            "predictionError": -37.5,
             "haulAchieved": false,
             "blankOccurred": true,
             "alphaVsTemplate": -35.4
@@ -437,7 +437,7 @@
               "name": "Raya",
               "team": "ARS",
               "position": "GKP",
-              "projectedXp": 6,
+              "projectedXp": 6.8,
               "actualPoints": 6,
               "played": true
             },
@@ -446,7 +446,7 @@
               "name": "Calafiori",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 5.6,
+              "projectedXp": 4.8,
               "actualPoints": 9,
               "played": true
             },
@@ -455,7 +455,7 @@
               "name": "White",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 4.2,
+              "projectedXp": 4,
               "actualPoints": 11,
               "played": true
             },
@@ -554,12 +554,12 @@
               "subbedIn": false
             },
             {
-              "id": 261,
-              "name": "Iwobi",
-              "team": "FUL",
+              "id": 183,
+              "name": "Rudoni",
+              "team": "COV",
               "position": "MID",
               "projectedXp": 5.2,
-              "actualPoints": 2,
+              "actualPoints": 1,
               "played": true
             },
             {
@@ -591,23 +591,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 68.1,
-            "median": 68,
+            "meanXp": 67.6,
+            "median": 67,
             "p10": 48,
-            "p90": 89,
+            "p90": 88,
             "confidenceInterval": [
               48,
-              89
+              88
             ],
-            "haulProbability": 33,
-            "blankProbability": 3,
-            "variance": 266.6
+            "haulProbability": 30,
+            "blankProbability": 2,
+            "variance": 254
           },
           "reconciliation": {
             "actualScore": 68,
             "netActualScore": 68,
             "insideConfidenceInterval": true,
-            "predictionError": -0.1,
+            "predictionError": 0.4,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": -7.4
@@ -735,7 +735,7 @@
               "name": "Konsa",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 9,
+              "projectedXp": 10.2,
               "actualPoints": 0,
               "played": false,
               "subbedIn": false
@@ -778,23 +778,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 79.2,
-            "median": 79,
-            "p10": 60,
-            "p90": 98,
+            "meanXp": 81.7,
+            "median": 81,
+            "p10": 61,
+            "p90": 104,
             "confidenceInterval": [
-              60,
-              98
+              61,
+              104
             ],
-            "haulProbability": 61,
-            "blankProbability": 1,
-            "variance": 215.7
+            "haulProbability": 67,
+            "blankProbability": 0,
+            "variance": 303.5
           },
           "reconciliation": {
             "actualScore": 40,
             "netActualScore": 40,
             "insideConfidenceInterval": false,
-            "predictionError": -39.2,
+            "predictionError": -41.7,
             "haulAchieved": false,
             "blankOccurred": true,
             "alphaVsTemplate": -35.4
@@ -923,7 +923,7 @@
               "name": "Konsa",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 9,
+              "projectedXp": 10.2,
               "actualPoints": 0,
               "played": false,
               "subbedIn": false
@@ -968,23 +968,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 79.4,
-            "median": 79,
-            "p10": 59,
-            "p90": 101,
+            "meanXp": 80.5,
+            "median": 80,
+            "p10": 58,
+            "p90": 103,
             "confidenceInterval": [
-              59,
-              101
+              58,
+              103
             ],
-            "haulProbability": 62,
+            "haulProbability": 60,
             "blankProbability": 1,
-            "variance": 284.8
+            "variance": 309
           },
           "reconciliation": {
             "actualScore": 42,
             "netActualScore": 42,
             "insideConfidenceInterval": false,
-            "predictionError": -37.4,
+            "predictionError": -38.5,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": -33.4
@@ -1112,7 +1112,7 @@
               "name": "Konsa",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 9,
+              "projectedXp": 10.2,
               "actualPoints": 0,
               "played": false,
               "subbedIn": false
@@ -1156,23 +1156,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 82,
-            "median": 81,
-            "p10": 62,
-            "p90": 105,
+            "meanXp": 83.6,
+            "median": 83,
+            "p10": 61,
+            "p90": 106,
             "confidenceInterval": [
-              62,
-              105
+              61,
+              106
             ],
-            "haulProbability": 65,
+            "haulProbability": 70,
             "blankProbability": 0,
-            "variance": 322.9
+            "variance": 306.3
           },
           "reconciliation": {
             "actualScore": 40,
             "netActualScore": 40,
             "insideConfidenceInterval": false,
-            "predictionError": -42,
+            "predictionError": -43.6,
             "haulAchieved": false,
             "blankOccurred": true,
             "alphaVsTemplate": -35.4
@@ -1195,7 +1195,7 @@
               "name": "Raya",
               "team": "ARS",
               "position": "GKP",
-              "projectedXp": 6,
+              "projectedXp": 6.8,
               "actualPoints": 6,
               "played": true
             },
@@ -1204,8 +1204,17 @@
               "name": "Gabriel",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 8.2,
+              "projectedXp": 9.8,
               "actualPoints": 8,
+              "played": true
+            },
+            {
+              "id": 31,
+              "name": "Konsa",
+              "team": "ARS",
+              "position": "DEF",
+              "projectedXp": 10.2,
+              "actualPoints": 1,
               "played": true
             },
             {
@@ -1218,15 +1227,6 @@
               "played": true
             },
             {
-              "id": 114,
-              "name": "Boscagli",
-              "team": "BHA",
-              "position": "DEF",
-              "projectedXp": 5,
-              "actualPoints": -1,
-              "played": true
-            },
-            {
               "id": 127,
               "name": "Gomez",
               "team": "BHA",
@@ -1236,12 +1236,12 @@
               "played": true
             },
             {
-              "id": 230,
-              "name": "Branthwaite",
-              "team": "EVE",
+              "id": 114,
+              "name": "Boscagli",
+              "team": "BHA",
               "position": "DEF",
-              "projectedXp": 3.2,
-              "actualPoints": 4,
+              "projectedXp": 5,
+              "actualPoints": -1,
               "played": true,
               "subbedIn": true
             },
@@ -1302,15 +1302,6 @@
               "played": true
             },
             {
-              "id": 101,
-              "name": "Henderson",
-              "team": "CHE",
-              "position": "MID",
-              "projectedXp": 5,
-              "actualPoints": 0,
-              "played": false
-            },
-            {
               "id": 129,
               "name": "Ayari",
               "team": "BHA",
@@ -1319,6 +1310,15 @@
               "actualPoints": 0,
               "played": false,
               "subbedIn": false
+            },
+            {
+              "id": 101,
+              "name": "Henderson",
+              "team": "CHE",
+              "position": "MID",
+              "projectedXp": 5,
+              "actualPoints": 0,
+              "played": false
             },
             {
               "id": 469,
@@ -1338,9 +1338,9 @@
             "isVcPromoted": false
           },
           "viceCaptain": {
-            "id": 249,
-            "name": "Barry",
-            "actualPoints": 2
+            "id": 31,
+            "name": "Konsa",
+            "actualPoints": 1
           },
           "transfers": {
             "in": [],
@@ -1348,26 +1348,26 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 82.4,
-            "median": 82,
-            "p10": 61,
-            "p90": 105,
+            "meanXp": 90.3,
+            "median": 90,
+            "p10": 68,
+            "p90": 113,
             "confidenceInterval": [
-              61,
-              105
+              68,
+              113
             ],
-            "haulProbability": 67,
+            "haulProbability": 80,
             "blankProbability": 0,
-            "variance": 311.7
+            "variance": 314.5
           },
           "reconciliation": {
-            "actualScore": 51,
-            "netActualScore": 51,
+            "actualScore": 48,
+            "netActualScore": 48,
             "insideConfidenceInterval": false,
-            "predictionError": -31.4,
+            "predictionError": -42.3,
             "haulAchieved": false,
             "blankOccurred": false,
-            "alphaVsTemplate": -71.8
+            "alphaVsTemplate": -74.8
           }
         },
         "quant_aggressive": {
@@ -1380,7 +1380,7 @@
               "name": "Gabriel",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 8.2,
+              "projectedXp": 9.8,
               "actualPoints": 8,
               "played": true
             },
@@ -1483,7 +1483,7 @@
               "name": "Raya",
               "team": "ARS",
               "position": "GKP",
-              "projectedXp": 6,
+              "projectedXp": 6.8,
               "actualPoints": 6,
               "played": true
             },
@@ -1535,23 +1535,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 78.1,
-            "median": 78,
+            "meanXp": 78.5,
+            "median": 77,
             "p10": 57,
-            "p90": 99,
+            "p90": 101,
             "confidenceInterval": [
               57,
-              99
+              101
             ],
             "haulProbability": 57,
-            "blankProbability": 0,
-            "variance": 266.6
+            "blankProbability": 1,
+            "variance": 309
           },
           "reconciliation": {
             "actualScore": 39,
             "netActualScore": 39,
             "insideConfidenceInterval": false,
-            "predictionError": -39.1,
+            "predictionError": -39.5,
             "haulAchieved": false,
             "blankOccurred": true,
             "alphaVsTemplate": -83.8
@@ -1567,7 +1567,7 @@
               "name": "Raya",
               "team": "ARS",
               "position": "GKP",
-              "projectedXp": 6,
+              "projectedXp": 6.8,
               "actualPoints": 6,
               "played": true
             },
@@ -1576,7 +1576,7 @@
               "name": "Calafiori",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 5.6,
+              "projectedXp": 4.8,
               "actualPoints": 11,
               "played": true
             },
@@ -1585,7 +1585,7 @@
               "name": "White",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 4.2,
+              "projectedXp": 4,
               "actualPoints": 7,
               "played": true
             },
@@ -1720,23 +1720,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 65.6,
+            "meanXp": 65.9,
             "median": 65,
-            "p10": 48,
-            "p90": 86,
+            "p10": 46,
+            "p90": 87,
             "confidenceInterval": [
-              48,
-              86
+              46,
+              87
             ],
-            "haulProbability": 26,
-            "blankProbability": 3,
-            "variance": 254
+            "haulProbability": 29,
+            "blankProbability": 4,
+            "variance": 271.7
           },
           "reconciliation": {
             "actualScore": 82,
             "netActualScore": 82,
             "insideConfidenceInterval": true,
-            "predictionError": 16.4,
+            "predictionError": 16.1,
             "haulAchieved": true,
             "blankOccurred": false,
             "alphaVsTemplate": -40.8
@@ -1752,7 +1752,7 @@
               "name": "Raya",
               "team": "ARS",
               "position": "GKP",
-              "projectedXp": 6,
+              "projectedXp": 6.8,
               "actualPoints": 6,
               "played": true
             },
@@ -1761,7 +1761,7 @@
               "name": "Gabriel",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 8.2,
+              "projectedXp": 9.8,
               "actualPoints": 8,
               "played": true
             },
@@ -1770,7 +1770,7 @@
               "name": "Konsa",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 9,
+              "projectedXp": 10.2,
               "actualPoints": 1,
               "played": true
             },
@@ -1905,23 +1905,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 83.2,
-            "median": 83,
-            "p10": 64,
-            "p90": 104,
+            "meanXp": 86.7,
+            "median": 87,
+            "p10": 66,
+            "p90": 108,
             "confidenceInterval": [
-              64,
-              104
+              66,
+              108
             ],
-            "haulProbability": 71,
+            "haulProbability": 78,
             "blankProbability": 0,
-            "variance": 264.1
+            "variance": 276.9
           },
           "reconciliation": {
             "actualScore": 65,
             "netActualScore": 65,
-            "insideConfidenceInterval": true,
-            "predictionError": -18.2,
+            "insideConfidenceInterval": false,
+            "predictionError": -21.7,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": -57.8
@@ -1933,11 +1933,20 @@
           "scenarioLabel": "Risky Template Shield",
           "startingXI": [
             {
+              "id": 1,
+              "name": "Raya",
+              "team": "ARS",
+              "position": "GKP",
+              "projectedXp": 6.8,
+              "actualPoints": 6,
+              "played": true
+            },
+            {
               "id": 4,
               "name": "Gabriel",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 8.2,
+              "projectedXp": 9.8,
               "actualPoints": 8,
               "played": true
             },
@@ -1946,7 +1955,7 @@
               "name": "Konsa",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 9,
+              "projectedXp": 10.2,
               "actualPoints": 1,
               "played": true
             },
@@ -1956,15 +1965,6 @@
               "team": "AVL",
               "position": "FWD",
               "projectedXp": 8.8,
-              "actualPoints": 2,
-              "played": true
-            },
-            {
-              "id": 597,
-              "name": "Suzuki",
-              "team": "AVL",
-              "position": "GKP",
-              "projectedXp": 3,
               "actualPoints": 2,
               "played": true
             },
@@ -2035,12 +2035,12 @@
           ],
           "bench": [
             {
-              "id": 1,
-              "name": "Raya",
-              "team": "ARS",
+              "id": 597,
+              "name": "Suzuki",
+              "team": "AVL",
               "position": "GKP",
-              "projectedXp": 6,
-              "actualPoints": 6,
+              "projectedXp": 3,
+              "actualPoints": 2,
               "played": true
             },
             {
@@ -2090,26 +2090,26 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 79.8,
-            "median": 79,
-            "p10": 58,
-            "p90": 102,
+            "meanXp": 86.7,
+            "median": 86,
+            "p10": 64,
+            "p90": 110,
             "confidenceInterval": [
-              58,
-              102
+              64,
+              110
             ],
-            "haulProbability": 61,
+            "haulProbability": 74,
             "blankProbability": 0,
-            "variance": 300.8
+            "variance": 331.4
           },
           "reconciliation": {
-            "actualScore": 48,
-            "netActualScore": 48,
+            "actualScore": 52,
+            "netActualScore": 52,
             "insideConfidenceInterval": false,
-            "predictionError": -31.8,
+            "predictionError": -34.7,
             "haulAchieved": false,
             "blankOccurred": false,
-            "alphaVsTemplate": -74.8
+            "alphaVsTemplate": -70.8
           }
         },
         "template_value": {
@@ -2122,7 +2122,7 @@
               "name": "Raya",
               "team": "ARS",
               "position": "GKP",
-              "projectedXp": 6,
+              "projectedXp": 6.8,
               "actualPoints": 6,
               "played": true
             },
@@ -2131,7 +2131,7 @@
               "name": "Gabriel",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 8.2,
+              "projectedXp": 9.8,
               "actualPoints": 8,
               "played": true
             },
@@ -2140,7 +2140,7 @@
               "name": "Konsa",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 9,
+              "projectedXp": 10.2,
               "actualPoints": 1,
               "played": true
             },
@@ -2275,15 +2275,15 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 85.8,
-            "median": 86,
-            "p10": 64,
-            "p90": 109,
+            "meanXp": 89.8,
+            "median": 90,
+            "p10": 67,
+            "p90": 113,
             "confidenceInterval": [
-              64,
-              109
+              67,
+              113
             ],
-            "haulProbability": 73,
+            "haulProbability": 81,
             "blankProbability": 0,
             "variance": 328.5
           },
@@ -2291,7 +2291,7 @@
             "actualScore": 54,
             "netActualScore": 54,
             "insideConfidenceInterval": false,
-            "predictionError": -31.8,
+            "predictionError": -35.8,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": -68.8
@@ -2314,7 +2314,7 @@
               "name": "Raya",
               "team": "ARS",
               "position": "GKP",
-              "projectedXp": 6,
+              "projectedXp": 6.8,
               "actualPoints": 3,
               "played": true
             },
@@ -2323,7 +2323,7 @@
               "name": "Gabriel",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 8.2,
+              "projectedXp": 9.8,
               "actualPoints": 2,
               "played": true
             },
@@ -2332,7 +2332,7 @@
               "name": "Rice",
               "team": "ARS",
               "position": "MID",
-              "projectedXp": 6,
+              "projectedXp": 5.8,
               "actualPoints": 5,
               "played": true
             },
@@ -2396,7 +2396,7 @@
               "name": "Justin",
               "team": "LEE",
               "position": "DEF",
-              "projectedXp": 5,
+              "projectedXp": 4.8,
               "actualPoints": 4,
               "played": true
             },
@@ -2416,7 +2416,7 @@
               "name": "Trafford",
               "team": "LEE",
               "position": "GKP",
-              "projectedXp": 5.2,
+              "projectedXp": 6,
               "actualPoints": 3,
               "played": true
             },
@@ -2467,23 +2467,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 81.2,
-            "median": 81,
-            "p10": 58,
-            "p90": 103,
+            "meanXp": 83.5,
+            "median": 83,
+            "p10": 61,
+            "p90": 106,
             "confidenceInterval": [
-              58,
-              103
+              61,
+              106
             ],
-            "haulProbability": 64,
-            "blankProbability": 1,
-            "variance": 290.1
+            "haulProbability": 71,
+            "blankProbability": 0,
+            "variance": 309
           },
           "reconciliation": {
             "actualScore": 35,
             "netActualScore": 35,
             "insideConfidenceInterval": false,
-            "predictionError": -46.2,
+            "predictionError": -48.5,
             "haulAchieved": false,
             "blankOccurred": true,
             "alphaVsTemplate": -25.4
@@ -2499,7 +2499,7 @@
               "name": "Gabriel",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 8.2,
+              "projectedXp": 9.8,
               "actualPoints": 2,
               "played": true
             },
@@ -2508,7 +2508,7 @@
               "name": "Rice",
               "team": "ARS",
               "position": "MID",
-              "projectedXp": 6,
+              "projectedXp": 5.8,
               "actualPoints": 5,
               "played": true
             },
@@ -2581,7 +2581,7 @@
               "name": "Justin",
               "team": "LEE",
               "position": "DEF",
-              "projectedXp": 5,
+              "projectedXp": 4.8,
               "actualPoints": 4,
               "played": true
             },
@@ -2590,7 +2590,7 @@
               "name": "Trafford",
               "team": "LEE",
               "position": "GKP",
-              "projectedXp": 5.2,
+              "projectedXp": 6,
               "actualPoints": 3,
               "played": true
             }
@@ -2601,7 +2601,7 @@
               "name": "Raya",
               "team": "ARS",
               "position": "GKP",
-              "projectedXp": 6,
+              "projectedXp": 6.8,
               "actualPoints": 3,
               "played": true
             },
@@ -2652,23 +2652,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 79.6,
-            "median": 79,
-            "p10": 58,
+            "meanXp": 80.8,
+            "median": 81,
+            "p10": 60,
             "p90": 102,
             "confidenceInterval": [
-              58,
+              60,
               102
             ],
-            "haulProbability": 61,
+            "haulProbability": 64,
             "blankProbability": 1,
-            "variance": 306.3
+            "variance": 274.3
           },
           "reconciliation": {
             "actualScore": 29,
             "netActualScore": 29,
             "insideConfidenceInterval": false,
-            "predictionError": -50.6,
+            "predictionError": -51.8,
             "haulAchieved": false,
             "blankOccurred": true,
             "alphaVsTemplate": -31.4
@@ -2684,7 +2684,7 @@
               "name": "Calafiori",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 5.6,
+              "projectedXp": 4.8,
               "actualPoints": 2,
               "played": true
             },
@@ -2713,6 +2713,15 @@
               "position": "DEF",
               "projectedXp": 4.6,
               "actualPoints": 1,
+              "played": true
+            },
+            {
+              "id": 385,
+              "name": "Trafford",
+              "team": "LEE",
+              "position": "GKP",
+              "projectedXp": 6,
+              "actualPoints": 3,
               "played": true
             },
             {
@@ -2768,15 +2777,6 @@
               "projectedXp": 4.2,
               "actualPoints": 8,
               "played": true
-            },
-            {
-              "id": 496,
-              "name": "Kinsky",
-              "team": "TOT",
-              "position": "GKP",
-              "projectedXp": 4.4,
-              "actualPoints": 6,
-              "played": true
             }
           ],
           "bench": [
@@ -2799,15 +2799,6 @@
               "played": false
             },
             {
-              "id": 599,
-              "name": "Cherif",
-              "team": "COV",
-              "position": "FWD",
-              "projectedXp": 3.4,
-              "actualPoints": 0,
-              "played": false
-            },
-            {
               "id": 175,
               "name": "van Ewijk",
               "team": "COV",
@@ -2815,6 +2806,15 @@
               "projectedXp": 2.8,
               "actualPoints": 3,
               "played": true
+            },
+            {
+              "id": 272,
+              "name": "Kusi-Asare",
+              "team": "FUL",
+              "position": "FWD",
+              "projectedXp": 4.5,
+              "actualPoints": 0,
+              "played": false
             }
           ],
           "captain": {
@@ -2835,26 +2835,26 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 57.5,
-            "median": 57,
-            "p10": 41,
-            "p90": 73,
+            "meanXp": 58.6,
+            "median": 58,
+            "p10": 43,
+            "p90": 76,
             "confidenceInterval": [
-              41,
-              73
+              43,
+              76
             ],
-            "haulProbability": 9,
-            "blankProbability": 9,
-            "variance": 146.6
+            "haulProbability": 11,
+            "blankProbability": 7,
+            "variance": 184.8
           },
           "reconciliation": {
-            "actualScore": 75,
-            "netActualScore": 75,
-            "insideConfidenceInterval": false,
-            "predictionError": 17.5,
-            "haulAchieved": true,
+            "actualScore": 72,
+            "netActualScore": 72,
+            "insideConfidenceInterval": true,
+            "predictionError": 13.4,
+            "haulAchieved": false,
             "blankOccurred": false,
-            "alphaVsTemplate": 14.6
+            "alphaVsTemplate": 11.6
           }
         },
         "template_safe": {
@@ -2867,7 +2867,7 @@
               "name": "Raya",
               "team": "ARS",
               "position": "GKP",
-              "projectedXp": 6,
+              "projectedXp": 6.8,
               "actualPoints": 3,
               "played": true
             },
@@ -2876,7 +2876,7 @@
               "name": "Gabriel",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 8.2,
+              "projectedXp": 9.8,
               "actualPoints": 2,
               "played": true
             },
@@ -2885,7 +2885,7 @@
               "name": "Konsa",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 9,
+              "projectedXp": 10.2,
               "actualPoints": 4,
               "played": true
             },
@@ -2949,7 +2949,7 @@
               "name": "Justin",
               "team": "LEE",
               "position": "DEF",
-              "projectedXp": 5,
+              "projectedXp": 4.8,
               "actualPoints": 4,
               "played": true
             },
@@ -2969,7 +2969,7 @@
               "name": "Trafford",
               "team": "LEE",
               "position": "GKP",
-              "projectedXp": 5.2,
+              "projectedXp": 6,
               "actualPoints": 3,
               "played": true
             },
@@ -3020,23 +3020,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 81.2,
-            "median": 81,
-            "p10": 61,
-            "p90": 102,
+            "meanXp": 85.2,
+            "median": 84,
+            "p10": 65,
+            "p90": 107,
             "confidenceInterval": [
-              61,
-              102
+              65,
+              107
             ],
-            "haulProbability": 65,
-            "blankProbability": 1,
-            "variance": 264.1
+            "haulProbability": 75,
+            "blankProbability": 0,
+            "variance": 290.1
           },
           "reconciliation": {
             "actualScore": 46,
             "netActualScore": 46,
             "insideConfidenceInterval": false,
-            "predictionError": -35.2,
+            "predictionError": -39.2,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": -14.4
@@ -3052,7 +3052,7 @@
               "name": "Gabriel",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 8.2,
+              "projectedXp": 9.8,
               "actualPoints": 2,
               "played": true
             },
@@ -3061,7 +3061,7 @@
               "name": "Konsa",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 9,
+              "projectedXp": 10.2,
               "actualPoints": 4,
               "played": true
             },
@@ -3125,7 +3125,7 @@
               "name": "Justin",
               "team": "LEE",
               "position": "DEF",
-              "projectedXp": 5,
+              "projectedXp": 4.8,
               "actualPoints": 4,
               "played": true
             },
@@ -3134,7 +3134,7 @@
               "name": "Trafford",
               "team": "LEE",
               "position": "GKP",
-              "projectedXp": 5.2,
+              "projectedXp": 6,
               "actualPoints": 3,
               "played": true
             },
@@ -3154,7 +3154,7 @@
               "name": "Raya",
               "team": "ARS",
               "position": "GKP",
-              "projectedXp": 6,
+              "projectedXp": 6.8,
               "actualPoints": 3,
               "played": true
             },
@@ -3205,23 +3205,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 82.8,
-            "median": 83,
-            "p10": 61,
-            "p90": 104,
+            "meanXp": 85.6,
+            "median": 86,
+            "p10": 62,
+            "p90": 109,
             "confidenceInterval": [
-              61,
-              104
+              62,
+              109
             ],
-            "haulProbability": 69,
-            "blankProbability": 1,
-            "variance": 274.3
+            "haulProbability": 73,
+            "blankProbability": 0,
+            "variance": 334.2
           },
           "reconciliation": {
             "actualScore": 39,
             "netActualScore": 39,
             "insideConfidenceInterval": false,
-            "predictionError": -43.8,
+            "predictionError": -46.6,
             "haulAchieved": false,
             "blankOccurred": true,
             "alphaVsTemplate": -21.4
@@ -3237,7 +3237,7 @@
               "name": "Raya",
               "team": "ARS",
               "position": "GKP",
-              "projectedXp": 6,
+              "projectedXp": 6.8,
               "actualPoints": 3,
               "played": true
             },
@@ -3246,7 +3246,7 @@
               "name": "Gabriel",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 8.2,
+              "projectedXp": 9.8,
               "actualPoints": 2,
               "played": true
             },
@@ -3255,7 +3255,7 @@
               "name": "Konsa",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 9,
+              "projectedXp": 10.2,
               "actualPoints": 4,
               "played": true
             },
@@ -3319,7 +3319,7 @@
               "name": "Justin",
               "team": "LEE",
               "position": "DEF",
-              "projectedXp": 5,
+              "projectedXp": 4.8,
               "actualPoints": 4,
               "played": true
             },
@@ -3339,7 +3339,7 @@
               "name": "Trafford",
               "team": "LEE",
               "position": "GKP",
-              "projectedXp": 5.2,
+              "projectedXp": 6,
               "actualPoints": 3,
               "played": true
             },
@@ -3390,23 +3390,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 84.9,
-            "median": 85,
-            "p10": 63,
-            "p90": 107,
+            "meanXp": 87.6,
+            "median": 87,
+            "p10": 65,
+            "p90": 112,
             "confidenceInterval": [
-              63,
-              107
+              65,
+              112
             ],
-            "haulProbability": 72,
+            "haulProbability": 75,
             "blankProbability": 0,
-            "variance": 298.1
+            "variance": 363.4
           },
           "reconciliation": {
             "actualScore": 39,
             "netActualScore": 39,
             "insideConfidenceInterval": false,
-            "predictionError": -45.9,
+            "predictionError": -48.6,
             "haulAchieved": false,
             "blankOccurred": true,
             "alphaVsTemplate": -21.4
@@ -3429,17 +3429,8 @@
               "name": "Gabriel",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 8.2,
+              "projectedXp": 9.8,
               "actualPoints": 9,
-              "played": true
-            },
-            {
-              "id": 13,
-              "name": "Rice",
-              "team": "ARS",
-              "position": "MID",
-              "projectedXp": 6,
-              "actualPoints": 6,
               "played": true
             },
             {
@@ -3447,7 +3438,7 @@
               "name": "Konsa",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 9,
+              "projectedXp": 10.2,
               "actualPoints": 6,
               "played": true
             },
@@ -3484,6 +3475,15 @@
               "team": "COV",
               "position": "MID",
               "projectedXp": 5.2,
+              "actualPoints": 2,
+              "played": true
+            },
+            {
+              "id": 236,
+              "name": "Dewsbury-Hall",
+              "team": "EVE",
+              "position": "MID",
+              "projectedXp": 6,
               "actualPoints": 2,
               "played": true
             },
@@ -3580,26 +3580,26 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 83.5,
-            "median": 83,
-            "p10": 61,
-            "p90": 106,
+            "meanXp": 87.8,
+            "median": 87,
+            "p10": 66,
+            "p90": 111,
             "confidenceInterval": [
-              61,
-              106
+              66,
+              111
             ],
-            "haulProbability": 70,
+            "haulProbability": 76,
             "blankProbability": 0,
-            "variance": 309
+            "variance": 328.5
           },
           "reconciliation": {
-            "actualScore": 54,
-            "netActualScore": 54,
+            "actualScore": 50,
+            "netActualScore": 50,
             "insideConfidenceInterval": false,
-            "predictionError": -29.5,
+            "predictionError": -37.8,
             "haulAchieved": false,
             "blankOccurred": false,
-            "alphaVsTemplate": -45.2
+            "alphaVsTemplate": -49.2
           }
         },
         "quant_aggressive": {
@@ -3612,7 +3612,7 @@
               "name": "Gabriel",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 8.2,
+              "projectedXp": 9.8,
               "actualPoints": 9,
               "played": true
             },
@@ -3621,7 +3621,16 @@
               "name": "Rice",
               "team": "ARS",
               "position": "MID",
-              "projectedXp": 6,
+              "projectedXp": 5.8,
+              "actualPoints": 6,
+              "played": true
+            },
+            {
+              "id": 31,
+              "name": "Konsa",
+              "team": "ARS",
+              "position": "DEF",
+              "projectedXp": 10.2,
               "actualPoints": 6,
               "played": true
             },
@@ -3650,15 +3659,6 @@
               "position": "FWD",
               "projectedXp": 8.6,
               "actualPoints": 5,
-              "played": true
-            },
-            {
-              "id": 87,
-              "name": "Ajer",
-              "team": "BRE",
-              "position": "DEF",
-              "projectedXp": 4.2,
-              "actualPoints": 1,
               "played": true
             },
             {
@@ -3727,21 +3727,21 @@
               "played": true
             },
             {
+              "id": 87,
+              "name": "Ajer",
+              "team": "BRE",
+              "position": "DEF",
+              "projectedXp": 4.2,
+              "actualPoints": 1,
+              "played": true
+            },
+            {
               "id": 91,
               "name": "Pinnock",
               "team": "COV",
               "position": "DEF",
               "projectedXp": 2.8,
               "actualPoints": 2,
-              "played": true
-            },
-            {
-              "id": 279,
-              "name": "Ajayi",
-              "team": "HUL",
-              "position": "DEF",
-              "projectedXp": 3,
-              "actualPoints": 1,
               "played": true
             }
           ],
@@ -3753,9 +3753,9 @@
             "isVcPromoted": false
           },
           "viceCaptain": {
-            "id": 79,
-            "name": "Evanilson",
-            "actualPoints": 5
+            "id": 31,
+            "name": "Konsa",
+            "actualPoints": 6
           },
           "transfers": {
             "in": [],
@@ -3763,26 +3763,26 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 77,
-            "median": 77,
-            "p10": 56,
-            "p90": 98,
+            "meanXp": 85.4,
+            "median": 84,
+            "p10": 63,
+            "p90": 109,
             "confidenceInterval": [
-              56,
-              98
+              63,
+              109
             ],
-            "haulProbability": 56,
-            "blankProbability": 1,
-            "variance": 269.2
+            "haulProbability": 73,
+            "blankProbability": 0,
+            "variance": 339.9
           },
           "reconciliation": {
-            "actualScore": 40,
-            "netActualScore": 40,
+            "actualScore": 45,
+            "netActualScore": 45,
             "insideConfidenceInterval": false,
-            "predictionError": -37,
+            "predictionError": -40.4,
             "haulAchieved": false,
-            "blankOccurred": true,
-            "alphaVsTemplate": -59.2
+            "blankOccurred": false,
+            "alphaVsTemplate": -54.2
           }
         },
         "quant_value": {
@@ -3795,7 +3795,7 @@
               "name": "Raya",
               "team": "ARS",
               "position": "GKP",
-              "projectedXp": 6,
+              "projectedXp": 6.8,
               "actualPoints": 14,
               "played": true
             },
@@ -3804,7 +3804,7 @@
               "name": "Calafiori",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 5.6,
+              "projectedXp": 4.8,
               "actualPoints": 6,
               "played": true
             },
@@ -3867,7 +3867,7 @@
               "name": "Calvert-Lewin",
               "team": "LEE",
               "position": "FWD",
-              "projectedXp": 3.4,
+              "projectedXp": 3.8,
               "actualPoints": 10,
               "played": true
             },
@@ -3946,23 +3946,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 69,
+            "meanXp": 69.4,
             "median": 69,
             "p10": 50,
-            "p90": 88,
+            "p90": 90,
             "confidenceInterval": [
               50,
-              88
+              90
             ],
-            "haulProbability": 36,
-            "blankProbability": 2,
-            "variance": 220.3
+            "haulProbability": 35,
+            "blankProbability": 3,
+            "variance": 259
           },
           "reconciliation": {
             "actualScore": 89,
             "netActualScore": 89,
-            "insideConfidenceInterval": false,
-            "predictionError": 20,
+            "insideConfidenceInterval": true,
+            "predictionError": 19.6,
             "haulAchieved": true,
             "blankOccurred": false,
             "alphaVsTemplate": -10.2
@@ -3978,17 +3978,8 @@
               "name": "Gabriel",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 8.2,
+              "projectedXp": 9.8,
               "actualPoints": 9,
-              "played": true
-            },
-            {
-              "id": 13,
-              "name": "Rice",
-              "team": "ARS",
-              "position": "MID",
-              "projectedXp": 6,
-              "actualPoints": 6,
               "played": true
             },
             {
@@ -3996,7 +3987,16 @@
               "name": "Konsa",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 9,
+              "projectedXp": 10.2,
+              "actualPoints": 6,
+              "played": true
+            },
+            {
+              "id": 45,
+              "name": "McGinn",
+              "team": "AVL",
+              "position": "MID",
+              "projectedXp": 5.4,
               "actualPoints": 6,
               "played": true
             },
@@ -4129,23 +4129,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 80.6,
-            "median": 81,
-            "p10": 60,
-            "p90": 101,
+            "meanXp": 84,
+            "median": 84,
+            "p10": 62,
+            "p90": 105,
             "confidenceInterval": [
-              60,
-              101
+              62,
+              105
             ],
-            "haulProbability": 64,
-            "blankProbability": 1,
-            "variance": 254
+            "haulProbability": 73,
+            "blankProbability": 0,
+            "variance": 269.2
           },
           "reconciliation": {
             "actualScore": 65,
             "netActualScore": 65,
             "insideConfidenceInterval": true,
-            "predictionError": -15.6,
+            "predictionError": -19,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": -34.2
@@ -4161,17 +4161,8 @@
               "name": "Gabriel",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 8.2,
+              "projectedXp": 9.8,
               "actualPoints": 9,
-              "played": true
-            },
-            {
-              "id": 13,
-              "name": "Rice",
-              "team": "ARS",
-              "position": "MID",
-              "projectedXp": 6,
-              "actualPoints": 6,
               "played": true
             },
             {
@@ -4179,7 +4170,16 @@
               "name": "Konsa",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 9,
+              "projectedXp": 10.2,
+              "actualPoints": 6,
+              "played": true
+            },
+            {
+              "id": 45,
+              "name": "McGinn",
+              "team": "AVL",
+              "position": "MID",
+              "projectedXp": 5.4,
               "actualPoints": 6,
               "played": true
             },
@@ -4312,15 +4312,15 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 82.5,
-            "median": 82,
-            "p10": 61,
-            "p90": 106,
+            "meanXp": 85.5,
+            "median": 85,
+            "p10": 63,
+            "p90": 109,
             "confidenceInterval": [
-              61,
-              106
+              63,
+              109
             ],
-            "haulProbability": 66,
+            "haulProbability": 72,
             "blankProbability": 0,
             "variance": 337.1
           },
@@ -4328,7 +4328,7 @@
             "actualScore": 56,
             "netActualScore": 56,
             "insideConfidenceInterval": false,
-            "predictionError": -26.5,
+            "predictionError": -29.5,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": -43.2
@@ -4344,17 +4344,8 @@
               "name": "Gabriel",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 8.2,
+              "projectedXp": 9.8,
               "actualPoints": 9,
-              "played": true
-            },
-            {
-              "id": 13,
-              "name": "Rice",
-              "team": "ARS",
-              "position": "MID",
-              "projectedXp": 6,
-              "actualPoints": 6,
               "played": true
             },
             {
@@ -4362,7 +4353,16 @@
               "name": "Konsa",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 9,
+              "projectedXp": 10.2,
+              "actualPoints": 6,
+              "played": true
+            },
+            {
+              "id": 45,
+              "name": "McGinn",
+              "team": "AVL",
+              "position": "MID",
+              "projectedXp": 5.4,
               "actualPoints": 6,
               "played": true
             },
@@ -4495,23 +4495,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 83.6,
-            "median": 82,
-            "p10": 62,
-            "p90": 107,
+            "meanXp": 85.7,
+            "median": 84,
+            "p10": 64,
+            "p90": 110,
             "confidenceInterval": [
-              62,
-              107
+              64,
+              110
             ],
-            "haulProbability": 69,
+            "haulProbability": 71,
             "blankProbability": 1,
-            "variance": 334.2
+            "variance": 360.4
           },
           "reconciliation": {
             "actualScore": 56,
             "netActualScore": 56,
             "insideConfidenceInterval": false,
-            "predictionError": -27.6,
+            "predictionError": -29.7,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": -43.2
@@ -4534,7 +4534,7 @@
               "name": "Raya",
               "team": "ARS",
               "position": "GKP",
-              "projectedXp": 6,
+              "projectedXp": 6.8,
               "actualPoints": 1,
               "played": true
             },
@@ -4543,7 +4543,7 @@
               "name": "Gabriel",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 8.2,
+              "projectedXp": 9.8,
               "actualPoints": 1,
               "played": true
             },
@@ -4552,7 +4552,7 @@
               "name": "Rice",
               "team": "ARS",
               "position": "MID",
-              "projectedXp": 6,
+              "projectedXp": 5.8,
               "actualPoints": 1,
               "played": true
             },
@@ -4685,23 +4685,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 82.7,
-            "median": 82,
+            "meanXp": 84.5,
+            "median": 84,
             "p10": 61,
-            "p90": 104,
+            "p90": 108,
             "confidenceInterval": [
               61,
-              104
+              108
             ],
-            "haulProbability": 68,
+            "haulProbability": 69,
             "blankProbability": 0,
-            "variance": 276.9
+            "variance": 337.1
           },
           "reconciliation": {
             "actualScore": 41,
             "netActualScore": 41,
             "insideConfidenceInterval": false,
-            "predictionError": -41.7,
+            "predictionError": -43.5,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": -1.1
@@ -4717,7 +4717,7 @@
               "name": "Gabriel",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 8.2,
+              "projectedXp": 9.8,
               "actualPoints": 1,
               "played": true
             },
@@ -4726,7 +4726,7 @@
               "name": "Rice",
               "team": "ARS",
               "position": "MID",
-              "projectedXp": 6,
+              "projectedXp": 5.8,
               "actualPoints": 1,
               "played": true
             },
@@ -4818,7 +4818,7 @@
               "name": "Raya",
               "team": "ARS",
               "position": "GKP",
-              "projectedXp": 6,
+              "projectedXp": 6.8,
               "actualPoints": 1,
               "played": true
             },
@@ -4868,23 +4868,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 78.6,
-            "median": 78,
-            "p10": 56,
-            "p90": 100,
+            "meanXp": 80.1,
+            "median": 79,
+            "p10": 59,
+            "p90": 103,
             "confidenceInterval": [
-              56,
-              100
+              59,
+              103
             ],
-            "haulProbability": 60,
-            "blankProbability": 0,
-            "variance": 279.5
+            "haulProbability": 62,
+            "blankProbability": 1,
+            "variance": 320.1
           },
           "reconciliation": {
             "actualScore": 42,
             "netActualScore": 42,
             "insideConfidenceInterval": false,
-            "predictionError": -36.6,
+            "predictionError": -38.1,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": -0.1
@@ -4900,7 +4900,7 @@
               "name": "Calafiori",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 5.6,
+              "projectedXp": 4.8,
               "actualPoints": 1,
               "played": true
             },
@@ -5051,23 +5051,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 72.7,
-            "median": 72,
-            "p10": 51,
-            "p90": 94,
+            "meanXp": 72,
+            "median": 71,
+            "p10": 52,
+            "p90": 93,
             "confidenceInterval": [
-              51,
-              94
+              52,
+              93
             ],
-            "haulProbability": 45,
+            "haulProbability": 43,
             "blankProbability": 1,
-            "variance": 276.9
+            "variance": 269.2
           },
           "reconciliation": {
             "actualScore": 54,
             "netActualScore": 54,
             "insideConfidenceInterval": true,
-            "predictionError": -18.7,
+            "predictionError": -18,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": 11.9
@@ -5083,7 +5083,7 @@
               "name": "Raya",
               "team": "ARS",
               "position": "GKP",
-              "projectedXp": 6,
+              "projectedXp": 6.8,
               "actualPoints": 1,
               "played": true
             },
@@ -5092,7 +5092,7 @@
               "name": "Gabriel",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 8.2,
+              "projectedXp": 9.8,
               "actualPoints": 1,
               "played": true
             },
@@ -5101,7 +5101,7 @@
               "name": "Konsa",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 9,
+              "projectedXp": 10.2,
               "actualPoints": 1,
               "played": true
             },
@@ -5234,23 +5234,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 82.3,
-            "median": 81,
-            "p10": 62,
-            "p90": 103,
+            "meanXp": 86.9,
+            "median": 86,
+            "p10": 66,
+            "p90": 109,
             "confidenceInterval": [
-              62,
-              103
+              66,
+              109
             ],
-            "haulProbability": 67,
+            "haulProbability": 75,
             "blankProbability": 0,
-            "variance": 261.5
+            "variance": 298.1
           },
           "reconciliation": {
             "actualScore": 37,
             "netActualScore": 37,
             "insideConfidenceInterval": false,
-            "predictionError": -45.3,
+            "predictionError": -49.9,
             "haulAchieved": false,
             "blankOccurred": true,
             "alphaVsTemplate": -5.1
@@ -5266,7 +5266,7 @@
               "name": "Gabriel",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 8.2,
+              "projectedXp": 9.8,
               "actualPoints": 1,
               "played": true
             },
@@ -5275,7 +5275,7 @@
               "name": "Rice",
               "team": "ARS",
               "position": "MID",
-              "projectedXp": 6,
+              "projectedXp": 5.8,
               "actualPoints": 1,
               "played": true
             },
@@ -5284,7 +5284,7 @@
               "name": "Konsa",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 9,
+              "projectedXp": 10.2,
               "actualPoints": 1,
               "played": true
             },
@@ -5417,23 +5417,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 83.2,
-            "median": 82,
-            "p10": 61,
-            "p90": 106,
+            "meanXp": 86.8,
+            "median": 86,
+            "p10": 66,
+            "p90": 110,
             "confidenceInterval": [
-              61,
-              106
+              66,
+              110
             ],
-            "haulProbability": 69,
+            "haulProbability": 76,
             "blankProbability": 0,
-            "variance": 317.3
+            "variance": 328.5
           },
           "reconciliation": {
             "actualScore": 38,
             "netActualScore": 38,
             "insideConfidenceInterval": false,
-            "predictionError": -45.2,
+            "predictionError": -48.8,
             "haulAchieved": false,
             "blankOccurred": true,
             "alphaVsTemplate": -4.1
@@ -5449,7 +5449,7 @@
               "name": "Raya",
               "team": "ARS",
               "position": "GKP",
-              "projectedXp": 6,
+              "projectedXp": 6.8,
               "actualPoints": 1,
               "played": true
             },
@@ -5458,7 +5458,7 @@
               "name": "Gabriel",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 8.2,
+              "projectedXp": 9.8,
               "actualPoints": 1,
               "played": true
             },
@@ -5467,7 +5467,7 @@
               "name": "Konsa",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 9,
+              "projectedXp": 10.2,
               "actualPoints": 1,
               "played": true
             },
@@ -5600,23 +5600,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 85.7,
-            "median": 85,
-            "p10": 64,
-            "p90": 107,
+            "meanXp": 89.3,
+            "median": 89,
+            "p10": 66,
+            "p90": 113,
             "confidenceInterval": [
-              64,
-              107
+              66,
+              113
             ],
-            "haulProbability": 75,
+            "haulProbability": 79,
             "blankProbability": 0,
-            "variance": 276.9
+            "variance": 342.8
           },
           "reconciliation": {
             "actualScore": 37,
             "netActualScore": 37,
             "insideConfidenceInterval": false,
-            "predictionError": -48.7,
+            "predictionError": -52.3,
             "haulAchieved": false,
             "blankOccurred": true,
             "alphaVsTemplate": -5.1
@@ -5639,7 +5639,7 @@
               "name": "Gabriel",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 8.2,
+              "projectedXp": 9.8,
               "actualPoints": 2,
               "played": true
             },
@@ -5693,7 +5693,7 @@
               "name": "Justin",
               "team": "LEE",
               "position": "DEF",
-              "projectedXp": 5,
+              "projectedXp": 4.8,
               "actualPoints": 6,
               "played": true
             },
@@ -5702,7 +5702,7 @@
               "name": "Trafford",
               "team": "LEE",
               "position": "GKP",
-              "projectedXp": 5.2,
+              "projectedXp": 6,
               "actualPoints": 2,
               "played": true
             },
@@ -5790,23 +5790,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 82.2,
-            "median": 82,
-            "p10": 61,
-            "p90": 104,
+            "meanXp": 83.4,
+            "median": 83,
+            "p10": 62,
+            "p90": 107,
             "confidenceInterval": [
-              61,
-              104
+              62,
+              107
             ],
-            "haulProbability": 65,
-            "blankProbability": 0,
-            "variance": 290.1
+            "haulProbability": 69,
+            "blankProbability": 1,
+            "variance": 339.9
           },
           "reconciliation": {
             "actualScore": 53,
             "netActualScore": 53,
             "insideConfidenceInterval": false,
-            "predictionError": -29.2,
+            "predictionError": -30.4,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": -29.2
@@ -5822,7 +5822,7 @@
               "name": "Gabriel",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 8.2,
+              "projectedXp": 9.8,
               "actualPoints": 2,
               "played": true
             },
@@ -5876,7 +5876,7 @@
               "name": "Justin",
               "team": "LEE",
               "position": "DEF",
-              "projectedXp": 5,
+              "projectedXp": 4.8,
               "actualPoints": 6,
               "played": true
             },
@@ -5885,7 +5885,7 @@
               "name": "Trafford",
               "team": "LEE",
               "position": "GKP",
-              "projectedXp": 5.2,
+              "projectedXp": 6,
               "actualPoints": 2,
               "played": true
             },
@@ -5973,23 +5973,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 79.1,
-            "median": 78,
-            "p10": 57,
-            "p90": 101,
+            "meanXp": 80.9,
+            "median": 81,
+            "p10": 59,
+            "p90": 103,
             "confidenceInterval": [
-              57,
-              101
+              59,
+              103
             ],
-            "haulProbability": 59,
+            "haulProbability": 65,
             "blankProbability": 0,
-            "variance": 292.7
+            "variance": 298.1
           },
           "reconciliation": {
             "actualScore": 61,
             "netActualScore": 61,
             "insideConfidenceInterval": true,
-            "predictionError": -18.1,
+            "predictionError": -19.9,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": -21.2
@@ -6005,7 +6005,7 @@
               "name": "Raya",
               "team": "ARS",
               "position": "GKP",
-              "projectedXp": 6,
+              "projectedXp": 6.8,
               "actualPoints": 3,
               "played": true
             },
@@ -6014,7 +6014,7 @@
               "name": "Calafiori",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 5.6,
+              "projectedXp": 4.8,
               "actualPoints": 9,
               "played": true
             },
@@ -6055,21 +6055,21 @@
               "played": true
             },
             {
+              "id": 127,
+              "name": "Gomez",
+              "team": "BHA",
+              "position": "MID",
+              "projectedXp": 5.4,
+              "actualPoints": 5,
+              "played": true
+            },
+            {
               "id": 40,
               "name": "Rogers",
               "team": "CHE",
               "position": "MID",
               "projectedXp": 4.6,
               "actualPoints": 9,
-              "played": true
-            },
-            {
-              "id": 101,
-              "name": "Henderson",
-              "team": "CHE",
-              "position": "MID",
-              "projectedXp": 5,
-              "actualPoints": 18,
               "played": true
             },
             {
@@ -6086,7 +6086,7 @@
               "name": "Justin",
               "team": "LEE",
               "position": "DEF",
-              "projectedXp": 5,
+              "projectedXp": 4.8,
               "actualPoints": 6,
               "played": true
             },
@@ -6102,11 +6102,20 @@
           ],
           "bench": [
             {
-              "id": 57,
-              "name": "Petrović",
-              "team": "BOU",
+              "id": 385,
+              "name": "Trafford",
+              "team": "LEE",
               "position": "GKP",
-              "projectedXp": 4.2,
+              "projectedXp": 6,
+              "actualPoints": 2,
+              "played": true
+            },
+            {
+              "id": 566,
+              "name": "Silva",
+              "team": "BOU",
+              "position": "DEF",
+              "projectedXp": 5.4,
               "actualPoints": 0,
               "played": true
             },
@@ -6120,22 +6129,13 @@
               "played": true
             },
             {
-              "id": 579,
-              "name": "Araujo",
-              "team": "LIV",
-              "position": "DEF",
-              "projectedXp": 4.4,
-              "actualPoints": 0,
-              "played": true
-            },
-            {
-              "id": 64,
-              "name": "Smith",
-              "team": "BOU",
+              "id": 539,
+              "name": "O'Nien",
+              "team": "SUN",
               "position": "DEF",
               "projectedXp": 3.8,
               "actualPoints": 0,
-              "played": true
+              "played": false
             }
           ],
           "captain": {
@@ -6156,26 +6156,26 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 77.6,
-            "median": 78,
-            "p10": 57,
+            "meanXp": 77.2,
+            "median": 77,
+            "p10": 56,
             "p90": 99,
             "confidenceInterval": [
-              57,
+              56,
               99
             ],
-            "haulProbability": 57,
+            "haulProbability": 54,
             "blankProbability": 1,
-            "variance": 279.5
+            "variance": 290.1
           },
           "reconciliation": {
-            "actualScore": 105,
-            "netActualScore": 105,
-            "insideConfidenceInterval": false,
-            "predictionError": 27.4,
+            "actualScore": 92,
+            "netActualScore": 92,
+            "insideConfidenceInterval": true,
+            "predictionError": 14.8,
             "haulAchieved": true,
             "blankOccurred": false,
-            "alphaVsTemplate": 22.8
+            "alphaVsTemplate": 9.8
           }
         },
         "template_safe": {
@@ -6188,7 +6188,7 @@
               "name": "Konsa",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 9,
+              "projectedXp": 10.2,
               "actualPoints": 4,
               "played": true
             },
@@ -6242,7 +6242,7 @@
               "name": "Justin",
               "team": "LEE",
               "position": "DEF",
-              "projectedXp": 5,
+              "projectedXp": 4.8,
               "actualPoints": 6,
               "played": true
             },
@@ -6251,7 +6251,7 @@
               "name": "Trafford",
               "team": "LEE",
               "position": "GKP",
-              "projectedXp": 5.2,
+              "projectedXp": 6,
               "actualPoints": 2,
               "played": true
             },
@@ -6339,23 +6339,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 78.7,
-            "median": 78,
-            "p10": 60,
-            "p90": 99,
+            "meanXp": 80.7,
+            "median": 80,
+            "p10": 61,
+            "p90": 102,
             "confidenceInterval": [
-              60,
-              99
+              61,
+              102
             ],
-            "haulProbability": 60,
+            "haulProbability": 66,
             "blankProbability": 0,
-            "variance": 251.5
+            "variance": 276.9
           },
           "reconciliation": {
             "actualScore": 54,
             "netActualScore": 54,
             "insideConfidenceInterval": false,
-            "predictionError": -24.7,
+            "predictionError": -26.7,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": -28.2
@@ -6371,7 +6371,7 @@
               "name": "Konsa",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 9,
+              "projectedXp": 10.2,
               "actualPoints": 4,
               "played": true
             },
@@ -6425,7 +6425,7 @@
               "name": "Justin",
               "team": "LEE",
               "position": "DEF",
-              "projectedXp": 5,
+              "projectedXp": 4.8,
               "actualPoints": 6,
               "played": true
             },
@@ -6434,7 +6434,7 @@
               "name": "Trafford",
               "team": "LEE",
               "position": "GKP",
-              "projectedXp": 5.2,
+              "projectedXp": 6,
               "actualPoints": 2,
               "played": true
             },
@@ -6522,23 +6522,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 82.5,
-            "median": 82,
-            "p10": 60,
-            "p90": 104,
+            "meanXp": 83.9,
+            "median": 84,
+            "p10": 62,
+            "p90": 106,
             "confidenceInterval": [
-              60,
-              104
+              62,
+              106
             ],
-            "haulProbability": 66,
-            "blankProbability": 1,
-            "variance": 282.1
+            "haulProbability": 70,
+            "blankProbability": 0,
+            "variance": 298.1
           },
           "reconciliation": {
             "actualScore": 71,
             "netActualScore": 71,
             "insideConfidenceInterval": true,
-            "predictionError": -11.5,
+            "predictionError": -12.9,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": -11.2
@@ -6554,7 +6554,7 @@
               "name": "Konsa",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 9,
+              "projectedXp": 10.2,
               "actualPoints": 4,
               "played": true
             },
@@ -6608,7 +6608,7 @@
               "name": "Justin",
               "team": "LEE",
               "position": "DEF",
-              "projectedXp": 5,
+              "projectedXp": 4.8,
               "actualPoints": 6,
               "played": true
             },
@@ -6617,7 +6617,7 @@
               "name": "Trafford",
               "team": "LEE",
               "position": "GKP",
-              "projectedXp": 5.2,
+              "projectedXp": 6,
               "actualPoints": 2,
               "played": true
             },
@@ -6705,23 +6705,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 81.3,
-            "median": 81,
-            "p10": 61,
-            "p90": 103,
+            "meanXp": 83.8,
+            "median": 83,
+            "p10": 62,
+            "p90": 105,
             "confidenceInterval": [
-              61,
-              103
+              62,
+              105
             ],
-            "haulProbability": 65,
+            "haulProbability": 69,
             "blankProbability": 0,
-            "variance": 287.4
+            "variance": 274.3
           },
           "reconciliation": {
             "actualScore": 57,
             "netActualScore": 57,
             "insideConfidenceInterval": false,
-            "predictionError": -24.3,
+            "predictionError": -26.8,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": -25.2
@@ -6740,21 +6740,21 @@
           "scenarioLabel": "Quant Optimal",
           "startingXI": [
             {
+              "id": 4,
+              "name": "Gabriel",
+              "team": "ARS",
+              "position": "DEF",
+              "projectedXp": 9.8,
+              "actualPoints": 8,
+              "played": true
+            },
+            {
               "id": 166,
               "name": "N.Jackson",
               "team": "AVL",
               "position": "FWD",
               "projectedXp": 8.8,
               "actualPoints": 2,
-              "played": true
-            },
-            {
-              "id": 87,
-              "name": "Ajer",
-              "team": "BRE",
-              "position": "DEF",
-              "projectedXp": 4.2,
-              "actualPoints": 3,
               "played": true
             },
             {
@@ -6798,7 +6798,7 @@
               "name": "Trafford",
               "team": "LEE",
               "position": "GKP",
-              "projectedXp": 5.2,
+              "projectedXp": 6,
               "actualPoints": 2,
               "played": true
             },
@@ -6850,12 +6850,21 @@
               "played": true
             },
             {
-              "id": 362,
-              "name": "Jacquet",
-              "team": "LIV",
+              "id": 87,
+              "name": "Ajer",
+              "team": "BRE",
               "position": "DEF",
-              "projectedXp": 4,
+              "projectedXp": 4.2,
               "actualPoints": 3,
+              "played": true
+            },
+            {
+              "id": 539,
+              "name": "O'Nien",
+              "team": "SUN",
+              "position": "DEF",
+              "projectedXp": 3.8,
+              "actualPoints": 1,
               "played": true
             },
             {
@@ -6865,15 +6874,6 @@
               "position": "MID",
               "projectedXp": 3.6,
               "actualPoints": 2,
-              "played": true
-            },
-            {
-              "id": 534,
-              "name": "Hume",
-              "team": "SUN",
-              "position": "DEF",
-              "projectedXp": 3.4,
-              "actualPoints": 3,
               "played": true
             }
           ],
@@ -6885,9 +6885,9 @@
             "isVcPromoted": false
           },
           "viceCaptain": {
-            "id": 249,
-            "name": "Barry",
-            "actualPoints": 2
+            "id": 4,
+            "name": "Gabriel",
+            "actualPoints": 8
           },
           "transfers": {
             "in": [],
@@ -6895,26 +6895,26 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 73.8,
-            "median": 72,
-            "p10": 53,
-            "p90": 96,
+            "meanXp": 80.4,
+            "median": 80,
+            "p10": 59,
+            "p90": 102,
             "confidenceInterval": [
-              53,
-              96
+              59,
+              102
             ],
-            "haulProbability": 45,
-            "blankProbability": 1,
-            "variance": 300.8
+            "haulProbability": 63,
+            "blankProbability": 0,
+            "variance": 284.8
           },
           "reconciliation": {
-            "actualScore": 41,
-            "netActualScore": 41,
+            "actualScore": 46,
+            "netActualScore": 46,
             "insideConfidenceInterval": false,
-            "predictionError": -32.8,
+            "predictionError": -34.4,
             "haulAchieved": false,
             "blankOccurred": false,
-            "alphaVsTemplate": -17.5
+            "alphaVsTemplate": -12.5
           }
         },
         "quant_aggressive": {
@@ -6950,15 +6950,6 @@
               "played": true
             },
             {
-              "id": 571,
-              "name": "Florentino",
-              "team": "IPS",
-              "position": "MID",
-              "projectedXp": 3.6,
-              "actualPoints": 2,
-              "played": true
-            },
-            {
               "id": 591,
               "name": "Enciso",
               "team": "IPS",
@@ -6981,7 +6972,7 @@
               "name": "Trafford",
               "team": "LEE",
               "position": "GKP",
-              "projectedXp": 5.2,
+              "projectedXp": 6,
               "actualPoints": 2,
               "played": true
             },
@@ -7009,6 +7000,15 @@
               "team": "LIV",
               "position": "DEF",
               "projectedXp": 4.4,
+              "actualPoints": 1,
+              "played": true
+            },
+            {
+              "id": 539,
+              "name": "O'Nien",
+              "team": "SUN",
+              "position": "DEF",
+              "projectedXp": 3.8,
               "actualPoints": 1,
               "played": true
             },
@@ -7051,12 +7051,12 @@
               "played": true
             },
             {
-              "id": 534,
-              "name": "Hume",
-              "team": "SUN",
-              "position": "DEF",
-              "projectedXp": 3.4,
-              "actualPoints": 3,
+              "id": 571,
+              "name": "Florentino",
+              "team": "IPS",
+              "position": "MID",
+              "projectedXp": 3.6,
+              "actualPoints": 2,
               "played": true
             }
           ],
@@ -7078,26 +7078,26 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 72.1,
-            "median": 72,
-            "p10": 51,
-            "p90": 93,
+            "meanXp": 73.5,
+            "median": 73,
+            "p10": 53,
+            "p90": 95,
             "confidenceInterval": [
-              51,
-              93
+              53,
+              95
             ],
-            "haulProbability": 43,
-            "blankProbability": 2,
-            "variance": 266.6
+            "haulProbability": 47,
+            "blankProbability": 1,
+            "variance": 282.1
           },
           "reconciliation": {
-            "actualScore": 40,
-            "netActualScore": 40,
+            "actualScore": 39,
+            "netActualScore": 39,
             "insideConfidenceInterval": false,
-            "predictionError": -32.1,
+            "predictionError": -34.5,
             "haulAchieved": false,
             "blankOccurred": true,
-            "alphaVsTemplate": -18.5
+            "alphaVsTemplate": -19.5
           }
         },
         "quant_value": {
@@ -7110,7 +7110,7 @@
               "name": "Raya",
               "team": "ARS",
               "position": "GKP",
-              "projectedXp": 6,
+              "projectedXp": 6.8,
               "actualPoints": 9,
               "played": true
             },
@@ -7119,7 +7119,7 @@
               "name": "Calafiori",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 5.6,
+              "projectedXp": 4.8,
               "actualPoints": 6,
               "played": true
             },
@@ -7128,7 +7128,7 @@
               "name": "Konsa",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 9,
+              "projectedXp": 10.2,
               "actualPoints": 9,
               "played": true
             },
@@ -7225,21 +7225,21 @@
               "played": true
             },
             {
+              "id": 539,
+              "name": "O'Nien",
+              "team": "SUN",
+              "position": "DEF",
+              "projectedXp": 3.8,
+              "actualPoints": 1,
+              "played": true
+            },
+            {
               "id": 571,
               "name": "Florentino",
               "team": "IPS",
               "position": "MID",
               "projectedXp": 3.6,
               "actualPoints": 2,
-              "played": true
-            },
-            {
-              "id": 534,
-              "name": "Hume",
-              "team": "SUN",
-              "position": "DEF",
-              "projectedXp": 3.4,
-              "actualPoints": 3,
               "played": true
             }
           ],
@@ -7261,23 +7261,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 79.3,
-            "median": 79,
-            "p10": 59,
-            "p90": 101,
+            "meanXp": 80.6,
+            "median": 80,
+            "p10": 60,
+            "p90": 103,
             "confidenceInterval": [
-              59,
-              101
+              60,
+              103
             ],
-            "haulProbability": 60,
+            "haulProbability": 62,
             "blankProbability": 0,
-            "variance": 287.4
+            "variance": 306.3
           },
           "reconciliation": {
             "actualScore": 61,
             "netActualScore": 61,
             "insideConfidenceInterval": true,
-            "predictionError": -18.3,
+            "predictionError": -19.6,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": 2.5
@@ -7293,7 +7293,7 @@
               "name": "Raya",
               "team": "ARS",
               "position": "GKP",
-              "projectedXp": 6,
+              "projectedXp": 6.8,
               "actualPoints": 9,
               "played": true
             },
@@ -7302,7 +7302,7 @@
               "name": "Konsa",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 9,
+              "projectedXp": 10.2,
               "actualPoints": 9,
               "played": true
             },
@@ -7408,21 +7408,21 @@
               "played": true
             },
             {
+              "id": 539,
+              "name": "O'Nien",
+              "team": "SUN",
+              "position": "DEF",
+              "projectedXp": 3.8,
+              "actualPoints": 1,
+              "played": true
+            },
+            {
               "id": 571,
               "name": "Florentino",
               "team": "IPS",
               "position": "MID",
               "projectedXp": 3.6,
               "actualPoints": 2,
-              "played": true
-            },
-            {
-              "id": 534,
-              "name": "Hume",
-              "team": "SUN",
-              "position": "DEF",
-              "projectedXp": 3.4,
-              "actualPoints": 3,
               "played": true
             }
           ],
@@ -7444,23 +7444,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 76.4,
-            "median": 75,
-            "p10": 58,
-            "p90": 97,
+            "meanXp": 78.5,
+            "median": 78,
+            "p10": 59,
+            "p90": 99,
             "confidenceInterval": [
-              58,
-              97
+              59,
+              99
             ],
-            "haulProbability": 53,
-            "blankProbability": 0,
-            "variance": 259
+            "haulProbability": 58,
+            "blankProbability": 1,
+            "variance": 256.5
           },
           "reconciliation": {
             "actualScore": 63,
             "netActualScore": 63,
             "insideConfidenceInterval": true,
-            "predictionError": -13.4,
+            "predictionError": -15.5,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": 4.5
@@ -7476,7 +7476,190 @@
               "name": "Konsa",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 9,
+              "projectedXp": 10.2,
+              "actualPoints": 9,
+              "played": true
+            },
+            {
+              "id": 166,
+              "name": "N.Jackson",
+              "team": "AVL",
+              "position": "FWD",
+              "projectedXp": 8.8,
+              "actualPoints": 2,
+              "played": true
+            },
+            {
+              "id": 40,
+              "name": "Rogers",
+              "team": "CHE",
+              "position": "MID",
+              "projectedXp": 4.6,
+              "actualPoints": 2,
+              "played": true
+            },
+            {
+              "id": 236,
+              "name": "Dewsbury-Hall",
+              "team": "EVE",
+              "position": "MID",
+              "projectedXp": 6,
+              "actualPoints": 2,
+              "played": true
+            },
+            {
+              "id": 591,
+              "name": "Enciso",
+              "team": "IPS",
+              "position": "MID",
+              "projectedXp": 4.6,
+              "actualPoints": 2,
+              "played": true
+            },
+            {
+              "id": 592,
+              "name": "Ouattara",
+              "team": "IPS",
+              "position": "DEF",
+              "projectedXp": 4.6,
+              "actualPoints": 3,
+              "played": true
+            },
+            {
+              "id": 385,
+              "name": "Trafford",
+              "team": "LEE",
+              "position": "GKP",
+              "projectedXp": 6,
+              "actualPoints": 2,
+              "played": true
+            },
+            {
+              "id": 366,
+              "name": "Wirtz",
+              "team": "LIV",
+              "position": "MID",
+              "projectedXp": 5.6,
+              "actualPoints": 5,
+              "played": true
+            },
+            {
+              "id": 579,
+              "name": "Araujo",
+              "team": "LIV",
+              "position": "DEF",
+              "projectedXp": 4.4,
+              "actualPoints": 1,
+              "played": true
+            },
+            {
+              "id": 411,
+              "name": "Haaland",
+              "team": "MCI",
+              "position": "FWD",
+              "projectedXp": 6.2,
+              "actualPoints": 13,
+              "played": true
+            },
+            {
+              "id": 539,
+              "name": "O'Nien",
+              "team": "SUN",
+              "position": "DEF",
+              "projectedXp": 3.8,
+              "actualPoints": 1,
+              "played": true
+            }
+          ],
+          "bench": [
+            {
+              "id": 529,
+              "name": "Roefs",
+              "team": "SUN",
+              "position": "GKP",
+              "projectedXp": 4.4,
+              "actualPoints": 2,
+              "played": true
+            },
+            {
+              "id": 249,
+              "name": "Barry",
+              "team": "EVE",
+              "position": "FWD",
+              "projectedXp": 7,
+              "actualPoints": 2,
+              "played": true
+            },
+            {
+              "id": 87,
+              "name": "Ajer",
+              "team": "BRE",
+              "position": "DEF",
+              "projectedXp": 4.2,
+              "actualPoints": 3,
+              "played": true
+            },
+            {
+              "id": 571,
+              "name": "Florentino",
+              "team": "IPS",
+              "position": "MID",
+              "projectedXp": 3.6,
+              "actualPoints": 2,
+              "played": true
+            }
+          ],
+          "captain": {
+            "id": 166,
+            "name": "N.Jackson",
+            "actualPoints": 2,
+            "multiplier": 2,
+            "isVcPromoted": false
+          },
+          "viceCaptain": {
+            "id": 31,
+            "name": "Konsa",
+            "actualPoints": 9
+          },
+          "transfers": {
+            "in": [],
+            "out": [],
+            "hitCost": 0
+          },
+          "monteCarlo": {
+            "meanXp": 76.4,
+            "median": 76,
+            "p10": 57,
+            "p90": 97,
+            "confidenceInterval": [
+              57,
+              97
+            ],
+            "haulProbability": 54,
+            "blankProbability": 1,
+            "variance": 259
+          },
+          "reconciliation": {
+            "actualScore": 44,
+            "netActualScore": 44,
+            "insideConfidenceInterval": false,
+            "predictionError": -32.4,
+            "haulAchieved": false,
+            "blankOccurred": false,
+            "alphaVsTemplate": -14.5
+          }
+        },
+        "template_value": {
+          "mode": "value",
+          "scenario": "template",
+          "scenarioLabel": "Risky Template Shield",
+          "startingXI": [
+            {
+              "id": 31,
+              "name": "Konsa",
+              "team": "ARS",
+              "position": "DEF",
+              "projectedXp": 10.2,
               "actualPoints": 9,
               "played": true
             },
@@ -7539,7 +7722,7 @@
               "name": "Trafford",
               "team": "LEE",
               "position": "GKP",
-              "projectedXp": 5.2,
+              "projectedXp": 6,
               "actualPoints": 2,
               "played": true
             },
@@ -7591,204 +7774,21 @@
               "played": true
             },
             {
-              "id": 571,
-              "name": "Florentino",
-              "team": "IPS",
-              "position": "MID",
-              "projectedXp": 3.6,
-              "actualPoints": 2,
-              "played": true
-            },
-            {
-              "id": 534,
-              "name": "Hume",
+              "id": 539,
+              "name": "O'Nien",
               "team": "SUN",
               "position": "DEF",
-              "projectedXp": 3.4,
-              "actualPoints": 3,
-              "played": true
-            }
-          ],
-          "captain": {
-            "id": 166,
-            "name": "N.Jackson",
-            "actualPoints": 2,
-            "multiplier": 2,
-            "isVcPromoted": false
-          },
-          "viceCaptain": {
-            "id": 31,
-            "name": "Konsa",
-            "actualPoints": 9
-          },
-          "transfers": {
-            "in": [],
-            "out": [],
-            "hitCost": 0
-          },
-          "monteCarlo": {
-            "meanXp": 79.2,
-            "median": 78,
-            "p10": 59,
-            "p90": 102,
-            "confidenceInterval": [
-              59,
-              102
-            ],
-            "haulProbability": 58,
-            "blankProbability": 1,
-            "variance": 317.3
-          },
-          "reconciliation": {
-            "actualScore": 45,
-            "netActualScore": 45,
-            "insideConfidenceInterval": false,
-            "predictionError": -34.2,
-            "haulAchieved": false,
-            "blankOccurred": false,
-            "alphaVsTemplate": -13.5
-          }
-        },
-        "template_value": {
-          "mode": "value",
-          "scenario": "template",
-          "scenarioLabel": "Risky Template Shield",
-          "startingXI": [
-            {
-              "id": 1,
-              "name": "Raya",
-              "team": "ARS",
-              "position": "GKP",
-              "projectedXp": 6,
-              "actualPoints": 9,
-              "played": true
-            },
-            {
-              "id": 31,
-              "name": "Konsa",
-              "team": "ARS",
-              "position": "DEF",
-              "projectedXp": 9,
-              "actualPoints": 9,
-              "played": true
-            },
-            {
-              "id": 166,
-              "name": "N.Jackson",
-              "team": "AVL",
-              "position": "FWD",
-              "projectedXp": 8.8,
-              "actualPoints": 2,
-              "played": true
-            },
-            {
-              "id": 40,
-              "name": "Rogers",
-              "team": "CHE",
-              "position": "MID",
-              "projectedXp": 4.6,
-              "actualPoints": 2,
-              "played": true
-            },
-            {
-              "id": 236,
-              "name": "Dewsbury-Hall",
-              "team": "EVE",
-              "position": "MID",
-              "projectedXp": 6,
-              "actualPoints": 2,
-              "played": true
-            },
-            {
-              "id": 249,
-              "name": "Barry",
-              "team": "EVE",
-              "position": "FWD",
-              "projectedXp": 7,
-              "actualPoints": 2,
-              "played": true
-            },
-            {
-              "id": 591,
-              "name": "Enciso",
-              "team": "IPS",
-              "position": "MID",
-              "projectedXp": 4.6,
-              "actualPoints": 2,
-              "played": true
-            },
-            {
-              "id": 592,
-              "name": "Ouattara",
-              "team": "IPS",
-              "position": "DEF",
-              "projectedXp": 4.6,
-              "actualPoints": 3,
-              "played": true
-            },
-            {
-              "id": 366,
-              "name": "Wirtz",
-              "team": "LIV",
-              "position": "MID",
-              "projectedXp": 5.6,
-              "actualPoints": 5,
-              "played": true
-            },
-            {
-              "id": 579,
-              "name": "Araujo",
-              "team": "LIV",
-              "position": "DEF",
-              "projectedXp": 4.4,
+              "projectedXp": 3.8,
               "actualPoints": 1,
               "played": true
             },
             {
-              "id": 411,
-              "name": "Haaland",
-              "team": "MCI",
-              "position": "FWD",
-              "projectedXp": 6.2,
-              "actualPoints": 13,
-              "played": true
-            }
-          ],
-          "bench": [
-            {
-              "id": 529,
-              "name": "Roefs",
-              "team": "SUN",
-              "position": "GKP",
-              "projectedXp": 4.4,
-              "actualPoints": 2,
-              "played": true
-            },
-            {
-              "id": 87,
-              "name": "Ajer",
-              "team": "BRE",
-              "position": "DEF",
-              "projectedXp": 4.2,
-              "actualPoints": 3,
-              "played": true
-            },
-            {
               "id": 571,
               "name": "Florentino",
               "team": "IPS",
               "position": "MID",
               "projectedXp": 3.6,
               "actualPoints": 2,
-              "played": true
-            },
-            {
-              "id": 534,
-              "name": "Hume",
-              "team": "SUN",
-              "position": "DEF",
-              "projectedXp": 3.4,
-              "actualPoints": 3,
               "played": true
             }
           ],
@@ -7810,26 +7810,26 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 79.8,
-            "median": 80,
-            "p10": 59,
-            "p90": 103,
+            "meanXp": 79.2,
+            "median": 79,
+            "p10": 58,
+            "p90": 100,
             "confidenceInterval": [
-              59,
-              103
+              58,
+              100
             ],
-            "haulProbability": 61,
+            "haulProbability": 60,
             "blankProbability": 1,
-            "variance": 328.5
+            "variance": 264.1
           },
           "reconciliation": {
-            "actualScore": 52,
-            "netActualScore": 52,
+            "actualScore": 45,
+            "netActualScore": 45,
             "insideConfidenceInterval": false,
-            "predictionError": -27.8,
+            "predictionError": -34.2,
             "haulAchieved": false,
             "blankOccurred": false,
-            "alphaVsTemplate": -6.5
+            "alphaVsTemplate": -13.5
           }
         }
       }
@@ -7849,7 +7849,7 @@
               "name": "Raya",
               "team": "ARS",
               "position": "GKP",
-              "projectedXp": 6,
+              "projectedXp": 6.8,
               "actualPoints": 7,
               "played": true
             },
@@ -8000,23 +8000,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 80.4,
-            "median": 79,
-            "p10": 60,
-            "p90": 101,
+            "meanXp": 81.7,
+            "median": 81,
+            "p10": 61,
+            "p90": 102,
             "confidenceInterval": [
-              60,
-              101
+              61,
+              102
             ],
-            "haulProbability": 65,
+            "haulProbability": 66,
             "blankProbability": 0,
-            "variance": 259
+            "variance": 251.5
           },
           "reconciliation": {
             "actualScore": 75,
             "netActualScore": 75,
             "insideConfidenceInterval": true,
-            "predictionError": -5.4,
+            "predictionError": -6.7,
             "haulAchieved": true,
             "blankOccurred": false,
             "alphaVsTemplate": 43.4
@@ -8028,21 +8028,30 @@
           "scenarioLabel": "Quant Optimal",
           "startingXI": [
             {
+              "id": 1,
+              "name": "Raya",
+              "team": "ARS",
+              "position": "GKP",
+              "projectedXp": 6.8,
+              "actualPoints": 7,
+              "played": true
+            },
+            {
+              "id": 45,
+              "name": "McGinn",
+              "team": "AVL",
+              "position": "MID",
+              "projectedXp": 5.4,
+              "actualPoints": 6,
+              "played": true
+            },
+            {
               "id": 166,
               "name": "N.Jackson",
               "team": "AVL",
               "position": "FWD",
               "projectedXp": 8.8,
               "actualPoints": 13,
-              "played": true
-            },
-            {
-              "id": 597,
-              "name": "Suzuki",
-              "team": "AVL",
-              "position": "GKP",
-              "projectedXp": 3,
-              "actualPoints": 4,
               "played": true
             },
             {
@@ -8078,15 +8087,6 @@
               "team": "BHA",
               "position": "MID",
               "projectedXp": 6.2,
-              "actualPoints": 2,
-              "played": true
-            },
-            {
-              "id": 236,
-              "name": "Dewsbury-Hall",
-              "team": "EVE",
-              "position": "MID",
-              "projectedXp": 6,
               "actualPoints": 2,
               "played": true
             },
@@ -8183,26 +8183,26 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 72.7,
-            "median": 72,
-            "p10": 52,
-            "p90": 93,
+            "meanXp": 76.6,
+            "median": 76,
+            "p10": 55,
+            "p90": 99,
             "confidenceInterval": [
-              52,
-              93
+              55,
+              99
             ],
-            "haulProbability": 45,
-            "blankProbability": 2,
-            "variance": 251.5
+            "haulProbability": 54,
+            "blankProbability": 1,
+            "variance": 306.3
           },
           "reconciliation": {
-            "actualScore": 70,
-            "netActualScore": 70,
+            "actualScore": 77,
+            "netActualScore": 77,
             "insideConfidenceInterval": true,
-            "predictionError": -2.7,
-            "haulAchieved": false,
+            "predictionError": 0.4,
+            "haulAchieved": true,
             "blankOccurred": false,
-            "alphaVsTemplate": 38.4
+            "alphaVsTemplate": 45.4
           }
         },
         "quant_value": {
@@ -8215,7 +8215,7 @@
               "name": "Raya",
               "team": "ARS",
               "position": "GKP",
-              "projectedXp": 6,
+              "projectedXp": 6.8,
               "actualPoints": 7,
               "played": true
             },
@@ -8224,7 +8224,7 @@
               "name": "Calafiori",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 5.6,
+              "projectedXp": 4.8,
               "actualPoints": 1,
               "played": true
             },
@@ -8233,7 +8233,7 @@
               "name": "Konsa",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 9,
+              "projectedXp": 10.2,
               "actualPoints": 14,
               "played": true
             },
@@ -8296,7 +8296,7 @@
               "name": "Muharemović",
               "team": "LEE",
               "position": "DEF",
-              "projectedXp": 5.8,
+              "projectedXp": 6.8,
               "actualPoints": 9,
               "played": true
             },
@@ -8366,23 +8366,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 75.1,
-            "median": 75,
-            "p10": 56,
-            "p90": 95,
+            "meanXp": 78.9,
+            "median": 79,
+            "p10": 59,
+            "p90": 99,
             "confidenceInterval": [
-              56,
-              95
+              59,
+              99
             ],
-            "haulProbability": 50,
+            "haulProbability": 60,
             "blankProbability": 1,
-            "variance": 241.7
+            "variance": 246.6
           },
           "reconciliation": {
             "actualScore": 66,
             "netActualScore": 66,
             "insideConfidenceInterval": true,
-            "predictionError": -9.1,
+            "predictionError": -12.9,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": 34.4
@@ -8398,7 +8398,7 @@
               "name": "Raya",
               "team": "ARS",
               "position": "GKP",
-              "projectedXp": 6,
+              "projectedXp": 6.8,
               "actualPoints": 7,
               "played": true
             },
@@ -8407,7 +8407,7 @@
               "name": "Konsa",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 9,
+              "projectedXp": 10.2,
               "actualPoints": 14,
               "played": true
             },
@@ -8549,23 +8549,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 81.5,
-            "median": 81,
+            "meanXp": 83.1,
+            "median": 83,
             "p10": 62,
-            "p90": 102,
+            "p90": 104,
             "confidenceInterval": [
               62,
-              102
+              104
             ],
-            "haulProbability": 66,
+            "haulProbability": 71,
             "blankProbability": 0,
-            "variance": 256.5
+            "variance": 266.6
           },
           "reconciliation": {
             "actualScore": 73,
             "netActualScore": 73,
             "insideConfidenceInterval": true,
-            "predictionError": -8.5,
+            "predictionError": -10.1,
             "haulAchieved": false,
             "blankOccurred": false,
             "alphaVsTemplate": 41.4
@@ -8577,12 +8577,30 @@
           "scenarioLabel": "Risky Template Shield",
           "startingXI": [
             {
+              "id": 1,
+              "name": "Raya",
+              "team": "ARS",
+              "position": "GKP",
+              "projectedXp": 6.8,
+              "actualPoints": 7,
+              "played": true
+            },
+            {
               "id": 31,
               "name": "Konsa",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 9,
+              "projectedXp": 10.2,
               "actualPoints": 14,
+              "played": true
+            },
+            {
+              "id": 45,
+              "name": "McGinn",
+              "team": "AVL",
+              "position": "MID",
+              "projectedXp": 5.4,
+              "actualPoints": 6,
               "played": true
             },
             {
@@ -8592,15 +8610,6 @@
               "position": "FWD",
               "projectedXp": 8.8,
               "actualPoints": 13,
-              "played": true
-            },
-            {
-              "id": 597,
-              "name": "Suzuki",
-              "team": "AVL",
-              "position": "GKP",
-              "projectedXp": 3,
-              "actualPoints": 4,
               "played": true
             },
             {
@@ -8646,15 +8655,6 @@
               "position": "MID",
               "projectedXp": 4.6,
               "actualPoints": 1,
-              "played": true
-            },
-            {
-              "id": 366,
-              "name": "Wirtz",
-              "team": "LIV",
-              "position": "MID",
-              "projectedXp": 5.6,
-              "actualPoints": 6,
               "played": true
             },
             {
@@ -8732,26 +8732,26 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 79,
-            "median": 78,
-            "p10": 58,
-            "p90": 102,
+            "meanXp": 84,
+            "median": 84,
+            "p10": 63,
+            "p90": 106,
             "confidenceInterval": [
-              58,
-              102
+              63,
+              106
             ],
-            "haulProbability": 59,
-            "blankProbability": 1,
-            "variance": 322.9
+            "haulProbability": 71,
+            "blankProbability": 0,
+            "variance": 295.4
           },
           "reconciliation": {
-            "actualScore": 78,
-            "netActualScore": 78,
+            "actualScore": 81,
+            "netActualScore": 81,
             "insideConfidenceInterval": true,
-            "predictionError": -1,
+            "predictionError": -3,
             "haulAchieved": true,
             "blankOccurred": false,
-            "alphaVsTemplate": 46.4
+            "alphaVsTemplate": 49.4
           }
         },
         "template_value": {
@@ -8764,7 +8764,7 @@
               "name": "Raya",
               "team": "ARS",
               "position": "GKP",
-              "projectedXp": 6,
+              "projectedXp": 6.8,
               "actualPoints": 7,
               "played": true
             },
@@ -8773,7 +8773,7 @@
               "name": "Konsa",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 9,
+              "projectedXp": 10.2,
               "actualPoints": 14,
               "played": true
             },
@@ -8915,23 +8915,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 84.5,
-            "median": 84,
-            "p10": 62,
-            "p90": 108,
+            "meanXp": 86.1,
+            "median": 86,
+            "p10": 64,
+            "p90": 110,
             "confidenceInterval": [
-              62,
-              108
+              64,
+              110
             ],
-            "haulProbability": 70,
+            "haulProbability": 72,
             "blankProbability": 0,
-            "variance": 337.1
+            "variance": 348.6
           },
           "reconciliation": {
             "actualScore": 78,
             "netActualScore": 78,
             "insideConfidenceInterval": true,
-            "predictionError": -6.5,
+            "predictionError": -8.1,
             "haulAchieved": true,
             "blankOccurred": false,
             "alphaVsTemplate": 46.4
@@ -8954,7 +8954,7 @@
               "name": "Gabriel",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 8.2,
+              "projectedXp": 9.8,
               "actualPoints": 6,
               "played": true
             },
@@ -8963,7 +8963,7 @@
               "name": "Rice",
               "team": "ARS",
               "position": "MID",
-              "projectedXp": 6,
+              "projectedXp": 5.8,
               "actualPoints": 8,
               "played": true
             },
@@ -8995,6 +8995,15 @@
               "played": true
             },
             {
+              "id": 127,
+              "name": "Gomez",
+              "team": "BHA",
+              "position": "MID",
+              "projectedXp": 5.4,
+              "actualPoints": 3,
+              "played": true
+            },
+            {
               "id": 129,
               "name": "Ayari",
               "team": "BHA",
@@ -9013,12 +9022,12 @@
               "played": true
             },
             {
-              "id": 332,
-              "name": "Justin",
+              "id": 334,
+              "name": "Muharemović",
               "team": "LEE",
               "position": "DEF",
-              "projectedXp": 5,
-              "actualPoints": 2,
+              "projectedXp": 6.8,
+              "actualPoints": 3,
               "played": true
             },
             {
@@ -9026,16 +9035,7 @@
               "name": "Trafford",
               "team": "LEE",
               "position": "GKP",
-              "projectedXp": 5.2,
-              "actualPoints": 2,
-              "played": true
-            },
-            {
-              "id": 366,
-              "name": "Wirtz",
-              "team": "LIV",
-              "position": "MID",
-              "projectedXp": 5.6,
+              "projectedXp": 6,
               "actualPoints": 2,
               "played": true
             },
@@ -9060,11 +9060,11 @@
               "played": true
             },
             {
-              "id": 127,
-              "name": "Gomez",
-              "team": "BHA",
+              "id": 15,
+              "name": "Ødegaard",
+              "team": "ARS",
               "position": "MID",
-              "projectedXp": 5.4,
+              "projectedXp": 5,
               "actualPoints": 3,
               "played": true
             },
@@ -9078,13 +9078,13 @@
               "played": true
             },
             {
-              "id": 10,
-              "name": "White",
-              "team": "ARS",
+              "id": 362,
+              "name": "Jacquet",
+              "team": "LIV",
               "position": "DEF",
-              "projectedXp": 4.2,
-              "actualPoints": 0,
-              "played": false
+              "projectedXp": 4,
+              "actualPoints": 2,
+              "played": true
             }
           ],
           "captain": {
@@ -9105,26 +9105,26 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 82.9,
-            "median": 81,
-            "p10": 62,
-            "p90": 106,
+            "meanXp": 87.4,
+            "median": 87,
+            "p10": 64,
+            "p90": 111,
             "confidenceInterval": [
-              62,
-              106
+              64,
+              111
             ],
-            "haulProbability": 67,
-            "blankProbability": 1,
-            "variance": 325.7
+            "haulProbability": 77,
+            "blankProbability": 0,
+            "variance": 339.9
           },
           "reconciliation": {
-            "actualScore": 69,
-            "netActualScore": 69,
+            "actualScore": 71,
+            "netActualScore": 71,
             "insideConfidenceInterval": true,
-            "predictionError": -13.9,
+            "predictionError": -16.4,
             "haulAchieved": false,
             "blankOccurred": false,
-            "alphaVsTemplate": 0.7
+            "alphaVsTemplate": 2.7
           }
         },
         "quant_aggressive": {
@@ -9137,7 +9137,7 @@
               "name": "Gabriel",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 8.2,
+              "projectedXp": 9.8,
               "actualPoints": 6,
               "played": true
             },
@@ -9146,8 +9146,17 @@
               "name": "Rice",
               "team": "ARS",
               "position": "MID",
-              "projectedXp": 6,
+              "projectedXp": 5.8,
               "actualPoints": 8,
+              "played": true
+            },
+            {
+              "id": 15,
+              "name": "Ødegaard",
+              "team": "ARS",
+              "position": "MID",
+              "projectedXp": 5,
+              "actualPoints": 3,
               "played": true
             },
             {
@@ -9196,29 +9205,20 @@
               "played": true
             },
             {
-              "id": 332,
-              "name": "Justin",
-              "team": "LEE",
-              "position": "DEF",
-              "projectedXp": 5,
-              "actualPoints": 2,
-              "played": true
-            },
-            {
               "id": 385,
               "name": "Trafford",
               "team": "LEE",
               "position": "GKP",
-              "projectedXp": 5.2,
+              "projectedXp": 6,
               "actualPoints": 2,
               "played": true
             },
             {
-              "id": 366,
-              "name": "Wirtz",
+              "id": 362,
+              "name": "Jacquet",
               "team": "LIV",
-              "position": "MID",
-              "projectedXp": 5.6,
+              "position": "DEF",
+              "projectedXp": 4,
               "actualPoints": 2,
               "played": true
             },
@@ -9252,13 +9252,13 @@
               "played": true
             },
             {
-              "id": 10,
-              "name": "White",
-              "team": "ARS",
+              "id": 334,
+              "name": "Muharemović",
+              "team": "LEE",
               "position": "DEF",
-              "projectedXp": 4.2,
-              "actualPoints": 0,
-              "played": false
+              "projectedXp": 6.8,
+              "actualPoints": 3,
+              "played": true
             },
             {
               "id": 428,
@@ -9288,26 +9288,26 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 80.9,
-            "median": 79,
-            "p10": 60,
-            "p90": 103,
+            "meanXp": 79.5,
+            "median": 80,
+            "p10": 57,
+            "p90": 102,
             "confidenceInterval": [
-              60,
-              103
+              57,
+              102
             ],
-            "haulProbability": 62,
+            "haulProbability": 59,
             "blankProbability": 0,
-            "variance": 298.1
+            "variance": 309
           },
           "reconciliation": {
-            "actualScore": 70,
-            "netActualScore": 70,
+            "actualScore": 71,
+            "netActualScore": 71,
             "insideConfidenceInterval": true,
-            "predictionError": -10.9,
+            "predictionError": -8.5,
             "haulAchieved": false,
             "blankOccurred": false,
-            "alphaVsTemplate": 1.7
+            "alphaVsTemplate": 2.7
           }
         },
         "quant_value": {
@@ -9320,7 +9320,7 @@
               "name": "Raya",
               "team": "ARS",
               "position": "GKP",
-              "projectedXp": 6,
+              "projectedXp": 6.8,
               "actualPoints": 5,
               "played": true
             },
@@ -9329,7 +9329,7 @@
               "name": "Konsa",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 9,
+              "projectedXp": 10.2,
               "actualPoints": 10,
               "played": true
             },
@@ -9352,21 +9352,30 @@
               "played": true
             },
             {
-              "id": 79,
-              "name": "Evanilson",
-              "team": "BOU",
-              "position": "FWD",
-              "projectedXp": 8.6,
-              "actualPoints": 9,
+              "id": 114,
+              "name": "Boscagli",
+              "team": "BHA",
+              "position": "DEF",
+              "projectedXp": 5,
+              "actualPoints": 6,
               "played": true
             },
             {
-              "id": 129,
-              "name": "Ayari",
+              "id": 124,
+              "name": "Groß",
               "team": "BHA",
               "position": "MID",
-              "projectedXp": 6.2,
-              "actualPoints": 10,
+              "projectedXp": 4.6,
+              "actualPoints": 2,
+              "played": true
+            },
+            {
+              "id": 127,
+              "name": "Gomez",
+              "team": "BHA",
+              "position": "MID",
+              "projectedXp": 5.4,
+              "actualPoints": 3,
               "played": true
             },
             {
@@ -9385,15 +9394,6 @@
               "position": "MID",
               "projectedXp": 3.8,
               "actualPoints": 8,
-              "played": true
-            },
-            {
-              "id": 332,
-              "name": "Justin",
-              "team": "LEE",
-              "position": "DEF",
-              "projectedXp": 5,
-              "actualPoints": 2,
               "played": true
             },
             {
@@ -9421,36 +9421,36 @@
               "name": "Trafford",
               "team": "LEE",
               "position": "GKP",
-              "projectedXp": 5.2,
+              "projectedXp": 6,
               "actualPoints": 2,
               "played": true
             },
             {
-              "id": 127,
-              "name": "Gomez",
-              "team": "BHA",
-              "position": "MID",
-              "projectedXp": 5.4,
-              "actualPoints": 3,
+              "id": 249,
+              "name": "Barry",
+              "team": "EVE",
+              "position": "FWD",
+              "projectedXp": 7,
+              "actualPoints": 9,
               "played": true
             },
             {
-              "id": 114,
-              "name": "Boscagli",
-              "team": "BHA",
+              "id": 332,
+              "name": "Justin",
+              "team": "LEE",
               "position": "DEF",
-              "projectedXp": 5,
-              "actualPoints": 6,
+              "projectedXp": 4.8,
+              "actualPoints": 2,
               "played": true
             },
             {
-              "id": 10,
-              "name": "White",
-              "team": "ARS",
+              "id": 362,
+              "name": "Jacquet",
+              "team": "LIV",
               "position": "DEF",
-              "projectedXp": 4.2,
-              "actualPoints": 0,
-              "played": false
+              "projectedXp": 4,
+              "actualPoints": 2,
+              "played": true
             }
           ],
           "captain": {
@@ -9461,9 +9461,9 @@
             "isVcPromoted": false
           },
           "viceCaptain": {
-            "id": 79,
-            "name": "Evanilson",
-            "actualPoints": 9
+            "id": 31,
+            "name": "Konsa",
+            "actualPoints": 10
           },
           "transfers": {
             "in": [],
@@ -9471,26 +9471,26 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 82.2,
-            "median": 82,
-            "p10": 61,
-            "p90": 104,
+            "meanXp": 80.1,
+            "median": 80,
+            "p10": 59,
+            "p90": 102,
             "confidenceInterval": [
-              61,
-              104
+              59,
+              102
             ],
-            "haulProbability": 68,
+            "haulProbability": 62,
             "blankProbability": 1,
-            "variance": 290.1
+            "variance": 292.7
           },
           "reconciliation": {
-            "actualScore": 91,
-            "netActualScore": 91,
+            "actualScore": 81,
+            "netActualScore": 81,
             "insideConfidenceInterval": true,
-            "predictionError": 8.8,
+            "predictionError": 0.9,
             "haulAchieved": true,
             "blankOccurred": false,
-            "alphaVsTemplate": 22.7
+            "alphaVsTemplate": 12.7
           }
         },
         "template_safe": {
@@ -9503,7 +9503,7 @@
               "name": "Raya",
               "team": "ARS",
               "position": "GKP",
-              "projectedXp": 6,
+              "projectedXp": 6.8,
               "actualPoints": 5,
               "played": true
             },
@@ -9512,7 +9512,7 @@
               "name": "Rice",
               "team": "ARS",
               "position": "MID",
-              "projectedXp": 6,
+              "projectedXp": 5.8,
               "actualPoints": 8,
               "played": true
             },
@@ -9521,7 +9521,7 @@
               "name": "Konsa",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 9,
+              "projectedXp": 10.2,
               "actualPoints": 10,
               "played": true
             },
@@ -9575,7 +9575,7 @@
               "name": "Muharemović",
               "team": "LEE",
               "position": "DEF",
-              "projectedXp": 5.8,
+              "projectedXp": 6.8,
               "actualPoints": 3,
               "played": true
             },
@@ -9604,7 +9604,7 @@
               "name": "Trafford",
               "team": "LEE",
               "position": "GKP",
-              "projectedXp": 5.2,
+              "projectedXp": 6,
               "actualPoints": 2,
               "played": true
             },
@@ -9654,23 +9654,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 81.6,
-            "median": 81,
-            "p10": 60,
-            "p90": 104,
+            "meanXp": 84.5,
+            "median": 85,
+            "p10": 62,
+            "p90": 106,
             "confidenceInterval": [
-              60,
-              104
+              62,
+              106
             ],
-            "haulProbability": 64,
+            "haulProbability": 72,
             "blankProbability": 0,
-            "variance": 306.3
+            "variance": 282.1
           },
           "reconciliation": {
             "actualScore": 75,
             "netActualScore": 75,
             "insideConfidenceInterval": true,
-            "predictionError": -6.6,
+            "predictionError": -9.5,
             "haulAchieved": true,
             "blankOccurred": false,
             "alphaVsTemplate": 6.7
@@ -9682,11 +9682,20 @@
           "scenarioLabel": "Risky Template Shield",
           "startingXI": [
             {
+              "id": 4,
+              "name": "Gabriel",
+              "team": "ARS",
+              "position": "DEF",
+              "projectedXp": 9.8,
+              "actualPoints": 6,
+              "played": true
+            },
+            {
               "id": 13,
               "name": "Rice",
               "team": "ARS",
               "position": "MID",
-              "projectedXp": 6,
+              "projectedXp": 5.8,
               "actualPoints": 8,
               "played": true
             },
@@ -9695,16 +9704,16 @@
               "name": "Konsa",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 9,
+              "projectedXp": 10.2,
               "actualPoints": 10,
               "played": true
             },
             {
-              "id": 166,
-              "name": "N.Jackson",
-              "team": "AVL",
+              "id": 79,
+              "name": "Evanilson",
+              "team": "BOU",
               "position": "FWD",
-              "projectedXp": 8.8,
+              "projectedXp": 8.6,
               "actualPoints": 9,
               "played": true
             },
@@ -9745,20 +9754,11 @@
               "played": true
             },
             {
-              "id": 332,
-              "name": "Justin",
-              "team": "LEE",
-              "position": "DEF",
-              "projectedXp": 5,
-              "actualPoints": 2,
-              "played": true
-            },
-            {
               "id": 385,
               "name": "Trafford",
               "team": "LEE",
               "position": "GKP",
-              "projectedXp": 5.2,
+              "projectedXp": 6,
               "actualPoints": 2,
               "played": true
             },
@@ -9792,12 +9792,21 @@
               "played": true
             },
             {
-              "id": 79,
-              "name": "Evanilson",
-              "team": "BOU",
+              "id": 249,
+              "name": "Barry",
+              "team": "EVE",
               "position": "FWD",
-              "projectedXp": 8.6,
+              "projectedXp": 7,
               "actualPoints": 9,
+              "played": true
+            },
+            {
+              "id": 334,
+              "name": "Muharemović",
+              "team": "LEE",
+              "position": "DEF",
+              "projectedXp": 6.8,
+              "actualPoints": 3,
               "played": true
             },
             {
@@ -9808,20 +9817,11 @@
               "projectedXp": 4.4,
               "actualPoints": 4,
               "played": true
-            },
-            {
-              "id": 10,
-              "name": "White",
-              "team": "ARS",
-              "position": "DEF",
-              "projectedXp": 4.2,
-              "actualPoints": 0,
-              "played": false
             }
           ],
           "captain": {
-            "id": 166,
-            "name": "N.Jackson",
+            "id": 79,
+            "name": "Evanilson",
             "actualPoints": 9,
             "multiplier": 2,
             "isVcPromoted": false
@@ -9837,26 +9837,26 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 78.7,
-            "median": 78,
-            "p10": 58,
-            "p90": 100,
+            "meanXp": 84.9,
+            "median": 84,
+            "p10": 62,
+            "p90": 108,
             "confidenceInterval": [
-              58,
-              100
+              62,
+              108
             ],
-            "haulProbability": 58,
-            "blankProbability": 1,
-            "variance": 276.9
+            "haulProbability": 71,
+            "blankProbability": 0,
+            "variance": 325.7
           },
           "reconciliation": {
-            "actualScore": 72,
-            "netActualScore": 72,
+            "actualScore": 76,
+            "netActualScore": 76,
             "insideConfidenceInterval": true,
-            "predictionError": -6.7,
-            "haulAchieved": false,
+            "predictionError": -8.9,
+            "haulAchieved": true,
             "blankOccurred": false,
-            "alphaVsTemplate": 3.7
+            "alphaVsTemplate": 7.7
           }
         },
         "template_value": {
@@ -9869,7 +9869,7 @@
               "name": "Raya",
               "team": "ARS",
               "position": "GKP",
-              "projectedXp": 6,
+              "projectedXp": 6.8,
               "actualPoints": 5,
               "played": true
             },
@@ -9878,7 +9878,7 @@
               "name": "Rice",
               "team": "ARS",
               "position": "MID",
-              "projectedXp": 6,
+              "projectedXp": 5.8,
               "actualPoints": 8,
               "played": true
             },
@@ -9887,7 +9887,7 @@
               "name": "Konsa",
               "team": "ARS",
               "position": "DEF",
-              "projectedXp": 9,
+              "projectedXp": 10.2,
               "actualPoints": 10,
               "played": true
             },
@@ -9941,7 +9941,7 @@
               "name": "Muharemović",
               "team": "LEE",
               "position": "DEF",
-              "projectedXp": 5.8,
+              "projectedXp": 6.8,
               "actualPoints": 3,
               "played": true
             },
@@ -9970,7 +9970,7 @@
               "name": "Trafford",
               "team": "LEE",
               "position": "GKP",
-              "projectedXp": 5.2,
+              "projectedXp": 6,
               "actualPoints": 2,
               "played": true
             },
@@ -10020,23 +10020,23 @@
             "hitCost": 0
           },
           "monteCarlo": {
-            "meanXp": 84.4,
-            "median": 83,
-            "p10": 63,
-            "p90": 107,
+            "meanXp": 86.6,
+            "median": 86,
+            "p10": 66,
+            "p90": 108,
             "confidenceInterval": [
-              63,
-              107
+              66,
+              108
             ],
-            "haulProbability": 69,
-            "blankProbability": 1,
-            "variance": 311.7
+            "haulProbability": 76,
+            "blankProbability": 0,
+            "variance": 279.5
           },
           "reconciliation": {
             "actualScore": 82,
             "netActualScore": 82,
             "insideConfidenceInterval": true,
-            "predictionError": -2.4,
+            "predictionError": -4.6,
             "haulAchieved": true,
             "blankOccurred": false,
             "alphaVsTemplate": 13.7
