@@ -277,7 +277,7 @@ async function startServer() {
       const fuel = ((req.query.fuel || req.body?.fuel) as string) || 'native';
       const riskMode = ((req.query.riskMode || req.body?.riskMode) as string) || 'safe';
       const scenario = (((req.query.scenario || req.body?.scenario) as string) || 'template') as 'quant' | 'template';
-      const forwardSource = (((req.query.forwardSource || req.body?.forwardSource) as string) || 'autonomous') as 'autonomous' | 'synced';
+      const forwardSource = (((req.query.forwardSource || req.body?.forwardSource) as string) || 'autonomous') as 'autonomous' | 'synced' | 'duel';
       const endGw = (req.query.endGw || req.body?.endGw) ? parseInt((req.query.endGw || req.body?.endGw) as string, 10) : undefined;
 
       const { CareerService } = await import("./api/_lib/career-service");
