@@ -276,7 +276,7 @@ export class CareerService {
   /**
    * Run the Autonomous Season Career from GW1 to endGw under official FPL human constraints.
    */
-    private static orderBenchIds(benchIds: number[], oracle: XPOracle, gw: number): number[] {
+  private static orderBenchIds(benchIds: number[], oracle: XPOracle, gw: number): number[] {
     const gkpIds = benchIds.filter(id => oracle.getPosition(id) === 'GKP');
     const outfieldIds = benchIds.filter(id => oracle.getPosition(id) !== 'GKP');
     outfieldIds.sort((a, b) => {
@@ -1466,7 +1466,10 @@ export class CareerService {
       const capXp = oracle.getXP(captain, gw);
       const benchXp = benchIds.reduce((sum, id) => sum + oracle.getXP(id, gw), 0);
 
-      if (state.chipState['TC'] > 0 && (capXp >= tcThreshold || gw === chipDeadline)) {
+      const capPlayer = baseData.players.find((p: any) => p.id === captain);
+      const isEliteTalisman = capPlayer && (capPlayer.now_cost >= 90 || (oracle.getPosition(captain) === 'FWD' && capPlayer.now_cost >= 75));
+
+      if (state.chipState['TC'] > 0 && isEliteTalisman && (capXp >= tcThreshold || gw === chipDeadline)) {
         activeChip = 'TC';
         state.chipState['TC'] -= 1;
       } else if (state.chipState['BB'] > 0 && (benchXp >= bbThreshold || gw === chipDeadline)) {
@@ -1520,8 +1523,8 @@ export class CareerService {
       let log = isRolled
         ? `${logPrefix}GW${gw} Projected: Roll Free Transfer (Bank: ${state.freeTransfers} FTs). Captain: ${capModel.web_name} (${capPts} xP).`
         : transfersInList.length > 1
-        ? `${logPrefix}GW${gw} Projected: Double Transfer ${transfersInList.map((t, i) => `${transfersOutList[i]?.name || 'Player'} → ${t.name}`).join(', ')} (${transfersInList.length} FTs used, 0 hit). Captain: ${capModel.web_name} (${capPts} xP).`
-        : `${logPrefix}GW${gw} Projected: Transfer ${transfersOutList[0]?.name} → ${transfersInList[0]?.name}. Captain: ${capModel.web_name} (${capPts} xP).`;
+          ? `${logPrefix}GW${gw} Projected: Double Transfer ${transfersInList.map((t, i) => `${transfersOutList[i]?.name || 'Player'} → ${t.name}`).join(', ')} (${transfersInList.length} FTs used, 0 hit). Captain: ${capModel.web_name} (${capPts} xP).`
+          : `${logPrefix}GW${gw} Projected: Transfer ${transfersOutList[0]?.name} → ${transfersInList[0]?.name}. Captain: ${capModel.web_name} (${capPts} xP).`;
       if (activeChip === 'BB') {
         const benchPtsSum = benchIds.reduce((sum, id) => sum + (dummyActualStats[id]?.points ?? 0), 0);
         log += ` Bench Boost added +${benchPtsSum} xP from bench.`;
